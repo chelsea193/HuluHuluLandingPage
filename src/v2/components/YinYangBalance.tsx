@@ -10,10 +10,10 @@ import { YinYangFood } from '../types';
 import { ChevronRight, Sparkles, AlertTriangle, Scale } from 'lucide-react';
 
 const FOOD_DETAIL_IMAGES: Partial<Record<string, string>> = {
-  '椰子 (Coconut)': '/originals/LandingPage Desktop Part4 FD1-coconut.png',
-  '红肉 (Red Meat)': '/originals/LandingPage Desktop Part4 FD2-meal.png',
-  '牛奶 (Milk)': '/originals/LandingPage Desktop Part4 FD3-milk.png',
-  '精制盐 (Refined Salt)': '/originals/LandingPage Desktop Part4 FD4-salt.png'
+  '椰子 (Coconut)': `${import.meta.env.BASE_URL}originals/LandingPage Desktop Part4 FD1-coconut.png`,
+  '红肉 (Red Meat)': `${import.meta.env.BASE_URL}originals/LandingPage Desktop Part4 FD2-meal.png`,
+  '牛奶 (Milk)': `${import.meta.env.BASE_URL}originals/LandingPage Desktop Part4 FD3-milk.png`,
+  '精制盐 (Refined Salt)': `${import.meta.env.BASE_URL}originals/LandingPage Desktop Part4 FD4-salt.png`
 };
 
 export default function YinYangBalance() {

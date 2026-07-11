@@ -177,7 +177,7 @@ export const GALLERY_FOODS: GalleryFoodItem[] = [
     category: '午餐 / 简餐',
     energyType: 'neutral',
     description: '以有机糙米制成健康烘烤汉堡胚，搭配自制豆腐植物汉堡排，佐以香甜南瓜、酸甜青芒果沙拉与甜菜根，融合全谷物、植物蛋白及天然蔬食能量，营养均衡且轻盈无负担，带来持久饱足感。',
-    imageUrl: '/食物1.webp',
+    imageUrl: `${import.meta.env.BASE_URL}食物1.webp`,
     benefits: ['平衡五脏气能', '提供优质植物蛋白与稳定能量', '富含膳食纤维，促进肠道健康']
   },
   {
@@ -187,7 +187,7 @@ export const GALLERY_FOODS: GalleryFoodItem[] = [
     category: '午餐 / 简餐',
     energyType: 'yang',
     description: '选用意大利面搭配自制参巴酱，酸辣开胃、层次丰富，配以香煎天贝、海菜及当季时蔬。融合发酵豆类、海洋蔬食与天然辛香料的能量，在温和提振食欲的同时，兼顾均衡营养与轻盈饱足感。',
-    imageUrl: '/食物2.webp',
+    imageUrl: `${import.meta.env.BASE_URL}食物2.webp`,
     benefits: ['温暖脾胃，促进食欲', '提供优质植物蛋白与稳定能量', '富含膳食纤维及天然矿物质']
   },
   {
@@ -197,7 +197,7 @@ export const GALLERY_FOODS: GalleryFoodItem[] = [
     category: '主食 / 能量定食',
     energyType: 'neutral',
     description: '以有机糙米饭为主食，搭配酸甜豆腐、自制豆腐炒蛋（Tofu Scramble）、腌渍时蔬及香浓南瓜汤。结合全谷物、植物蛋白与根茎蔬菜的天然能量，融入食物五行能量，营养均衡、为身体补充好能量，持久的饱足感。',
-    imageUrl: '/食物3.webp',
+    imageUrl: `${import.meta.env.BASE_URL}食物3.webp`,
     benefits: ['温和养脾胃', '高膳食纤维', '富含 β-胡萝卜素及天然抗氧化营养']
   },
   {
@@ -208,7 +208,7 @@ export const GALLERY_FOODS: GalleryFoodItem[] = [
     energyType: 'yang',
     energyLabel: '阳性能量 (Yang Energising)',
     description: '精选多样植物食材，搭配香烤与轻炸料理，包含酥香紫薯、自制豆腐植物汉堡、豆腐炒蛋（Tofu Scramble）、可乐饼及每日手作小点心。结合全谷物、植物蛋白与根茎蔬菜，营养均衡、层次丰富，带来轻盈而满足的饱足体验。',
-    imageUrl: '/食物4.webp',
+    imageUrl: `${import.meta.env.BASE_URL}食物4.webp`,
     benefits: ['补充高能量与持久耐力', '增强饱足感，恢复体力', '温和滋养脾胃', '高植物蛋白', '丰富复合碳水化合物']
   },
   {
@@ -218,7 +218,7 @@ export const GALLERY_FOODS: GalleryFoodItem[] = [
     category: '能量膳食碗',
     energyType: 'neutral',
     description: '遵循韩式「五色饮食」理念，以五彩蔬食、优质谷物及天然食材均衡搭配，融合木、火、土、金、水五行能量。每一口都兼顾营养、风味与能量平衡，带来轻盈而满足的饱腹体验。',
-    imageUrl: '/食物5.webp',
+    imageUrl: `${import.meta.env.BASE_URL}食物5.webp`,
     benefits: ['平衡五脏气能', '补充稳定能量，减少餐后负担', '富含膳食纤维，维持肠道健康']
   },
   {
@@ -229,7 +229,7 @@ export const GALLERY_FOODS: GalleryFoodItem[] = [
     energyType: 'neutral',
     energyLabel: '温润平衡 (Warm & Balanced)',
     description: '以天然手工味噌与慢熬蔬食高汤为基底，搭配酿豆腐、当季时蔬（白菜、莲藕、海菜、羊角豆等），呈现层次丰富的天然鲜味。配上一碗香软芋头糙米饭，融合发酵食材、根茎蔬菜与全谷物能量，温润滋养，带来身心满足的暖食体验。',
-    imageUrl: '/食物6.webp',
+    imageUrl: `${import.meta.env.BASE_URL}食物6.webp`,
     benefits: ['补充温和稳定能量', '帮助维持消化机能', '富含植物蛋白', '丰富膳食纤维', '含天然发酵营养与矿物质']
   },
   {
@@ -240,7 +240,7 @@ export const GALLERY_FOODS: GalleryFoodItem[] = [
     energyType: 'neutral',
     energyLabel: '温润滋养 (Gentle Nourishing)',
     description: '以丝滑豆腐与植物食材制成轻盈乳酪蛋糕，口感细腻柔滑，甜而不腻。保留天然食材的纯净风味，带来温和满足与疗愈感。',
-    imageUrl: '/食物7.webp',
+    imageUrl: `${import.meta.env.BASE_URL}食物7.webp`,
     benefits: ['平衡身心', '天然植物蛋白来源', '较低负担的植物性甜点', '无鸡蛋，无精制糖，全豆腐制作']
   },
   {
@@ -251,7 +251,7 @@ export const GALLERY_FOODS: GalleryFoodItem[] = [
     energyType: 'yang',
     energyLabel: '温和微阳 (Gentle Warming)',
     description: '香甜南瓜融合酥香塔皮，散发自然浓郁的南瓜香气。根茎食材带来温暖能量，让每一口都充满丰收与幸福的滋味。',
-    imageUrl: '/食物8.webp',
+    imageUrl: `${import.meta.env.BASE_URL}食物8.webp`,
     benefits: ['稳定能量', '丰富膳食纤维', '天然植物营养', '天然低糖配方']
   },
   {
@@ -262,7 +262,7 @@ export const GALLERY_FOODS: GalleryFoodItem[] = [
     energyType: 'yang',
     energyLabel: '阳性能量 (Yang Energising)',
     description: '选用熟成香蕉与天然植物食材烘焙而成，散发自然果香与湿润口感。丰富的天然碳水化合物，为身体补充温和而持久的活力。',
-    imageUrl: '/食物9.webp',
+    imageUrl: `${import.meta.env.BASE_URL}食物9.webp`,
     benefits: ['补充活力', '增添饱足感', '天然水果营养', '丰富复合碳水化合物', '高膳食纤维']
   },
   {
@@ -273,7 +273,7 @@ export const GALLERY_FOODS: GalleryFoodItem[] = [
     energyType: 'yin',
     energyLabel: '清新平衡 (Refreshing Balance)',
     description: '新鲜青柠的清爽酸香与豆腐完美融合，酸甜平衡、口感轻盈，是餐后最清爽的甜点选择。',
-    imageUrl: '/食物10.webp',
+    imageUrl: `${import.meta.env.BASE_URL}食物10.webp`,
     benefits: ['清新开胃，平衡味蕾', '富含天然维生素 C', '天然植物食材', '清爽低糖']
   }
 ];

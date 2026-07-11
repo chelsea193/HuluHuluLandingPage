@@ -119,7 +119,7 @@ export default function PainPoints() {
               id={`pain-card-${point.id}`}
             >
               <img
-                src={`/LandingPage Full Sec2 Box-${index + 1}v2.png`}
+                src={`${import.meta.env.BASE_URL}LandingPage Full Sec2 Box-${index + 1}v2.png`}
                 alt={`LandingPage Full Sec2 Box-${index + 1}v2.png`}
                 loading="lazy"
                 decoding="async"

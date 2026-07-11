@@ -10,19 +10,19 @@ import { ElementType, FiveElementData } from '../types';
 import { Heart, ShieldCheck, Soup, Star } from 'lucide-react';
 
 const ELEMENT_NODE_IMAGES: Record<ElementType, string> = {
-  metal: '/LandingPage Desktop Part3 IC1-Mental.png',
-  wood: '/LandingPage Desktop Part3 IC2-Wood.png',
-  water: '/LandingPage Desktop Part3 IC3-water.png',
-  fire: '/LandingPage Desktop Part3 IC4-fire.png',
-  earth: '/LandingPage Desktop Part3 IC5-earth.png'
+  metal: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 IC1-Mental.png`,
+  wood: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 IC2-Wood.png`,
+  water: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 IC3-water.png`,
+  fire: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 IC4-fire.png`,
+  earth: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 IC5-earth.png`
 };
 
 const ELEMENT_PANEL_IMAGES: Record<ElementType, string> = {
-  metal: '/originals/LandingPage Desktop Part3 MSC1-Metal.png',
-  wood: '/originals/LandingPage Desktop Part3 MSC2-WOOD.png',
-  water: '/originals/LandingPage Desktop Part3 MSC3-Water.png',
-  fire: '/originals/LandingPage Desktop Part3 MSC4-Fire.png',
-  earth: '/originals/LandingPage Desktop Part3 MSC5-earth.png'
+  metal: `${import.meta.env.BASE_URL}originals/LandingPage Desktop Part3 MSC1-Metal.png`,
+  wood: `${import.meta.env.BASE_URL}originals/LandingPage Desktop Part3 MSC2-WOOD.png`,
+  water: `${import.meta.env.BASE_URL}originals/LandingPage Desktop Part3 MSC3-Water.png`,
+  fire: `${import.meta.env.BASE_URL}originals/LandingPage Desktop Part3 MSC4-Fire.png`,
+  earth: `${import.meta.env.BASE_URL}originals/LandingPage Desktop Part3 MSC5-earth.png`
 };
 
 export default function FiveElementsWheel() {
