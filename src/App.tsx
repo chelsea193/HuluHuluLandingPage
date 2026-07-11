@@ -174,6 +174,7 @@ export default function App() {
               className="lg:hidden bg-[#FAF8F4] border-b border-[#ECE7DE] relative overflow-hidden"
               id="mobile-menu-overlay"
             >
+
               <div className="px-6 py-6 flex flex-col gap-4" id="mobile-links-container">
                 {navLinks.map((link) => (
                   <a
