@@ -32,7 +32,7 @@ export default function FiveElementsWheel() {
     <section className="relative w-full bg-[#F7F3EC] overflow-hidden" id="section-5">
       {/* Section 5 full-page background image slot */}
       <img
-        src="/LandingPage Desktop Part3 BG.png"
+        src={`${import.meta.env.BASE_URL}LandingPage Desktop Part3 BG.png`}
         alt="LandingPage Desktop Part3 BG.png"
         loading="lazy"
         decoding="async"

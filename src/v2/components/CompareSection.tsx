@@ -11,7 +11,7 @@ export default function CompareSection() {
     <section className="relative w-full bg-[#F7F3EC] overflow-hidden" id="compare-section">
       {/* Section 6 full-page background image slot */}
       <img
-        src="/LandingPage Desktop Part6 BG.png"
+        src={`${import.meta.env.BASE_URL}LandingPage Desktop Part6 BG.png`}
         alt=""
         aria-hidden="true"
         loading="lazy"
@@ -43,7 +43,7 @@ export default function CompareSection() {
             id="supplements-card"
           >
             <img
-              src="/LandingPage Desktop Part6 Box1 PIC.png"
+              src={`${import.meta.env.BASE_URL}LandingPage Desktop Part6 Box1 PIC.png`}
               alt="LandingPage Desktop Part6 Box1 PIC.png"
               loading="lazy"
               decoding="async"
@@ -131,7 +131,7 @@ export default function CompareSection() {
 
             <div className="bg-gradient-to-br from-[#FAF8F4] via-white to-[#FAF8F4] rounded-3xl border-2 border-[#9BA88B]/60 shadow-md overflow-hidden flex flex-col flex-1">
               <img
-                src="/LandingPage Desktop Part6 Box2 PIC.png"
+                src={`${import.meta.env.BASE_URL}LandingPage Desktop Part6 Box2 PIC.png`}
                 alt="LandingPage Desktop Part6 Box2 PIC.png"
                 loading="lazy"
                 decoding="async"

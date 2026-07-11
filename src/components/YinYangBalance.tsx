@@ -33,7 +33,7 @@ export default function YinYangBalance() {
           Anchored to the top at natural aspect; the section's cream bg color continues it below. */}
       {/* Desktop: single combined background — pink illustration strip fading into cream. */}
       <img
-        src="/LandingPage Full Sec6-BG.jpg"
+        src={`${import.meta.env.BASE_URL}LandingPage Full Sec6-BG.jpg`}
         alt=""
         aria-hidden="true"
         className="absolute top-0 left-0 w-full h-auto pointer-events-none select-none z-0 hidden sm:block"
@@ -41,7 +41,7 @@ export default function YinYangBalance() {
       />
       {/* Mobile: cream watercolor base fills the whole section (paired with the pink band below). */}
       <img
-        src="/LandingPage Full Sec6-BG below section.jpg"
+        src={`${import.meta.env.BASE_URL}LandingPage Full Sec6-BG below section.jpg`}
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none z-0 sm:hidden"
@@ -56,7 +56,7 @@ export default function YinYangBalance() {
             screens (text overflowed onto the cream cards). Under sm we use the dedicated pink
             illustration, object-cover so it fills the band at whatever height the text needs. */}
         <img
-          src="/LandingPage Full Sec6-BG above section.jpg"
+          src={`${import.meta.env.BASE_URL}LandingPage Full Sec6-BG above section.jpg`}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none z-0 sm:hidden"
@@ -88,7 +88,7 @@ export default function YinYangBalance() {
           <div className="bg-gradient-to-br from-[#ECE7DE]/40 via-white to-indigo-50/20 p-8 md:p-12 rounded-3xl border border-indigo-100/40 shadow-sm flex flex-col justify-between" id="yin-column">
             <div>
               <img
-                src="/LandingPage Full Sec6- Box1.png"
+                src={`${import.meta.env.BASE_URL}LandingPage Full Sec6- Box1.png`}
                 alt="LandingPage Full Sec6- Box1.png"
                 className="w-full h-[300px] object-cover object-top rounded-2xl mb-6 border border-indigo-100/40"
                 id="yin-foods-image"
@@ -155,7 +155,7 @@ export default function YinYangBalance() {
           <div className="bg-gradient-to-br from-[#ECE7DE]/40 via-white to-red-50/20 p-8 md:p-12 rounded-3xl border border-red-100/40 shadow-sm flex flex-col justify-between" id="yang-column">
             <div>
               <img
-                src="/LandingPage Full Sec6- Box2.png"
+                src={`${import.meta.env.BASE_URL}LandingPage Full Sec6- Box2.png`}
                 alt="LandingPage Full Sec6- Box2.png"
                 className="w-full h-[330px] object-cover object-top rounded-2xl mb-6 border border-red-100/40"
                 id="yang-foods-image"
@@ -320,7 +320,7 @@ export default function YinYangBalance() {
         >
           {/* Full-width background image slot (standard quotation box) */}
           <img
-            src="/LandingPage Full Sec3-BG.jpg"
+            src={`${import.meta.env.BASE_URL}LandingPage Full Sec3-BG.jpg`}
             alt=""
             aria-hidden="true"
             className="absolute inset-0 w-full h-full object-fill opacity-100 pointer-events-none select-none"

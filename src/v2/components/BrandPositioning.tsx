@@ -85,7 +85,7 @@ export default function BrandPositioning() {
               id="guide-icon-core"
             >
               <img
-                src="/LandingPage Full Sec4-IC1.png"
+                src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-IC1.png`}
                 alt="LandingPage Full Sec4-IC1.png"
                 loading="lazy"
                 decoding="async"
@@ -127,7 +127,7 @@ export default function BrandPositioning() {
               id="guide-icon-diff"
             >
               <img
-                src="/LandingPage Full Sec4-IC2.png"
+                src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-IC2.png`}
                 alt="LandingPage Full Sec4-IC2.png"
                 loading="lazy"
                 decoding="async"
@@ -169,7 +169,7 @@ export default function BrandPositioning() {
               id="guide-icon-val"
             >
               <img
-                src="/LandingPage Full Sec4-IC3.png"
+                src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-IC3.png`}
                 alt="LandingPage Full Sec4-IC3.png"
                 loading="lazy"
                 decoding="async"
@@ -212,7 +212,7 @@ export default function BrandPositioning() {
             
             {/* Section 4 image slot — swap real asset later */}
             <img
-              src="/LandingPage Full Sec4-BG.jpg"
+              src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-BG.jpg`}
               alt="LandingPage Full Sec4-BG.jpg"
               loading="lazy"
               decoding="async"
@@ -334,7 +334,7 @@ export default function BrandPositioning() {
       >
         {/* Full-width background image slot */}
         <img
-          src="/LandingPage Full Sec3-BG.jpg"
+          src={`${import.meta.env.BASE_URL}LandingPage Full Sec3-BG.jpg`}
           alt="LandingPage Full Sec3-BG.jpg"
           loading="lazy"
           decoding="async"

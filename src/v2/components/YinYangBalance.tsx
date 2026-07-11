@@ -39,7 +39,7 @@ export default function YinYangBalance() {
     <section className="relative w-full bg-[#F7F3EC] overflow-hidden" id="yin-yang-section">
       {/* Section 6 full-page background image slot */}
       <img
-        src="/LandingPage Desktop Part4 BG.png"
+        src={`${import.meta.env.BASE_URL}LandingPage Desktop Part4 BG.png`}
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none z-0"
@@ -62,7 +62,7 @@ export default function YinYangBalance() {
           {/* Left Side: YIN (阴) - Blue Theme */}
           <div className="bg-gradient-to-br from-[#ECE7DE]/40 via-white to-indigo-50/20 rounded-3xl shadow-sm overflow-hidden flex flex-col" id="yin-column">
             <img
-              src="/LandingPage Full Sec6- Box1.png"
+              src={`${import.meta.env.BASE_URL}LandingPage Full Sec6- Box1.png`}
               alt="LandingPage Full Sec6- Box1.png"
               className="w-full aspect-[3/2] object-cover object-top"
               id="yin-foods-image"
@@ -131,7 +131,7 @@ export default function YinYangBalance() {
           {/* Right Side: YANG (阳) - Red Theme */}
           <div className="bg-gradient-to-br from-[#ECE7DE]/40 via-white to-red-50/20 rounded-3xl shadow-sm overflow-hidden flex flex-col" id="yang-column">
             <img
-              src="/LandingPage Full Sec6- Box2.png"
+              src={`${import.meta.env.BASE_URL}LandingPage Full Sec6- Box2.png`}
               alt="LandingPage Full Sec6- Box2.png"
               className="w-full aspect-[3/2] object-cover object-top"
               id="yang-foods-image"
@@ -310,7 +310,7 @@ export default function YinYangBalance() {
       id="yin-yang-quote-block"
     >
       <img
-        src="/LandingPage Desktop Part5 Bg.png"
+        src={`${import.meta.env.BASE_URL}LandingPage Desktop Part5 Bg.png`}
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none z-0"

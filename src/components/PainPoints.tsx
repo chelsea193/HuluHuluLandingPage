@@ -89,7 +89,7 @@ export default function PainPoints() {
       >
         {/* Section 3 full-width background image slot */}
         <img
-          src="/LandingPage Full Sec3-BG.jpg"
+          src={`${import.meta.env.BASE_URL}LandingPage Full Sec3-BG.jpg`}
           alt="LandingPage Full Sec3-BG.jpg"
           className="absolute inset-0 w-full h-full object-fill opacity-100 pointer-events-none select-none"
           id="section-3-bg-image"

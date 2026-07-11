@@ -85,7 +85,7 @@ export default function HeroSection() {
       {/* Mobile — single full-bleed image, text centered on top */}
       <div className="md:hidden relative min-h-[100vh] flex items-start justify-center" id="hulu-hero-mobile">
         <img
-          src="/LP-Mobile-GIF.gif"
+          src={`${import.meta.env.BASE_URL}LP-Mobile-GIF.gif`}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none z-0"
@@ -103,7 +103,7 @@ export default function HeroSection() {
       <div className="hidden md:block lg:hidden relative" id="hulu-hero-tablet">
         <div className="relative" id="hulu-hero-tablet-text-band">
           <img
-            src="/LP-Tablet-GIF.gif"
+            src={`${import.meta.env.BASE_URL}LP-Tablet-GIF.gif`}
             alt=""
             aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none select-none z-0"
@@ -115,7 +115,7 @@ export default function HeroSection() {
         </div>
         <div className="relative h-[70vw] overflow-hidden" id="hulu-hero-tablet-object-band">
           <img
-            src="/LP-Tablet-GIF.gif"
+            src={`${import.meta.env.BASE_URL}LP-Tablet-GIF.gif`}
             alt=""
             aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover object-bottom pointer-events-none select-none"
@@ -127,7 +127,7 @@ export default function HeroSection() {
       {/* Desktop — single full-bleed image, text centered on top */}
       <div className="hidden lg:flex relative min-h-[100vh] items-start justify-center" id="hulu-hero-desktop">
         <img
-          src="/LP-Desktop-Header.gif"
+          src={`${import.meta.env.BASE_URL}LP-Desktop-Header.gif`}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none select-none z-0"

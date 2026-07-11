@@ -156,7 +156,7 @@ export default function PainPoints() {
         >
           {/* Section 3 full-width background image slot */}
           <img
-            src="/LandingPage Desktop Part2 Column.png"
+            src={`${import.meta.env.BASE_URL}LandingPage Desktop Part2 Column.png`}
             alt="LandingPage Desktop Part2 Column.png"
             loading="lazy"
             decoding="async"

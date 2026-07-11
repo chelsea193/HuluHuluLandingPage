@@ -85,7 +85,7 @@ export default function BrandPositioning() {
               id="guide-icon-core"
             >
               <img
-                src="/LandingPage Full Sec4-IC1.png"
+                src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-IC1.png`}
                 alt="LandingPage Full Sec4-IC1.png"
                 className="w-full h-full object-cover scale-[1.35]"
               />
@@ -125,7 +125,7 @@ export default function BrandPositioning() {
               id="guide-icon-diff"
             >
               <img
-                src="/LandingPage Full Sec4-IC2.png"
+                src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-IC2.png`}
                 alt="LandingPage Full Sec4-IC2.png"
                 className="w-full h-full object-cover scale-[1.35]"
               />
@@ -165,7 +165,7 @@ export default function BrandPositioning() {
               id="guide-icon-val"
             >
               <img
-                src="/LandingPage Full Sec4-IC3.png"
+                src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-IC3.png`}
                 alt="LandingPage Full Sec4-IC3.png"
                 className="w-full h-full object-cover"
               />
@@ -206,7 +206,7 @@ export default function BrandPositioning() {
             
             {/* Section 4 image slot — swap real asset later */}
             <img
-              src="/LandingPage Full Sec4-BG.jpg"
+              src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-BG.jpg`}
               alt="LandingPage Full Sec4-BG.jpg"
               className="w-full h-full object-cover object-[left_100%] rounded-full border-4 border-white/60 bg-[#ECE7DE] drop-shadow-2xl"
               id="brand-positioning-image-slot"
@@ -326,7 +326,7 @@ export default function BrandPositioning() {
       >
         {/* Full-width background image slot */}
         <img
-          src="/LandingPage Full Sec3-BG.jpg"
+          src={`${import.meta.env.BASE_URL}LandingPage Full Sec3-BG.jpg`}
           alt="LandingPage Full Sec3-BG.jpg"
           className="absolute inset-0 w-full h-full object-fill opacity-100 pointer-events-none select-none"
           id="brand-positioning-highlight-bg"

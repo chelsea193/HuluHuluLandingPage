@@ -151,7 +151,7 @@ export default function HeroSection() {
 
             {/* Section 1 hero image slot — swap real asset later */}
             <img
-              src="/LandingPage Full SEC1v2-01.jpg"
+              src={`${import.meta.env.BASE_URL}LandingPage Full SEC1v2-01.jpg`}
               alt="LandingPage Full SEC1v2-01.jpg"
               className="w-full h-full object-cover object-right rounded-[2.5rem] border-4 border-white/60 bg-[#ECE7DE] drop-shadow-2xl"
               id="hero-image-slot"

@@ -16,7 +16,7 @@ export default function FiveElementsWheel() {
     <section className="relative py-24 px-6 md:px-12 max-w-7xl mx-auto rounded-3xl bg-[#FAF8F4] overflow-hidden shadow-sm my-16 border border-[#ECE7DE]" id="section-5">
       {/* Section 5 background image slot (subtle wash behind interactive content) */}
       <img
-        src="/LandingPage Full Sec5-BG.jpg"
+        src={`${import.meta.env.BASE_URL}LandingPage Full Sec5-BG.jpg`}
         alt="LandingPage Full Sec5-BG.jpg"
         className="absolute inset-0 w-full h-full object-fill opacity-100 pointer-events-none select-none z-0"
         id="section-5-bg-image"

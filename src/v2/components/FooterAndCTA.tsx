@@ -109,14 +109,14 @@ export default function FooterAndCTA() {
               {/* QR code framed by the mascot illustration */}
               <div className="w-48 h-48 relative" id="qr-box">
                 <img
-                  src="/QR Mascot-01.png"
+                  src={`${import.meta.env.BASE_URL}QR Mascot-01.png`}
                   alt=""
                   aria-hidden="true"
                   className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none z-0"
                   id="qr-mascot-frame"
                 />
                 <img
-                  src="/qr.png"
+                  src={`${import.meta.env.BASE_URL}qr.png`}
                   alt="扫码二维码"
                   className="absolute object-contain z-10"
                   style={{ top: '39.5%', left: '30%', width: '41%', height: '48%' }}

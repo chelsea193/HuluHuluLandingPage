@@ -13,7 +13,7 @@ export default function CompareSection() {
           Anchored to the top at natural aspect; the section's cream bg color continues it below. */}
       {/* Desktop: single combined background — pink illustration strip fading into cream. */}
       <img
-        src="/LandingPage Full Sec6-BG.jpg"
+        src={`${import.meta.env.BASE_URL}LandingPage Full Sec6-BG.jpg`}
         alt=""
         aria-hidden="true"
         className="absolute top-0 left-0 w-full h-auto pointer-events-none select-none z-0 hidden sm:block"
@@ -21,7 +21,7 @@ export default function CompareSection() {
       />
       {/* Mobile: cream watercolor base fills the whole section (paired with the pink band below). */}
       <img
-        src="/LandingPage Full Sec6-BG below section.jpg"
+        src={`${import.meta.env.BASE_URL}LandingPage Full Sec6-BG below section.jpg`}
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none z-0 sm:hidden"
@@ -35,7 +35,7 @@ export default function CompareSection() {
             screens (text overflowed onto the cream cards). Under sm we use the dedicated pink
             illustration, object-cover so it fills the band at whatever height the text needs. */}
         <img
-          src="/LandingPage Full Sec6-BG above section.jpg"
+          src={`${import.meta.env.BASE_URL}LandingPage Full Sec6-BG above section.jpg`}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none z-0 sm:hidden"

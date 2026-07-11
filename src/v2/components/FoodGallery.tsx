@@ -54,7 +54,7 @@ export default function FoodGallery() {
           Anchored to the top at natural aspect; the section's cream bg color continues it below. */}
       {/* Desktop: single combined background — pink illustration strip fading into cream. */}
       <img
-        src="/LandingPage Full Sec6-BG.jpg"
+        src={`${import.meta.env.BASE_URL}LandingPage Full Sec6-BG.jpg`}
         alt=""
         aria-hidden="true"
         loading="lazy"
@@ -64,7 +64,7 @@ export default function FoodGallery() {
       />
       {/* Mobile: cream watercolor base fills the whole section (paired with the pink band below). */}
       <img
-        src="/LandingPage Full Sec6-BG below section.jpg"
+        src={`${import.meta.env.BASE_URL}LandingPage Full Sec6-BG below section.jpg`}
         alt=""
         aria-hidden="true"
         loading="lazy"
@@ -80,7 +80,7 @@ export default function FoodGallery() {
             screens (text overflowed onto the cream cards). Under sm we use the dedicated pink
             illustration, object-cover so it fills the band at whatever height the text needs. */}
         <img
-          src="/LandingPage Full Sec6-BG above section.jpg"
+          src={`${import.meta.env.BASE_URL}LandingPage Full Sec6-BG above section.jpg`}
           alt=""
           aria-hidden="true"
           loading="lazy"
