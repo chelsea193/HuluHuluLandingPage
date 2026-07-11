@@ -1,0 +1,11 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Large pristine image originals (kept locally; web-optimized copies live in public/)
+public/originals/

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hulu Hulu — Typography Reference</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🅰️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2F2F2F;
+    --ink-soft:#6b6660;
+    --magenta:#EB288B;
+    --magenta-deep:#B81E6C;
+    --terracotta:#D89A63;
+    --sage:#9BA88B;
+    --sage-deep:#576751;
+    --cream:#FAF8F4;
+    --panel:#F7F3EC;
+    --stone:#ECE7DE;
+    --stone-deep:#DCD5C9;
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-serif: "Noto Serif SC", "Playfair Display", Georgia, serif;
+    --font-sc: "Noto Sans SC", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:var(--font-sans);
+    font-size:15px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:var(--magenta-deep);}
+
+  /* ---------- layout shell ---------- */
+  .shell{
+    display:grid;
+    grid-template-columns:260px minmax(0,1fr);
+    max-width:1360px;
+    margin:0 auto;
+  }
+  @media (max-width:900px){
+    .shell{grid-template-columns:1fr;}
+    .toc{position:static !important; height:auto !important; border-right:none !important; border-bottom:1px solid var(--stone-deep);}
+  }
+
+  .toc{
+    position:sticky;
+    top:0;
+    align-self:start;
+    height:100vh;
+    overflow-y:auto;
+    padding:32px 22px 40px;
+    border-right:1px solid var(--stone-deep);
+    background:var(--panel);
+  }
+  .toc-brand{
+    font-family:var(--font-serif);
+    font-weight:900;
+    font-size:1.15rem;
+    color:var(--magenta);
+    letter-spacing:.02em;
+    margin:0 0 2px;
+  }
+  .toc-sub{
+    font-family:var(--font-mono);
+    font-size:.65rem;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    color:var(--ink-soft);
+    margin:0 0 28px;
+  }
+  .toc nav{display:flex; flex-direction:column; gap:2px;}
+  .toc nav a{
+    display:block;
+    padding:7px 10px;
+    border-radius:8px;
+    font-size:.82rem;
+    color:var(--ink);
+    text-decoration:none;
+    border-left:2px solid transparent;
+  }
+  .toc nav a:hover{background:rgba(155,168,139,.14); border-left-color:var(--sage);}
+  .toc nav .grp{
+    font-family:var(--font-mono);
+    font-size:.64rem;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    color:var(--terracotta);
+    margin:18px 0 4px 10px;
+  }
+  .toc nav .grp:first-child{margin-top:0;}
+
+  main{padding:56px clamp(24px,4vw,64px) 100px;}
+
+  /* ---------- hero ---------- */
+  .doc-hero{margin-bottom:56px;}
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:.5em;
+    font-family:var(--font-mono);
+    font-size:.7rem;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+    color:var(--magenta);
+    background:rgba(235,40,139,.08);
+    padding:5px 12px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+  h1.doc-title{
+    font-family:var(--font-serif);
+    font-weight:900;
+    font-size:clamp(1.9rem,3.4vw,2.7rem);
+    letter-spacing:-.01em;
+    line-height:1.15;
+    margin:0 0 14px;
+    text-wrap:balance;
+    color:var(--ink);
+  }
+  .doc-dek{
+    max-width:62ch;
+    color:var(--ink-soft);
+    font-size:1rem;
+    margin:0;
+  }
+  .doc-dek code{background:var(--stone); padding:.1em .4em; border-radius:5px; font-size:.9em;}
+
+  /* ---------- generic section ---------- */
+  section.doc-section{
+    padding-top:52px;
+    margin-top:8px;
+    border-top:1px solid var(--stone-deep);
+  }
+  section.doc-section:first-of-type{border-top:none;}
+  .sec-kicker{
+    font-family:var(--font-mono);
+    font-size:.68rem;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    color:var(--sage-deep);
+    margin:0 0 6px;
+  }
+  h2.sec-title{
+    font-family:var(--font-serif);
+    font-weight:800;
+    font-size:1.55rem;
+    margin:0 0 10px;
+    color:var(--ink);
+  }
+  h3.sub-title{
+    font-family:var(--font-sans);
+    font-weight:700;
+    font-size:1.05rem;
+    margin:34px 0 4px;
+    color:var(--ink);
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  h3.sub-title .file{
+    font-family:var(--font-mono);
+    font-weight:400;
+    font-size:.72rem;
+    color:var(--ink-soft);
+    background:var(--stone);
+    padding:2px 8px;
+    border-radius:6px;
+  }
+  .sec-note{color:var(--ink-soft); max-width:70ch; margin:0 0 24px;}
+
+  /* ---------- font family specimen cards ---------- */
+  .family-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:16px;
+    margin:22px 0 8px;
+  }
+  .family-card{
+    background:#fff;
+    border:1px solid var(--stone-deep);
+    border-radius:16px;
+    padding:22px 22px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .family-card .fam-name{
+    font-family:var(--font-mono);
+    font-size:.68rem;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    color:var(--terracotta);
+  }
+  .family-card .fam-specimen{
+    font-size:2.1rem;
+    line-height:1.15;
+    color:var(--ink);
+  }
+  .family-card .fam-latin{font-size:1.1rem; color:var(--ink-soft);}
+  .family-card .fam-role{
+    font-size:.82rem;
+    color:var(--ink-soft);
+    border-top:1px dashed var(--stone-deep);
+    padding-top:10px;
+    margin-top:auto;
+  }
+  .f-inter .fam-specimen{font-family:var(--font-sans); font-weight:600;}
+  .f-notosans .fam-specimen{font-family:var(--font-sc); font-weight:700;}
+  .f-notoserif .fam-specimen{font-family:var(--font-serif); font-weight:700;}
+  .f-mono .fam-specimen{font-family:var(--font-mono); font-weight:500; font-size:1.6rem;}
+
+  /* ---------- size scale ---------- */
+  .scale-list{border:1px solid var(--stone-deep); border-radius:16px; overflow:hidden; background:#fff;}
+  .scale-row{
+    display:grid;
+    grid-template-columns:150px 90px minmax(0,1fr);
+    align-items:center;
+    gap:18px;
+    padding:12px 20px;
+    border-bottom:1px solid var(--stone);
+  }
+  .scale-row:last-child{border-bottom:none;}
+  .scale-row .cls{font-family:var(--font-mono); font-size:.78rem; color:var(--magenta-deep);}
+  .scale-row .px{font-family:var(--font-mono); font-size:.72rem; color:var(--ink-soft); font-variant-numeric:tabular-nums;}
+  .scale-row .sample{font-family:var(--font-sc); color:var(--ink); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+
+  /* ---------- data tables ---------- */
+  .table-wrap{overflow-x:auto; border:1px solid var(--stone-deep); border-radius:14px; background:#fff; margin:14px 0 6px;}
+  table{border-collapse:collapse; width:100%; min-width:640px;}
+  thead th{
+    text-align:left;
+    font-family:var(--font-mono);
+    font-size:.65rem;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    color:var(--ink-soft);
+    background:var(--panel);
+    padding:10px 16px;
+    border-bottom:1px solid var(--stone-deep);
+    position:sticky; top:0;
+  }
+  tbody td{
+    padding:10px 16px;
+    border-bottom:1px solid var(--stone);
+    vertical-align:top;
+    font-size:.86rem;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover{background:rgba(155,168,139,.06);}
+  td.zh{font-family:var(--font-sc);}
+  .tag{
+    display:inline-block;
+    font-family:var(--font-mono);
+    font-size:.72rem;
+    padding:2px 8px;
+    border-radius:6px;
+    white-space:nowrap;
+  }
+  .tag-sans{background:rgba(47,47,47,.06); color:var(--ink);}
+  .tag-sc{background:rgba(235,40,139,.08); color:var(--magenta-deep);}
+  .tag-serifsc{background:rgba(216,154,99,.14); color:#8a5a2c;}
+  .tag-mono{background:rgba(155,168,139,.14); color:var(--sage-deep);}
+  .sz{font-family:var(--font-mono); font-size:.78rem; color:var(--ink-soft); white-space:nowrap;}
+
+  /* ---------- callout ---------- */
+  .callout{
+    background:var(--panel);
+    border:1px dashed rgba(155,168,139,.5);
+    border-radius:14px;
+    padding:16px 20px;
+    font-size:.86rem;
+    color:var(--ink-soft);
+    margin:18px 0;
+  }
+  .callout strong{color:var(--ink);}
+
+  footer.doc-footer{
+    margin-top:70px;
+    padding-top:22px;
+    border-top:1px solid var(--stone-deep);
+    font-family:var(--font-mono);
+    font-size:.68rem;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    letter-spacing:.08em;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <aside class="toc">
+    <p class="toc-brand">Hulu Hulu</p>
+    <p class="toc-sub">Typography Reference</p>
+    <nav>
+      <a href="#families">Font families</a>
+      <a href="#scale">Size scale</a>
+      <div class="grp">Wording Map</div>
+      <a href="#nav-header">Header / Nav</a>
+      <a href="#sec-hero">1 · Hero</a>
+      <a href="#sec-pain">2 · Pain Points</a>
+      <a href="#sec-elements">3 · Five Elements</a>
+      <a href="#sec-yinyang">4 · Yin / Yang</a>
+      <a href="#sec-compare">6 · Compare</a>
+      <a href="#sec-gallery">7 · Food Gallery</a>
+      <a href="#sec-footer">8 · Footer &amp; CTA</a>
+      <a href="#sec-unused">Unused components</a>
+      <div class="grp">Notes</div>
+      <a href="#v2">/version2</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="doc-hero">
+      <span class="eyebrow">Design Reference · Live Site</span>
+      <h1 class="doc-title">Every word on the page, and the font that renders it</h1>
+      <p class="doc-dek">
+        Source of truth: <code>src/index.css</code> for font loading and the Tailwind theme,
+        cross-referenced against every component in <code>src/components/</code> (served at <code>/</code>)
+        and <code>src/v2/components/</code> (served at <code>/version2</code>).
+      </p>
+    </div>
+
+    <!-- ========================= FAMILIES ========================= -->
+    <section class="doc-section" id="families">
+      <p class="sec-kicker">01 — Typefaces</p>
+      <h2 class="sec-title">Four font families, four jobs</h2>
+      <p class="sec-note">Loaded from Google Fonts in <code>src/index.css:1</code> and registered as Tailwind theme tokens / utility classes in the same file.</p>
+
+      <div class="family-grid">
+        <div class="family-card f-inter">
+          <span class="fam-name">font-sans · Inter</span>
+          <span class="fam-specimen fam-latin">Food Is Energy</span>
+          <span class="fam-role">Latin/English UI: nav links, buttons, tags, chip labels. Also the default <code>&lt;body&gt;</code> font.</span>
+        </div>
+        <div class="family-card f-notosans">
+          <span class="fam-name">font-noto-sans-sc · Noto Sans SC</span>
+          <span class="fam-specimen">你多久没有好好吃饭了？</span>
+          <span class="fam-role">The primary Chinese font site-wide — headlines, paragraphs, card titles, buttons.</span>
+        </div>
+        <div class="family-card f-notoserif">
+          <span class="fam-name">font-noto-serif-sc / font-serif · Noto Serif SC</span>
+          <span class="fam-specimen">其实，好好吃饭就能解决。</span>
+          <span class="fam-role">Chinese serif accents — quote headlines, small labels, editorial emphasis.</span>
+        </div>
+        <div class="family-card f-mono">
+          <span class="fam-name">font-mono · JetBrains Mono</span>
+          <span class="fam-specimen">COMMON CONCERNS</span>
+          <span class="fam-role">All-caps tracked eyebrows and numeric/code-style tags.</span>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Loaded but unused:</strong> <code>.calligraphy-text</code> sets <code>font-family: 'Ma Shan Zheng', cursive; font-size: 28px;</code> in <code>src/index.css:25-29</code>, but no component currently applies the class.
+        <br><strong>Fallback stack:</strong> <code>font-sans</code> → Inter, ui-sans-serif, system-ui, sans-serif · <code>font-serif</code> → Noto Serif SC, Playfair Display, Georgia, serif · <code>font-mono</code> → JetBrains Mono, ui-monospace, SFMono-Regular, monospace.
+        <br><strong>Note:</strong> Tailwind's bare <code>font-serif</code> token resolves to Noto Serif SC first, so plain <code>font-serif</code> and explicit <code>font-noto-serif-sc</code> render identically for Chinese text.
+      </div>
+    </section>
+
+    <!-- ========================= SCALE ========================= -->
+    <section class="doc-section" id="scale">
+      <p class="sec-kicker">02 — Scale</p>
+      <h2 class="sec-title">Font-size scale</h2>
+      <p class="sec-note">Tailwind's default rem-based scale (1rem = 16px), plus a handful of hand-picked pixel sizes for micro-copy that don't fit the default steps.</p>
+
+      <div class="scale-list">
+        <div class="scale-row"><span class="cls">text-[9px]</span><span class="px">9px</span><span class="sample" style="font-size:9px">五行粒子节点英文标签 · WOOD</span></div>
+        <div class="scale-row"><span class="cls">text-[10px]</span><span class="px">10px</span><span class="sample" style="font-size:10px">RECOMMENDED BASIS · 徽章角标</span></div>
+        <div class="scale-row"><span class="cls">text-[11px]</span><span class="px">11px</span><span class="sample" style="font-size:11px">💡 极阴现象 · QR 页脚说明</span></div>
+        <div class="scale-row"><span class="cls">text-xs</span><span class="px">12 / 16</span><span class="sample" style="font-size:12px">最常用的微文案：眉标、导航、徽章、脚注</span></div>
+        <div class="scale-row"><span class="cls">text-[15px]</span><span class="px">15px</span><span class="sample" style="font-size:15px">品牌定位板块的项目符号正文（移动端）</span></div>
+        <div class="scale-row"><span class="cls">text-sm</span><span class="px">14 / 20</span><span class="sample" style="font-size:14px">次级正文、卡片描述、辅助说明文字</span></div>
+        <div class="scale-row"><span class="cls">text-base</span><span class="px">16 / 24</span><span class="sample" style="font-size:16px">阴阳食物按钮名称，默认段落大小</span></div>
+        <div class="scale-row"><span class="cls">text-lg</span><span class="px">18 / 28</span><span class="sample" style="font-size:18px">板块导语、功能特色标题</span></div>
+        <div class="scale-row"><span class="cls">text-xl</span><span class="px">20 / 28</span><span class="sample" style="font-size:20px">卡片标题、Hero 副标题</span></div>
+        <div class="scale-row"><span class="cls">text-2xl</span><span class="px">24 / 32</span><span class="sample" style="font-size:24px">板块卡片标题 (h3)</span></div>
+        <div class="scale-row"><span class="cls">text-3xl</span><span class="px">30 / 36</span><span class="sample" style="font-size:30px">板块 h2 标题（移动端）</span></div>
+        <div class="scale-row"><span class="cls">text-4xl</span><span class="px">36 / 40</span><span class="sample" style="font-size:36px">板块 h2 标题（桌面 md）</span></div>
+        <div class="scale-row"><span class="cls">text-5xl</span><span class="px">48 / 1</span><span class="sample" style="font-size:48px">Hero h1（桌面）</span></div>
+        <div class="scale-row"><span class="cls">text-6xl</span><span class="px">60 / 1</span><span class="sample" style="font-size:60px">你多久</span></div>
+      </div>
+    </section>
+
+    <!-- ========================= WORDING MAP ========================= -->
+    <section class="doc-section" id="nav-header">
+      <p class="sec-kicker">03 — Wording → Font/Size Map</p>
+      <h2 class="sec-title">Global header / nav</h2>
+      <p class="sec-note"><code>src/App.tsx</code></p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Text</th><th>Font</th><th>Size</th></tr></thead>
+          <tbody>
+            <tr><td class="zh">“Hulu Hulu”（logo）</td><td><span class="tag tag-serifsc">font-serif · black</span></td><td class="sz">text-xl · 20px</td></tr>
+            <tr><td>“FOOD IS ENERGY”（logo 副标）</td><td><span class="tag tag-mono">font-mono · bold</span></td><td class="sz">text-[8px]</td></tr>
+            <tr><td class="zh">导航链接（能量启航 / 警惕失衡 / 五行食能 / 阴阳调和 / 原型食愈 / 食愈世界）</td><td><span class="tag tag-sans">font-sans · semibold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">“WhatsApp 咨询门径”（头部按钮）</td><td><span class="tag tag-sans">font-sans · semibold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>Mobile 导航链接</td><td><span class="tag tag-sans">font-sans · bold</span></td><td class="sz">text-sm · 14px</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="sec-hero">
+      <h3 class="sub-title">Section 1 — Hero <span class="file">src/components/HeroSection.tsx</span></h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Text</th><th>Font</th><th>Size</th></tr></thead>
+          <tbody>
+            <tr><td class="zh">“FOOD IS ENERGY · 食物即能量”（胶囊标签）</td><td><span class="tag tag-mono">font-mono · black</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">“你多久没有好好吃饭了？”（h1）</td><td><span class="tag tag-sc">font-noto-sans-sc · black</span></td><td class="sz">text-4xl → 5xl (sm) → 6xl (md) · 36/48/60px</td></tr>
+            <tr><td class="zh">“食物不只是卡路里”</td><td><span class="tag tag-serifsc">font-noto-serif-sc · medium</span></td><td class="sz">text-2xl · 24px</td></tr>
+            <tr><td class="zh">“它会影响你的身体能量、情绪状态与生活品质。”</td><td><span class="tag tag-serifsc">font-noto-serif-sc · light</span></td><td class="sz">text-sm → base (sm) · 14/16px</td></tr>
+            <tr><td class="zh">“【了解食物能量】”（主按钮）</td><td><span class="tag tag-sc">font-noto-sans-sc · semibold</span></td><td class="sz">text-sm · 14px</td></tr>
+            <tr><td>“— BY HULU HULU WELLNESS”</td><td><span class="tag tag-mono">font-mono</span></td><td class="sz">text-xs · 12px</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="sec-pain">
+      <h3 class="sub-title">Section 2 — Pain Points <span class="file">src/components/PainPoints.tsx</span></h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Text</th><th>Font</th><th>Size</th></tr></thead>
+          <tbody>
+            <tr><td>“COMMON CONCERNS”</td><td><span class="tag tag-mono">font-mono · semibold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">“为什么同样吃得健康，却还是觉得不舒服？”（h2）</td><td><span class="tag tag-sc">font-noto-sans-sc</span></td><td class="sz">text-3xl → 4xl (md)</td></tr>
+            <tr><td class="zh">“你是否经常出现以下情况？”</td><td><span class="tag tag-sc">font-noto-sans-sc · light</span></td><td class="sz">text-lg · 18px</td></tr>
+            <tr><td>卡片标题</td><td><span class="tag tag-sc">font-noto-sans-sc · semibold</span></td><td class="sz">text-xl · 20px</td></tr>
+            <tr><td>卡片描述</td><td><span class="tag tag-sc">font-noto-sans-sc · light</span></td><td class="sz">text-sm · 14px</td></tr>
+            <tr><td>“0X // ENERGY BLOCK” 卡片编号</td><td><span class="tag tag-mono">font-mono · bold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh"><em>闭合引用框</em> — “DIETARY INSPIRATION” 胶囊</td><td><span class="tag tag-mono">font-mono · semibold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">引用正文（“很多时候，问题不只是吃什么…”）</td><td><span class="tag tag-sc">font-noto-sans-sc</span></td><td class="sz">text-xl → 2xl (md)</td></tr>
+            <tr><td class="zh">引用标题（“其实，好好吃饭就能解决。”）</td><td><span class="tag tag-serifsc">font-noto-serif-sc · bold</span></td><td class="sz">text-2xl → 4xl (md)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="sec-elements">
+      <h3 class="sub-title">Section 3 — Five Elements Wheel <span class="file">src/components/FiveElementsWheel.tsx</span></h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Text</th><th>Font</th><th>Size</th></tr></thead>
+          <tbody>
+            <tr><td>“FOOD IS ENERGY &amp; VITALITY”</td><td><span class="tag tag-mono">font-mono · bold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">“重新认识你每天吃的食物”（h2）</td><td><span class="tag tag-sc">font-noto-sans-sc</span></td><td class="sz">text-3xl → 4xl (md)</td></tr>
+            <tr><td class="zh">导语（“食物不只是卡路里…”）</td><td><span class="tag tag-serifsc">font-noto-serif-sc · italic</span></td><td class="sz">text-lg → xl (md)</td></tr>
+            <tr><td>“ACTIVE ENERGY”（轮盘中心标签）</td><td><span class="tag tag-serifsc">font-noto-serif-sc</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">中心当前元素名（如 “土”）</td><td><span class="tag tag-serifsc">font-serif · black</span></td><td class="sz">text-4xl → 5xl (sm)</td></tr>
+            <tr><td>中心元素英文名</td><td><span class="tag tag-serifsc">font-serif</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">轮盘节点中文（如 “木”）</td><td><span class="tag tag-serifsc">font-serif · bold</span></td><td class="sz">text-lg → xl (md)</td></tr>
+            <tr><td>轮盘节点英文标签</td><td><span class="tag tag-serifsc">font-serif（继承）</span></td><td class="sz">text-[9px]</td></tr>
+            <tr><td class="zh">“* 点击五行粒子…” 提示</td><td><span class="tag tag-mono">font-mono</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">面板标题（“土形能量 · Earth Energy”）</td><td><span class="tag tag-sc">font-noto-sans-sc · bold</span></td><td class="sz">text-2xl · 24px</td></tr>
+            <tr><td class="zh">面板副标题（“对应腑脏：…”）</td><td><span class="tag tag-sc">font-noto-sans-sc</span></td><td class="sz">text-sm · 14px</td></tr>
+            <tr><td class="zh">“能量本征：…” 胶囊</td><td><span class="tag tag-sc">font-noto-sans-sc · medium</span></td><td class="sz">text-sm · 14px</td></tr>
+            <tr><td>元素描述段落</td><td><span class="tag tag-sc">font-noto-sans-sc · light</span></td><td class="sz">text-sm · 14px</td></tr>
+            <tr><td class="zh">“代表性能量食物 (Representative Foods)”</td><td><span class="tag tag-serifsc">font-noto-serif-sc · semibold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>食物标签芯片</td><td><span class="tag tag-sans">font-sans · medium</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>结语智慧段落</td><td><span class="tag tag-sc">font-noto-sans-sc · light</span></td><td class="sz">text-sm · 14px</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="sec-yinyang">
+      <h3 class="sub-title">Section 4 — Yin / Yang Balance <span class="file">src/components/YinYangBalance.tsx</span></h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Text</th><th>Font</th><th>Size</th></tr></thead>
+          <tbody>
+            <tr><td>“YIN &amp; YANG POLARITY”</td><td><span class="tag tag-mono">font-mono · bold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">“食物能量学：阴与阳的平衡”（h2）</td><td><span class="tag tag-sc">font-noto-sans-sc</span></td><td class="sz">text-3xl → 4xl (md)</td></tr>
+            <tr><td class="zh">“阴” / “阳” 徽章字</td><td><span class="tag tag-serifsc">font-noto-serif-sc · bold</span></td><td class="sz">默认继承 (~base)</td></tr>
+            <tr><td class="zh">“阴性食物（Yin Expansion）” / “阳性食物（Yang Contraction）”（h3）</td><td><span class="tag tag-sc">font-noto-sans-sc · bold</span></td><td class="sz">text-2xl · 24px</td></tr>
+            <tr><td class="zh">“特性：冷却 / 扩张 / 沉静…”</td><td><span class="tag tag-serifsc">font-noto-serif-sc · medium</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">食物按钮名称（如 “牛奶”）</td><td><span class="tag tag-sc">font-noto-sans-sc · semibold</span></td><td class="sz">text-base · 16px</td></tr>
+            <tr><td>食物按钮描述</td><td><span class="tag tag-sc">font-noto-sans-sc · light</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>“Level N Yin/Yang” 徽章</td><td><span class="tag tag-serifsc">font-noto-serif-sc</span></td><td class="sz">text-[10px]</td></tr>
+            <tr><td class="zh">“💡 极阴/极阳现象：”</td><td><span class="tag tag-serifsc">font-noto-serif-sc</span></td><td class="sz">text-[11px]</td></tr>
+            <tr><td class="zh">极端现象说明文字</td><td><span class="tag tag-sc">font-noto-sans-sc · light</span></td><td class="sz">text-[11px]</td></tr>
+            <tr><td>“EXPLORING POLARITY DETAILS”</td><td><span class="tag tag-mono">font-mono · bold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>详情卡当前食物名</td><td><span class="tag tag-serifsc">font-serif · semibold</span></td><td class="sz">text-xl · 20px</td></tr>
+            <tr><td class="zh">“阴性 (Cooling)” / “阳性 (Warming)” 胶囊</td><td><span class="tag tag-serifsc">font-noto-serif-sc · semibold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>“Energy Rating: N / 3 Polar Intensity”</td><td><span class="tag tag-mono">font-mono</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>食物详情描述</td><td><span class="tag tag-sc">font-noto-sans-sc · light</span></td><td class="sz">text-sm · 14px</td></tr>
+            <tr><td class="zh">“微言：…” 提示块</td><td><span class="tag tag-serifsc">font-noto-serif-sc</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">“阴 (YIN)” / “(YANG) 阳” 滑块标签</td><td><span class="tag tag-serifsc">font-noto-serif-sc · black</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>“Balance Dashboard”</td><td><span class="tag tag-serifsc">font-noto-serif-sc · semibold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">“此能量偏移：…” 结果徽章</td><td><span class="tag tag-serifsc">font-noto-serif-sc · bold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>滑块辅助说明文字</td><td><span class="tag tag-sc">font-noto-sans-sc · light</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh"><em>闭合引用框</em> — “YIN &amp; YANG BALANCE” 胶囊</td><td><span class="tag tag-mono">font-mono · semibold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">引用正文（“偏阴不行，偏阳也不行…”）</td><td><span class="tag tag-sc">font-noto-sans-sc</span></td><td class="sz">text-xl → 2xl (md)</td></tr>
+            <tr><td class="zh">署名（“—— Hulu Hulu 饮食”）</td><td><span class="tag tag-serifsc">font-noto-serif-sc · semibold</span></td><td class="sz">text-xs · 12px</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="sec-compare">
+      <h3 class="sub-title">Section 6 — Whole Food vs. Supplement <span class="file">src/components/CompareSection.tsx</span></h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Text</th><th>Font</th><th>Size</th></tr></thead>
+          <tbody>
+            <tr><td>“WHOLE FOOD VS SUPPLEMENT”</td><td><span class="tag tag-mono">font-mono · extrabold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">“为什么只靠保健品并不足够？”（h2）</td><td><span class="tag tag-sc">font-noto-sans-sc</span></td><td class="sz">text-3xl → 4xl (md)</td></tr>
+            <tr><td class="zh">“保健品是补充，食物才是基础”</td><td><span class="tag tag-sc">font-noto-sans-sc · semibold</span></td><td class="sz">text-lg → xl (md)</td></tr>
+            <tr><td class="zh">“保健品” / “天然食物”（卡片 h3）</td><td><span class="tag tag-sc">font-noto-sans-sc · black</span></td><td class="sz">text-2xl · 24px</td></tr>
+            <tr><td>“EXTRACTED pill” / “WHOLE FOOD MATRIX” 标签</td><td><span class="tag tag-mono">font-mono</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>卡片摘要（斜体）</td><td><span class="tag tag-sc">font-noto-sans-sc · light italic</span></td><td class="sz">text-sm · 14px</td></tr>
+            <tr><td class="zh">列表强调文字（如 “单一营养提取…”）</td><td><span class="tag tag-sc">font-noto-sans-sc</span></td><td class="sz">text-sm · 14px</td></tr>
+            <tr><td>列表详情文字</td><td><span class="tag tag-sc">font-noto-sans-sc · light</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>免责声明 / 感悟脚注</td><td><span class="tag tag-serifsc">font-noto-serif-sc · light</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>“RECOMMENDED BASIS” 缎带</td><td><span class="tag tag-mono">font-mono · bold</span></td><td class="sz">text-[10px]</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="sec-gallery">
+      <h3 class="sub-title">Section 7 — Food Gallery <span class="file">src/components/FoodGallery.tsx</span></h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Text</th><th>Font</th><th>Size</th></tr></thead>
+          <tbody>
+            <tr><td>“HULU HULU WORLD”</td><td><span class="tag tag-mono">font-mono · black</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">“健康 · 好吃 · 能量”</td><td><span class="tag tag-sc">font-noto-sans-sc · semibold</span></td><td class="sz">text-sm → base (md)</td></tr>
+            <tr><td class="zh">“让食物不仅好吃，还吃出身体的能量”（h2）</td><td><span class="tag tag-sc">font-noto-sans-sc</span></td><td class="sz">text-3xl → 5xl (md)</td></tr>
+            <tr><td class="zh">分类筛选标签（如 “全部食物 (All)”）</td><td><span class="tag tag-sans">font-sans · medium</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">卡片分类标签（如 “午餐/简餐”）</td><td><span class="tag tag-mono">font-mono · bold</span></td><td class="sz">text-[10px]</td></tr>
+            <tr><td>卡片中文标题</td><td><span class="tag tag-serifsc">font-serif · bold</span></td><td class="sz">text-xl · 20px</td></tr>
+            <tr><td>卡片英文标题</td><td><span class="tag tag-mono">font-mono</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>卡片描述</td><td><span class="tag tag-sans">默认 sans · light</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">“点击了解能量特性”</td><td><span class="tag tag-sc">font-noto-sans-sc · medium</span></td><td class="sz">text-[11px]</td></tr>
+            <tr><td class="zh">能量徽章浮层（如 “稍微偏阴 (Cooling Yin)”）</td><td><span class="tag tag-serifsc">font-noto-serif-sc · semibold</span></td><td class="sz">text-[10px]</td></tr>
+            <tr><td><em>灯箱弹窗</em>：分类徽章</td><td><span class="tag tag-mono">font-mono · bold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>灯箱中文标题</td><td><span class="tag tag-serifsc">font-serif · black</span></td><td class="sz">text-2xl · 24px</td></tr>
+            <tr><td>灯箱英文标题</td><td><span class="tag tag-mono">font-mono</span></td><td class="sz">text-sm · 14px</td></tr>
+            <tr><td class="zh">“食物能量特性：”标签</td><td><span class="tag tag-sc">font-noto-sans-sc · medium</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>灯箱叙述描述</td><td><span class="tag tag-sans">默认 · light</span></td><td class="sz">text-sm · 14px</td></tr>
+            <tr><td class="zh">“✓ 能量滋补效益 (Energy Benefits)”</td><td><span class="tag tag-sans">默认 · bold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>效益列表项</td><td><span class="tag tag-sans">默认 · light</span></td><td class="sz">text-xs → sm (md)</td></tr>
+            <tr><td class="zh">“返回世界页 Back” 按钮</td><td><span class="tag tag-sans">默认 · semibold</span></td><td class="sz">text-xs · 12px</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="sec-footer">
+      <h3 class="sub-title">Section 8 — Final CTA &amp; Footer <span class="file">src/components/FooterAndCTA.tsx</span></h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Text</th><th>Font</th><th>Size</th></tr></thead>
+          <tbody>
+            <tr><td>“EMBARK ON YOUR HEALTH JOURNEY”</td><td><span class="tag tag-mono">font-mono · extrabold</span></td><td class="sz">text-[10px]</td></tr>
+            <tr><td class="zh">“开启你的食物能量旅程”（h2）</td><td><span class="tag tag-sc">font-noto-sans-sc</span></td><td class="sz">text-3xl → 5xl (md)</td></tr>
+            <tr><td class="zh">CTA 描述（“加入 Hulu Hulu 社群…”）</td><td><span class="tag tag-sc">font-noto-sans-sc · light</span></td><td class="sz">text-sm → base (md)</td></tr>
+            <tr><td class="zh">“进入 Hulu Hulu 食物能量世界”（按钮）</td><td><span class="tag tag-sans">默认 · semibold</span></td><td class="sz">text-sm · 14px</td></tr>
+            <tr><td class="zh">“WhatsApp 咨询”（按钮）</td><td><span class="tag tag-sans">默认 · medium</span></td><td class="sz">text-xs → sm (sm)</td></tr>
+            <tr><td>成功提示横幅文字</td><td><span class="tag tag-sans">默认 · medium</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">信任标语（“超过 1,850+ 位会员…”）</td><td><span class="tag tag-sc">font-noto-sans-sc</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td class="zh">“扫码了解更多”</td><td><span class="tag tag-serifsc">font-noto-serif-sc · bold</span></td><td class="sz">text-[10px]</td></tr>
+            <tr><td>“[ QR Code Center ]”</td><td><span class="tag tag-serifsc">font-noto-serif-sc · semibold</span></td><td class="sz">text-[11px]</td></tr>
+            <tr><td class="zh">二维码说明（“微信/小红书扫描二维码…”）</td><td><span class="tag tag-serifsc">font-noto-serif-sc · light</span></td><td class="sz">text-[10px]</td></tr>
+            <tr><td class="zh">“Hulu Hulu”（页脚品牌）</td><td><span class="tag tag-serifsc">font-noto-serif-sc · black</span></td><td class="sz">text-2xl · 24px</td></tr>
+            <tr><td>“Food Is Energy” 标签</td><td><span class="tag tag-mono">font-mono · bold</span></td><td class="sz">text-[10px]</td></tr>
+            <tr><td>页脚品牌简介</td><td><span class="tag tag-sc">font-noto-sans-sc · light</span></td><td class="sz">text-xs → sm (md)</td></tr>
+            <tr><td class="zh">“联络我们 CONTACTS” / “关注我们 FOLLOW US”</td><td><span class="tag tag-serifsc">font-noto-serif-sc · extrabold</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>联系方式行（WhatsApp/Email/地址）</td><td><span class="tag tag-sc">font-noto-sans-sc（标签 semibold ＋ 数值 light）</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>社交链接（Facebook/Instagram/WhatsApp）</td><td><span class="tag tag-sc">font-noto-sans-sc · light</span></td><td class="sz">text-xs · 12px</td></tr>
+            <tr><td>版权行 &amp; 法律链接</td><td><span class="tag tag-mono">font-mono</span></td><td class="sz">text-[10px]</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="sec-unused">
+      <p class="sec-kicker">04 — Not currently rendered</p>
+      <h2 class="sec-title">Components present in the repo, but commented out</h2>
+      <p class="sec-note">Neither <code>src/App.tsx</code> nor <code>src/v2/App.tsx</code> renders these — listed here so the fonts stay documented if they're reintroduced.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Component</th><th>Typography summary</th></tr></thead>
+          <tbody>
+            <tr><td class="file" style="font-family:var(--font-mono); font-size:.78rem;">BrandPositioning.tsx</td><td>Headings in <span class="tag tag-serifsc">font-serif · black</span> at <span class="sz">text-3xl/4xl</span> and <span class="sz">text-xl/2xl</span>; body bullets in <span class="tag tag-sans">font-sans</span> at <span class="sz">text-[15px]/base</span>; closing quote in <span class="tag tag-serifsc">font-serif</span> at <span class="sz">text-lg/2xl</span>.</td></tr>
+            <tr><td class="file" style="font-family:var(--font-mono); font-size:.78rem;">MacrobioticWisdom.tsx</td><td>Heading <span class="tag tag-serifsc">font-serif · bold</span> at <span class="sz">text-3xl/4xl</span>; feature titles <span class="tag tag-serifsc">font-serif · semibold</span> at <span class="sz">text-lg</span>; body copy default light at <span class="sz">text-lg/xs/sm</span>; overlay quote <span class="tag tag-serifsc">font-serif · semibold italic</span> at <span class="sz">text-base/lg</span>.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="v2">
+      <p class="sec-kicker">05 — Variant</p>
+      <h2 class="sec-title">/version2 (src/v2/)</h2>
+      <p class="sec-note" style="max-width:70ch;">
+        <code>src/v2/App.tsx</code> is byte-identical to <code>src/App.tsx</code>. Every v2 component uses the exact same
+        font families and size classes as its v1 counterpart — <code>font-noto-sans-sc</code>, <code>font-noto-serif-sc</code>,
+        <code>font-mono</code>, <code>font-sans</code>, <code>font-serif</code> — with only a handful of responsive breakpoint
+        tweaks: e.g. <code>YinYangBalance.tsx</code> shrinks some <code>text-xs</code> labels to <code>text-[10px] sm:text-xs</code>
+        on narrow screens, and the active-food name goes from a fixed <code>text-xl</code> to <code>text-lg sm:text-xl</code>.
+        No new font family or base size is introduced in v2.
+      </p>
+    </section>
+
+    <footer class="doc-footer">Hulu Hulu — Typography Reference · Generated from source, updated 2026-07-04</footer>
+  </main>
+</div>
+</body>
+</html>

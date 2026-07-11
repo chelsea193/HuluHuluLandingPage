@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400&family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Noto Serif SC", "Playfair Display", Georgia, serif;
+  --font-sans: "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Font 1: black & white (monochrome) text */
+.font-noto-sans-sc {
+  font-family: "Noto Sans SC", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* Font 2: grey text */
+.font-noto-serif-sc {
+  font-family: "Noto Serif SC", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* Font 3: colorful/accent text */
+.calligraphy-text {
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 28px;
+  line-height: 1.6;
+}
+
+body {
+  background-color: #F7F3EC;
+  color: #2F2F2F;
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Natural Tones Watercolor blob theme elements */
+.watercolor-blob {
+  position: absolute;
+  filter: blur(50px);
+  z-index: 0;
+  border-radius: 50%;
+  opacity: 0.18;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+.blob-1 {
+  top: -100px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: #9BA88B;
+}
+
+.blob-2 {
+  bottom: 0px;
+  right: -100px;
+  width: 450px;
+  height: 450px;
+  background: #D89A63;
+}
+
+.blob-3 {
+  top: 40%;
+  left: 5%;
+  width: 400px;
+  height: 400px;
+  background: #E3DAC9;
+  opacity: 0.25;
+}
+
+/* Custom scroll bar for cohesive calm branding */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F3EC;
+}
+::-webkit-scrollbar-thumb {
+  background: #ECE7DE;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9BA88B;
+}
+
+/* Hides the scrollbar on horizontal card carousels while keeping native scroll/snap behavior */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

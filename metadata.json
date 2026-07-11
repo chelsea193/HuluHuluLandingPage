@@ -1,0 +1,6 @@
+{
+  "name": "Hulu Hulu Food Energy",
+  "description": "An elegant, calm, and educational landing page for Hulu Hulu Food Energy, introducing the wisdom of Macrobiotics, five elements food energies, and natural diet balance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
