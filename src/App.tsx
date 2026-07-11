@@ -160,7 +160,6 @@ export default function App() {
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
-
         </div>
 
         {/* Swipeable Mobile Overlay */}
