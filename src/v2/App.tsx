@@ -106,7 +106,7 @@ export default function App() {
             id="header-logo-link"
           >
             <img
-              src={`${import.meta.env.BASE_URL}originals/HuluHulu Logo FA-02.png`}
+              src={`${import.meta.env.BASE_URL}HuluHulu Logo FA-02.png`}
               alt="Hulu Hulu"
               className="h-20 md:h-20  w-auto object-contain group-hover:scale-105 transition-all duration-300"
               id="header-logo-image"

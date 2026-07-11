@@ -18,11 +18,11 @@ const ELEMENT_NODE_IMAGES: Record<ElementType, string> = {
 };
 
 const ELEMENT_PANEL_IMAGES: Record<ElementType, string> = {
-  metal: `${import.meta.env.BASE_URL}originals/LandingPage Desktop Part3 MSC1-Metal.png`,
-  wood: `${import.meta.env.BASE_URL}originals/LandingPage Desktop Part3 MSC2-WOOD.png`,
-  water: `${import.meta.env.BASE_URL}originals/LandingPage Desktop Part3 MSC3-Water.png`,
-  fire: `${import.meta.env.BASE_URL}originals/LandingPage Desktop Part3 MSC4-Fire.png`,
-  earth: `${import.meta.env.BASE_URL}originals/LandingPage Desktop Part3 MSC5-earth.png`
+  metal: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 MSC1-Metal.png`,
+  wood: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 MSC2-WOOD.png`,
+  water: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 MSC3-Water.png`,
+  fire: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 MSC4-Fire.png`,
+  earth: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 MSC5-earth.png`
 };
 
 export default function FiveElementsWheel() {
