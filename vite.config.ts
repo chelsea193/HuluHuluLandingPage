@@ -5,9 +5,9 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    // Vercel serves the app from the domain root, but the GitHub Pages
-    // deployment lives under /HuluHuluLandingPage/ — only override there.
-    base: process.env.GITHUB_PAGES === 'true' ? '/HuluHuluLandingPage/' : '/',
+    // Served from the domain root: huluhuluwellness.com is a GitHub Pages
+    // custom domain, not a github.io subpath.
+    base: '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
