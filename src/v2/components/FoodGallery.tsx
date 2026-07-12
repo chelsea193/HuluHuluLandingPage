@@ -4,6 +4,7 @@
  */
 
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { GALLERY_FOODS } from '../data';
 import { GalleryFoodItem } from '../types';
@@ -205,8 +206,11 @@ export default function FoodGallery() {
           </AnimatePresence>
         </div>
 
-        {/* Dynamic Detail Modal */}
-        <AnimatePresence>
+        {/* Dynamic Detail Modal — portaled to <body> so its z-index isn't
+            capped by this section's "relative z-10" content-wrapper stacking
+            context (which would otherwise trap it below the sticky header). */}
+        {createPortal(
+          <AnimatePresence>
           {selectedFood && (
             <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999] flex items-center justify-center p-4" id="gallery-lightbox-modal">
               <motion.div
@@ -306,7 +310,9 @@ export default function FoodGallery() {
               </motion.div>
             </div>
           )}
-        </AnimatePresence>
+          </AnimatePresence>,
+          document.body
+        )}
 
       </div>
     </section>
