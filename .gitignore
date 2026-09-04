@@ -7,5 +7,6 @@ coverage/
 .env*
 !.env.example
 
-# Large pristine image originals (kept locally; web-optimized copies live in public/)
-public/originals/
+# Large pristine media originals (kept locally; web-optimized copies live in public/).
+# Deliberately outside public/ — Vite copies all of publicDir into dist.
+asset-originals/

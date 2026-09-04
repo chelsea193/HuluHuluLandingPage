@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400&family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap');
+/* Webfonts are linked from index.html, not imported here. A CSS `@import` is
+   only discovered after this stylesheet has downloaded and parsed, so it
+   serialised the font request behind the CSS and blocked first paint. */
 @import "tailwindcss";
 
 @theme {
@@ -19,13 +21,6 @@
   font-family: "Noto Serif SC", serif;
   font-optical-sizing: auto;
   font-style: normal;
-}
-
-/* Font 3: colorful/accent text */
-.calligraphy-text {
-  font-family: 'Ma Shan Zheng', cursive;
-  font-size: 28px;
-  line-height: 1.6;
 }
 
 body {

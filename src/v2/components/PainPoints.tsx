@@ -119,8 +119,8 @@ export default function PainPoints() {
               id={`pain-card-${point.id}`}
             >
               <img
-                src={`${import.meta.env.BASE_URL}LandingPage Full Sec2 Box-${index + 1}v2.png`}
-                alt={`LandingPage Full Sec2 Box-${index + 1}v2.png`}
+                src={`${import.meta.env.BASE_URL}LandingPage Full Sec2 Box-${index + 1}v2.webp`}
+                alt={point.title}
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-[4/3] object-cover object-top"
@@ -156,8 +156,9 @@ export default function PainPoints() {
         >
           {/* Section 3 full-width background image slot */}
           <img
-            src={`${import.meta.env.BASE_URL}LandingPage Desktop Part2 Column.png`}
-            alt="LandingPage Desktop Part2 Column.png"
+            src={`${import.meta.env.BASE_URL}LandingPage Desktop Part2 Column.webp`}
+            alt=""
+            aria-hidden="true"
             loading="lazy"
             decoding="async"
             className="absolute inset-0 w-full h-full object-fill opacity-100 pointer-events-none select-none"
@@ -171,9 +172,11 @@ export default function PainPoints() {
             而是你吃进去的食物，是否真正适合你的身体状态。
           </p>
           <div className="relative z-10 w-12 h-0.5 bg-[#EB288B]/50 mx-auto mb-6" id="closing-divider"></div>
-          <h1 className="relative z-10 text-3xl md:text-5xl font-bold text-[#EB288B] tracking-wider font-noto-sans-sc" id="closing-headline">
+          {/* h2, not h1 — the page's one <h1> belongs to the hero headline;
+              this uses the identical className so it's visually unchanged. */}
+          <h2 className="relative z-10 text-3xl md:text-5xl font-bold text-[#EB288B] tracking-wider font-noto-sans-sc" id="closing-headline">
             其实，好好吃饭就能解决。
-          </h1>
+          </h2>
         </motion.div>
       </div>
     </section>

@@ -85,8 +85,8 @@ export default function BrandPositioning() {
               id="guide-icon-core"
             >
               <img
-                src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-IC1.png`}
-                alt="LandingPage Full Sec4-IC1.png"
+                src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-IC1.webp`}
+                alt="品牌核心理念图标"
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover scale-[1.35]"
@@ -127,8 +127,8 @@ export default function BrandPositioning() {
               id="guide-icon-diff"
             >
               <img
-                src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-IC2.png`}
-                alt="LandingPage Full Sec4-IC2.png"
+                src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-IC2.webp`}
+                alt="品牌差异化图标"
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover scale-[1.35]"
@@ -149,7 +149,7 @@ export default function BrandPositioning() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#9BA88B]" />
-                  <span className="text-[#9BA88B] font-bold">创造让身体稳定的系统</span>
+                  <span className="text-[#69725F] font-bold">创造让身体稳定的系统</span>
                 </li>
               </ul>
             </div>
@@ -169,8 +169,8 @@ export default function BrandPositioning() {
               id="guide-icon-val"
             >
               <img
-                src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-IC3.png`}
-                alt="LandingPage Full Sec4-IC3.png"
+                src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-IC3.webp`}
+                alt="品牌价值主张图标"
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover"
@@ -188,7 +188,7 @@ export default function BrandPositioning() {
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#D89A63] mt-2" />
                   <span className="text-gray-900 leading-relaxed">
-                    而是一套 <strong className="text-[#D89A63] font-bold bg-amber-50 px-1 py-0.5 rounded text-sm sm:text-base">“食物 + 能量 + 身体状态”</strong> 的完整调理系统
+                    而是一套 <strong className="text-[#8F6641] font-bold bg-amber-50 px-1 py-0.5 rounded text-sm sm:text-base">“食物 + 能量 + 身体状态”</strong> 的完整调理系统
                   </span>
                 </li>
               </ul>
@@ -212,8 +212,9 @@ export default function BrandPositioning() {
             
             {/* Section 4 image slot — swap real asset later */}
             <img
-              src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-BG.jpg`}
-              alt="LandingPage Full Sec4-BG.jpg"
+              src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-BG.webp`}
+              alt=""
+              aria-hidden="true"
               loading="lazy"
               decoding="async"
               className="w-full h-full object-cover object-[left_100%] rounded-full border-4 border-white/60 bg-[#ECE7DE] drop-shadow-2xl"
@@ -334,8 +335,9 @@ export default function BrandPositioning() {
       >
         {/* Full-width background image slot */}
         <img
-          src={`${import.meta.env.BASE_URL}LandingPage Full Sec3-BG.jpg`}
-          alt="LandingPage Full Sec3-BG.jpg"
+          src={`${import.meta.env.BASE_URL}LandingPage Full Sec3-BG.webp`}
+          alt=""
+          aria-hidden="true"
           loading="lazy"
           decoding="async"
           className="absolute inset-0 w-full h-full object-fill opacity-100 pointer-events-none select-none"

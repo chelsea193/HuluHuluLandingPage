@@ -1,6 +1,10 @@
 {
-  "name": "Hulu Hulu Wellness",
+  "name": "Hulu Hulu Wellness — 食物即能量",
   "short_name": "Hulu Hulu",
+  "description": "结合自然饮食法 Macrobiotic、五行食能与阴阳调和，重新认识食物与能量的关系。",
+  "lang": "zh-Hans",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/android-icon-192x192.png",
@@ -13,7 +17,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#EB288B",
+  "background_color": "#F7F3EC",
   "display": "standalone"
 }

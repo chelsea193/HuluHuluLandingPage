@@ -130,7 +130,7 @@ same dashed border, same background image treatment, same `max-w-4xl` width.
     id="section-3-bg-image"
   />
 
-  <div className="relative z-10 inline-block px-4 py-1.5 rounded-full bg-[#9BA88B]/10 text-[#9BA88B] text-xs font-semibold tracking-wider mb-6" id="closing-accent">
+  <div className="relative z-10 inline-block px-4 py-1.5 rounded-full bg-[#9BA88B]/10 text-[#69725F] text-xs font-semibold tracking-wider mb-6" id="closing-accent">
     DIETARY INSPIRATION
   </div>
   <p className="relative z-10 text-[#2F2F2F] text-xl md:text-2xl font-serif leading-loose mb-6 tracking-wide" id="closing-text">
@@ -152,7 +152,7 @@ same dashed border, same background image treatment, same `max-w-4xl` width.
 | Surface         | `bg-[#F7F3EC] rounded-3xl border-2 border-dashed border-[#9BA88B]/40`   |
 | Height (padding)| `p-8 md:p-12`                                                          |
 | Background      | `absolute inset-0 w-full h-full object-fill` (decorative)              |
-| Accent pill     | `px-4 py-1.5 rounded-full bg-[#9BA88B]/10 text-[#9BA88B] text-xs`       |
+| Accent pill     | `px-4 py-1.5 rounded-full bg-[#9BA88B]/10 text-[#69725F] text-xs`       |
 | Body copy       | `text-xl md:text-2xl font-serif leading-loose mb-6 tracking-wide`      |
 | Divider         | `w-12 h-0.5 bg-[#D89A63]/50 mx-auto mb-6`                              |
 | Headline        | `text-2xl md:text-4xl font-bold text-[#EB288B] tracking-wider font-sans`|
@@ -165,11 +165,30 @@ same dashed border, same background image treatment, same `max-w-4xl` width.
 
 ## Shared palette (for reference)
 
+> **Magenta is `#EB288B` by deliberate brand choice.** A prior pass deepened
+> it to `#CF237A` because `#EB288B` only scores 4.03:1 against the page's
+> cream surfaces (`#FFFFFF`, `#FAF8F4`, `#F7F3EC`, `#FAF1EA`, `#FFFBEB`) —
+> short of the WCAG AA text minimum of 4.5:1. That change was reverted at the
+> project owner's request, so `#EB288B` is back everywhere `#CF237A` was
+> used, contrast shortfall included. Don't "fix" this back to `#CF237A`.
+> If AA contrast becomes a priority again, revisit magenta specifically
+> rather than reusing `#CF237A` from memory — re-derive it, since exact
+> requirements (target ratio, surfaces) may differ next time.
+>
+> Terracotta and sage remain split: `#D89A63` / `#9BA88B` for *decoration*
+> only (dividers, borders, blobs, where contrast rules don't apply), and their
+> darker text siblings below for anything that has to be read. Also avoid
+> `text-gray-400` (2.6:1) — use `text-gray-600`, and never fade body text with
+> an opacity suffix such as `text-[#F7F3EC]/80`, which blends the colour and
+> silently drops the ratio.
+
 | Token        | Hex                   | Use                                  |
 | ------------ | --------------------- | ------------------------------------ |
-| Magenta      | `#EB288B`             | Brand / headlines / accents          |
-| Terracotta   | `#D89A63`             | Secondary accent / dividers          |
-| Sage         | `#9BA88B`             | Borders / muted labels               |
+| Magenta      | `#EB288B`             | Brand / headlines / accents / fills  |
+| Terracotta   | `#D89A63`             | Dividers, borders, decoration **only** |
+| Terracotta ✎ | `#8F6641`             | Terracotta **text**                  |
+| Sage         | `#9BA88B`             | Borders / decoration **only**        |
+| Sage ✎       | `#69725F`             | Sage **text**                        |
 | Ink          | `#2F2F2F`             | Body text                            |
 | Cream panel  | `#F7F3EC`             | Quote-box surface                    |
 | Cream bg     | `#FAF8F4` / `#FAF1EA` | Section background fallback          |

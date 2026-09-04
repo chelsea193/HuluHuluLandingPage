@@ -35,7 +35,7 @@ export default function MacrobioticWisdom() {
           {/* Left Panel: Narrative, checklist, features */}
           <div className="lg:col-span-7 flex flex-col justify-center" id="macrobiotic-narrative">
             <span className="text-xs uppercase tracking-widest font-extrabold text-[#EB288B] mb-2 flex items-center gap-1">
-              <Sprout className="w-4 h-4 text-[#9BA88B]" /> MACROBIOTIC ECO-PHILOSOPHY
+              <Sprout className="w-4 h-4 text-[#69725F]" /> MACROBIOTIC ECO-PHILOSOPHY
             </span>
             <h2 className="text-3xl md:text-4xl font-noto-sans-sc text-[#2F2F2F] font-bold tracking-tight mb-6" id="macrobiotic-title">
               Macrobiotic 饮食智慧
@@ -59,7 +59,7 @@ export default function MacrobioticWisdom() {
                   id={`macro-feature-item-${idx}`}
                 >
                   <div className="w-6 h-6 rounded-full bg-[#9BA88B]/10 flex items-center justify-center shrink-0 mt-0.5" id={`check-icon-${idx}`}>
-                    <CheckCircle2 className="w-4 h-4 text-[#9BA88B]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#69725F]" />
                   </div>
                   <div>
                     <h4 className="text-lg font-noto-sans-sc font-semibold text-[#2F2F2F] mb-1" id={`macro-feature-title-${idx}`}>
@@ -83,7 +83,7 @@ export default function MacrobioticWisdom() {
               id="macro-statement-box"
             >
               <p className="text-sm text-[#EB288B] font-noto-sans-sc leading-loose font-medium flex items-center gap-2" id="macro-statement">
-                <Flame className="w-4 h-4 text-[#D89A63]" />
+                <Flame className="w-4 h-4 text-[#8F6641]" />
                 不是节食，不是限制，而是一种帮助身体回归平衡的生活方式。
               </p>
             </motion.div>

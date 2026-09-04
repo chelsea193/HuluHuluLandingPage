@@ -11,7 +11,7 @@ export default function CompareSection() {
     <section className="relative w-full bg-[#F7F3EC] overflow-hidden" id="compare-section">
       {/* Section 6 full-page background image slot */}
       <img
-        src={`${import.meta.env.BASE_URL}LandingPage Desktop Part6 BG.png`}
+        src={`${import.meta.env.BASE_URL}LandingPage Desktop Part6 BG.webp`}
         alt=""
         aria-hidden="true"
         loading="lazy"
@@ -43,8 +43,8 @@ export default function CompareSection() {
             id="supplements-card"
           >
             <img
-              src={`${import.meta.env.BASE_URL}LandingPage Desktop Part6 Box1 PIC.png`}
-              alt="LandingPage Desktop Part6 Box1 PIC.png"
+              src={`${import.meta.env.BASE_URL}LandingPage Desktop Part6 Box1 PIC.webp`}
+              alt="各式保健品胶囊与营养补充剂"
               loading="lazy"
               decoding="async"
               className="w-full aspect-[3/2] object-cover"
@@ -59,7 +59,7 @@ export default function CompareSection() {
                   </span>
                   <h3 className="text-2xl font-noto-sans-sc font-black text-gray-700">保健品</h3>
                 </div>
-                <span className="text-xs uppercase text-gray-400 font-noto-sans-sc tracking-widest bg-gray-100 px-3 py-1 rounded-full">
+                <span className="text-xs uppercase text-gray-600 font-noto-sans-sc tracking-widest bg-gray-100 px-3 py-1 rounded-full">
                   WHOLE FOOD MATRIX
                 </span>
               </div>
@@ -131,8 +131,8 @@ export default function CompareSection() {
 
             <div className="bg-gradient-to-br from-[#FAF8F4] via-white to-[#FAF8F4] rounded-3xl border-2 border-[#9BA88B]/60 shadow-md overflow-hidden flex flex-col flex-1">
               <img
-                src={`${import.meta.env.BASE_URL}LandingPage Desktop Part6 Box2 PIC.png`}
-                alt="LandingPage Desktop Part6 Box2 PIC.png"
+                src={`${import.meta.env.BASE_URL}LandingPage Desktop Part6 Box2 PIC.webp`}
+                alt="天然原型食物：全谷物、豆类与新鲜蔬菜"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-[3/2] object-cover"
@@ -142,14 +142,14 @@ export default function CompareSection() {
               <div>
               <div className="flex flex-col items-start gap-2 min-[957px]:flex-row min-[957px]:items-center min-[957px]:justify-between mb-6" id="natural-title-box">
                 <div className="flex items-center gap-3">
-                  <span className="w-12 h-12 rounded-full bg-[#9BA88B]/10 flex items-center justify-center text-[#9BA88B] gap-0.5" id="leaf-icon-wrapper">
+                  <span className="w-12 h-12 rounded-full bg-[#9BA88B]/10 flex items-center justify-center text-[#69725F] gap-0.5" id="leaf-icon-wrapper">
                     {/* Icon: Whole Grain + Leaf */}
                     <Wheat className="w-5 h-5" />
                     {/* <Leaf className="w-5 h-5" /> */}
                   </span>
                   <h3 className="text-2xl font-noto-sans-sc font-black text-[#2F2F2F]">天然食物</h3>
                 </div>
-                <span className="text-xs uppercase text-[#9BA88B] font-noto-sans-sc tracking-widest bg-[#9BA88B]/10 px-3 py-1 rounded-full">
+                <span className="text-xs uppercase text-[#69725F] font-noto-sans-sc tracking-widest bg-[#9BA88B]/10 px-3 py-1 rounded-full">
                   EXTRACTED pill
                 </span>
               </div>
@@ -160,7 +160,7 @@ export default function CompareSection() {
 
               <ul className="space-y-4" id="natural-item-list">
                 <li className="flex items-start gap-3" id="natural-item-1">
-                  <Apple className="w-5 h-5 text-[#9BA88B] shrink-0 mt-0.5" />
+                  <Apple className="w-5 h-5 text-[#69725F] shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-gray-800 text-sm font-noto-sans-sc block">完整营养结构 (Holographic Matrix)</strong>
                     <span className="text-xs font-noto-sans-sc text-gray-500 leading-relaxed font-light">
@@ -169,7 +169,7 @@ export default function CompareSection() {
                   </div>
                 </li>
                 <li className="flex items-start gap-3" id="natural-item-2">
-                  <Apple className="w-5 h-5 text-[#9BA88B] shrink-0 mt-0.5" />
+                  <Apple className="w-5 h-5 text-[#69725F] shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-gray-800 text-sm font-noto-sans-sc block">自然能量来源 (Earthbound Lifeforce)</strong>
                     <span className="text-xs font-noto-sans-sc text-gray-500 leading-relaxed font-light">
@@ -178,7 +178,7 @@ export default function CompareSection() {
                   </div>
                 </li>
                 <li className="flex items-start gap-3" id="natural-item-3">
-                  <Apple className="w-5 h-5 text-[#9BA88B] shrink-0 mt-0.5" />
+                  <Apple className="w-5 h-5 text-[#69725F] shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-gray-800 text-sm font-noto-sans-sc block">长期平衡身体状态 (Sustained Equilibrium)</strong>
                     <span className="text-xs font-noto-sans-sc text-gray-500 leading-relaxed font-light">
@@ -187,7 +187,7 @@ export default function CompareSection() {
                   </div>
                 </li>
                 <li className="flex items-start gap-3" id="natural-item-4">
-                  <Apple className="w-5 h-5 text-[#9BA88B] shrink-0 mt-0.5" />
+                  <Apple className="w-5 h-5 text-[#69725F] shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-gray-800 text-sm font-noto-sans-sc block">更容易被身体接纳 (Bio-Compatible)</strong>
                     <span className="text-xs font-noto-sans-sc text-gray-500 leading-relaxed font-light">
@@ -199,7 +199,7 @@ export default function CompareSection() {
             </div>
 
             <div className="bg-[#9BA88B]/10 p-4 rounded-2xl border border-[#9BA88B]/20 mt-8 text-xs font-noto-sans-sc text-[#576751] font-light flex items-center gap-2" id="wholefoods-proclaim">
-              <Heart className="w-4 h-4 shrink-0 text-[#9BA88B]" />
+              <Heart className="w-4 h-4 shrink-0 text-[#69725F]" />
               悟：一口蕴含胚芽、麦芽与麸皮的完整糙米，胜过十粒人工合成的高浓度胶囊。
             </div>
               </div>

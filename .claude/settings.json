@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -viE '\\\\.\\(png|jpg|jpeg|webp|svg|gif\\)$')",
+      "Bash(node -e ' *)",
+      "Bash(python -c ' *)",
+      "Bash(npm run *)",
+      "Bash(git checkout *)"
+    ]
+  }
+}

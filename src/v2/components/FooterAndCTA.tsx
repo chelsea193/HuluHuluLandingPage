@@ -37,7 +37,7 @@ export default function FooterAndCTA() {
 
           {/* Headline and Narrative */}
           <div className="lg:col-span-7" id="final-cta-left">
-            <span className="text-[10px] uppercase tracking-[0.2em] font-noto-sans-sc font-extrabold text-[#D89A63] bg-amber-50 border border-amber-200/40 px-3.5 py-1.5 rounded-full mb-6 inline-block">
+            <span className="text-[10px] uppercase tracking-[0.2em] font-noto-sans-sc font-extrabold text-[#8F6641] bg-amber-50 border border-amber-200/40 px-3.5 py-1.5 rounded-full mb-6 inline-block">
               EMBARK ON YOUR HEALTH JOURNEY
             </span>
             <h2 className="text-3xl md:text-5xl font-noto-sans-sc text-[#2F2F2F] tracking-tight leading-tight mb-6" id="cta-headline">
@@ -64,7 +64,7 @@ export default function FooterAndCTA() {
                 className="px-6 py-4 rounded-full border-2 border-[#9BA88B]/60 hover:bg-[#9BA88B]/10 text-gray-700 text-xs sm:text-sm font-medium tracking-wide transition-all duration-300 flex items-center gap-2 pointer-events-auto cursor-pointer"
                 id="cta-whatsapp-btn"
               >
-                <MessageCircle className="w-4 h-4 text-[#9BA88B]" />
+                <MessageCircle className="w-4 h-4 text-[#69725F]" />
                 WhatsApp 咨询
               </button>
             </div>
@@ -102,22 +102,26 @@ export default function FooterAndCTA() {
 
               <div className="absolute inset-0 bg-gradient-to-b from-[#FAF8F4] to-white rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
 
-              <span className="text-[10px] uppercase tracking-widest font-noto-sans-sc font-bold text-gray-400 mb-4 block">
+              <span className="text-[10px] uppercase tracking-widest font-noto-sans-sc font-bold text-gray-600 mb-4 block">
                 扫码了解更多
               </span>
 
               {/* QR code framed by the mascot illustration */}
               <div className="w-48 h-48 relative" id="qr-box">
                 <img
-                  src={`${import.meta.env.BASE_URL}QR Mascot-01.png`}
+                  src={`${import.meta.env.BASE_URL}QR Mascot-01.webp`}
                   alt=""
                   aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none z-0"
                   id="qr-mascot-frame"
                 />
                 <img
-                  src={`${import.meta.env.BASE_URL}qr.png`}
+                  src={`${import.meta.env.BASE_URL}qr.webp`}
                   alt="扫码二维码"
+                  loading="lazy"
+                  decoding="async"
                   className="absolute object-contain z-10"
                   style={{ top: '39.5%', left: '30%', width: '41%', height: '48%' }}
                   id="qr-code-image"
@@ -127,7 +131,7 @@ export default function FooterAndCTA() {
               <span className="text-[11px] font-noto-sans-sc text-gray-500 font-semibold mt-4 mb-1 block">
                 [ QR Code Center ]
               </span>
-              <p className="text-[10px] font-noto-sans-sc text-gray-400 font-light leading-relaxed">
+              <p className="text-[10px] font-noto-sans-sc text-gray-600 font-light leading-relaxed">
                 微信/小红书扫描二维码<br />关注我们获取每日食谱
               </p>
             </div>
@@ -148,7 +152,7 @@ export default function FooterAndCTA() {
             <span className="text-[10px] uppercase tracking-widest font-noto-sans-sc font-bold text-[#F7F3EC] border border-white/30 px-3 py-1 rounded-full mb-6 inline-block">
               Food Is Energy
             </span>
-            <p className="text-xs md:text-sm font-noto-sans-sc text-[#F7F3EC]/80 leading-loose font-light max-w-sm" id="brand-concept-footer">
+            <p className="text-xs md:text-sm font-noto-sans-sc text-[#F7F3EC] leading-loose font-light max-w-sm" id="brand-concept-footer">
               帮助现代人重新认识食物与能量之间的关系。
               通过对宏观大健康、自然饮食法（Macrobiotic）以及东方非物质五行能量学的调养，找回身体真正的和谐平衡。
             </p>
@@ -156,11 +160,11 @@ export default function FooterAndCTA() {
 
           {/* Footer widget 2: Contacts */}
           <div className="md:col-span-4 flex flex-col justify-start" id="f-widget-contact">
-            <h4 className="text-xs uppercase tracking-wider font-noto-sans-sc font-extrabold text-white mb-6">
+            <h3 className="text-xs uppercase tracking-wider font-noto-sans-sc font-extrabold text-white mb-6">
               联络我们 CONTACTS
-            </h4>
+            </h3>
             <div className="space-y-4" id="footer-contacts-list">
-              <a href="https://wa.me/601157444931" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-xs text-[#F7F3EC]/80 hover:text-white transition-colors pointer-events-auto" id="f-con-whatsapp">
+              <a href="https://wa.me/601157444931" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-xs text-[#F7F3EC] hover:text-white transition-colors pointer-events-auto" id="f-con-whatsapp">
                 <MessageSquare className="w-4 h-4 text-[#F7F3EC]" />
                 <div className="font-noto-sans-sc">
                   <span className="font-semibold block text-white">WhatsApp</span>
@@ -168,7 +172,7 @@ export default function FooterAndCTA() {
                 </div>
               </a>
 
-              <a href="mailto:hello@huluhuluwellness.com" className="flex items-center gap-3 text-xs text-[#F7F3EC]/80 hover:text-white transition-colors pointer-events-auto" id="f-con-email">
+              <a href="mailto:hello@huluhuluwellness.com" className="flex items-center gap-3 text-xs text-[#F7F3EC] hover:text-white transition-colors pointer-events-auto" id="f-con-email">
                 <Mail className="w-4 h-4 text-[#F7F3EC]" />
                 <div className="font-noto-sans-sc">
                   <span className="font-semibold block text-white">Email</span>
@@ -176,7 +180,7 @@ export default function FooterAndCTA() {
                 </div>
               </a>
 
-              <div className="flex items-start gap-3 text-xs text-[#F7F3EC]/80" id="f-con-location">
+              <div className="flex items-start gap-3 text-xs text-[#F7F3EC]" id="f-con-location">
                 <MapPin className="w-4 h-4 text-[#F7F3EC] shrink-0 mt-0.5" />
                 <div className="font-noto-sans-sc">
                   <span className="font-semibold block text-white">Address</span>
@@ -188,17 +192,17 @@ export default function FooterAndCTA() {
 
           {/* Footer widget 3: Social & Media */}
           <div className="md:col-span-3 flex flex-col justify-start" id="f-widget-socials">
-            <h4 className="text-xs uppercase tracking-wider font-noto-sans-sc font-extrabold text-white mb-6">
+            <h3 className="text-xs uppercase tracking-wider font-noto-sans-sc font-extrabold text-white mb-6">
               关注我们 FOLLOW US
-            </h4>
+            </h3>
             <div className="flex flex-col gap-3 font-noto-sans-sc" id="social-links-col">
-              <a href="#facebook" className="text-xs text-[#F7F3EC]/80 font-light hover:text-white flex items-center gap-2 transition-colors pointer-events-auto">
+              <a href="#facebook" className="text-xs text-[#F7F3EC] font-light hover:text-white flex items-center gap-2 transition-colors pointer-events-auto">
                 <Facebook className="w-4 h-4 text-[#F7F3EC]" /> Facebook
               </a>
-              <a href="#instagram" className="text-xs text-[#F7F3EC]/80 font-light hover:text-white flex items-center gap-2 transition-colors pointer-events-auto">
+              <a href="#instagram" className="text-xs text-[#F7F3EC] font-light hover:text-white flex items-center gap-2 transition-colors pointer-events-auto">
                 <Instagram className="w-4 h-4 text-[#F7F3EC]" /> Instagram
               </a>
-              <a href="https://wa.me/601157444931" target="_blank" rel="noreferrer" className="text-xs text-[#F7F3EC]/80 font-light hover:text-white flex items-center gap-2 transition-colors pointer-events-auto">
+              <a href="https://wa.me/601157444931" target="_blank" rel="noreferrer" className="text-xs text-[#F7F3EC] font-light hover:text-white flex items-center gap-2 transition-colors pointer-events-auto">
                 <MessageCircle className="w-4 h-4 text-[#F7F3EC]" /> WhatsApp
               </a>
             </div>
@@ -207,7 +211,7 @@ export default function FooterAndCTA() {
         </div>
 
         {/* Copy block */}
-        <div className="max-w-7xl mx-auto px-6 md:px-12 border-t border-white/20 mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-[#F7F3EC]/70 font-noto-sans-sc" id="footer-bottom">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 border-t border-white/20 mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-[#F7F3EC] font-noto-sans-sc" id="footer-bottom">
           <div className="flex items-center gap-1" id="heart-stamp">
             <span>© 2026 Hulu Hulu. All Rights Reserved.</span>
             <span className="flex items-center"><Heart className="w-2.5 h-2.5 text-white fill-current inline mx-0.5" /> Made with pure botanical intent.</span>

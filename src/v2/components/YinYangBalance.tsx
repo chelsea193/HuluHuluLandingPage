@@ -10,10 +10,10 @@ import { YinYangFood } from '../types';
 import { ChevronRight, Sparkles, AlertTriangle, Scale } from 'lucide-react';
 
 const FOOD_DETAIL_IMAGES: Partial<Record<string, string>> = {
-  '椰子 (Coconut)': `${import.meta.env.BASE_URL}LandingPage Desktop Part4 FD1-coconut.png`,
-  '红肉 (Red Meat)': `${import.meta.env.BASE_URL}LandingPage Desktop Part4 FD2-meal.png`,
-  '牛奶 (Milk)': `${import.meta.env.BASE_URL}LandingPage Desktop Part4 FD3-milk.png`,
-  '精制盐 (Refined Salt)': `${import.meta.env.BASE_URL}LandingPage Desktop Part4 FD4-salt.png`
+  '椰子 (Coconut)': `${import.meta.env.BASE_URL}LandingPage Desktop Part4 FD1-coconut.webp`,
+  '红肉 (Red Meat)': `${import.meta.env.BASE_URL}LandingPage Desktop Part4 FD2-meal.webp`,
+  '牛奶 (Milk)': `${import.meta.env.BASE_URL}LandingPage Desktop Part4 FD3-milk.webp`,
+  '精制盐 (Refined Salt)': `${import.meta.env.BASE_URL}LandingPage Desktop Part4 FD4-salt.webp`
 };
 
 export default function YinYangBalance() {
@@ -26,9 +26,9 @@ export default function YinYangBalance() {
   // Dynamically determine balance label
   const getBalanceLabel = () => {
     if (balanceValue < -60) return { label: '极度偏阴 (Extreme Yin - Hyper-Expansion)', color: 'text-indigo-800 bg-indigo-100/60' };
-    if (balanceValue < -15) return { label: '稍微偏阴 (Mild Yin - Cool & Calming)', color: 'text-[#9BA88B] bg-[#9BA88B]/10' };
+    if (balanceValue < -15) return { label: '稍微偏阴 (Mild Yin - Cool & Calming)', color: 'text-[#69725F] bg-[#9BA88B]/10' };
     if (balanceValue > 60) return { label: '极度偏阳 (Extreme Yang - Over-contraction)', color: 'text-red-800 bg-red-100/60' };
-    if (balanceValue > 15) return { label: '稍微偏阳 (Mild Yang - Active & Vital)', color: 'text-[#D89A63] bg-[#D89A63]/10' };
+    if (balanceValue > 15) return { label: '稍微偏阳 (Mild Yang - Active & Vital)', color: 'text-[#8F6641] bg-[#D89A63]/10' };
     return { label: '中庸平衡 (Perfect Golden Center)', color: 'text-[#EB288B] bg-[#F7F3EC]' };
   };
 
@@ -39,9 +39,11 @@ export default function YinYangBalance() {
     <section className="relative w-full bg-[#F7F3EC] overflow-hidden" id="yin-yang-section">
       {/* Section 6 full-page background image slot */}
       <img
-        src={`${import.meta.env.BASE_URL}LandingPage Desktop Part4 BG.png`}
+        src={`${import.meta.env.BASE_URL}LandingPage Desktop Part4 BG.webp`}
         alt=""
         aria-hidden="true"
+        loading="lazy"
+        decoding="async"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none z-0"
         id="section-6-bg-image"
       />
@@ -62,8 +64,10 @@ export default function YinYangBalance() {
           {/* Left Side: YIN (阴) - Blue Theme */}
           <div className="bg-gradient-to-br from-[#ECE7DE]/40 via-white to-indigo-50/20 rounded-3xl shadow-sm overflow-hidden flex flex-col" id="yin-column">
             <img
-              src={`${import.meta.env.BASE_URL}LandingPage Full Sec6- Box1.png`}
-              alt="LandingPage Full Sec6- Box1.png"
+              src={`${import.meta.env.BASE_URL}LandingPage Full Sec6- Box1.webp`}
+              alt="偏阴性食物：生冷蔬果与清凉属性食物"
+              loading="lazy"
+              decoding="async"
               className="w-full aspect-[3/2] object-cover object-top"
               id="yin-foods-image"
             />
@@ -110,7 +114,7 @@ export default function YinYangBalance() {
                           }`}>
                           Level {food.level} Yin
                         </span>
-                        <ChevronRight className="w-4 h-4 text-gray-400" />
+                        <ChevronRight className="w-4 h-4 text-gray-600" />
                       </div>
                     </motion.button>
                   );
@@ -131,8 +135,10 @@ export default function YinYangBalance() {
           {/* Right Side: YANG (阳) - Red Theme */}
           <div className="bg-gradient-to-br from-[#ECE7DE]/40 via-white to-red-50/20 rounded-3xl shadow-sm overflow-hidden flex flex-col" id="yang-column">
             <img
-              src={`${import.meta.env.BASE_URL}LandingPage Full Sec6- Box2.png`}
-              alt="LandingPage Full Sec6- Box2.png"
+              src={`${import.meta.env.BASE_URL}LandingPage Full Sec6- Box2.webp`}
+              alt="偏阳性食物：温热属性的根茎类与烹煮食物"
+              loading="lazy"
+              decoding="async"
               className="w-full aspect-[3/2] object-cover object-top"
               id="yang-foods-image"
             />
@@ -179,7 +185,7 @@ export default function YinYangBalance() {
                           }`}>
                           Level {food.level} Yang
                         </span>
-                        <ChevronRight className="w-4 h-4 text-gray-400" />
+                        <ChevronRight className="w-4 h-4 text-gray-600" />
                       </div>
                     </motion.button>
                   );
@@ -204,7 +210,7 @@ export default function YinYangBalance() {
             {/* Detailed food card selection */}
             <div className="bg-[#FAF8F4] p-6 rounded-2xl border border-gray-100" id="detail-card-panel">
               <h4 className="text-xs uppercase tracking-widest font-noto-sans-sc font-bold text-[#EB288B] mb-3 flex items-center gap-1.5">
-                <Sparkles className="w-4 h-4 text-[#D89A63]" /> EXPLORING POLARITY DETAILS
+                <Sparkles className="w-4 h-4 text-[#8F6641]" /> EXPLORING POLARITY DETAILS
               </h4>
               <AnimatePresence mode="wait">
                 <motion.div
@@ -230,14 +236,14 @@ export default function YinYangBalance() {
                       {activeFood.energy === 'yin' ? '阴性 (Cooling)' : '阳性 (Warming)'}
                     </span>
                   </div>
-                  <p className="text-xs text-gray-400 font-noto-sans-sc mb-4 leading-none uppercase tracking-wide">
+                  <p className="text-xs text-gray-600 font-noto-sans-sc mb-4 leading-none uppercase tracking-wide">
                     Energy Rating: {activeFood.level} / 3 Polar Intensity
                   </p>
                   <p className="text-sm font-noto-sans-sc text-gray-600 leading-relaxed font-light mb-4" id="info-detail-description">
                     {activeFood.detail}
                   </p>
                   <div className="flex items-start gap-2 text-xs font-noto-sans-sc bg-amber-50/70 border border-amber-200/50 p-3 rounded-xl text-amber-900" id="info-warning-block">
-                    <AlertTriangle className="w-4 h-4 text-[#D89A63] shrink-0 mt-0.5" />
+                    <AlertTriangle className="w-4 h-4 text-[#8F6641] shrink-0 mt-0.5" />
                     <span>
                       <strong>微言：</strong>此类食材能量级属于<strong> Level {activeFood.level}</strong>，在日常饮食中应慎防过度累积。
                     </span>
@@ -278,8 +284,23 @@ export default function YinYangBalance() {
                       setActiveFood(matched);
                     }
                   }}
-                  className="w-full h-2 bg-gradient-to-r from-indigo-300 via-[#E3DAC9] to-red-300 rounded-lg appearance-none cursor-pointer focus:outline-none accent-[#EB288B]"
+                  // `focus:outline-none` removed the browser's default focus
+                  // ring and nothing replaced it, so a keyboard user tabbing
+                  // to the slider couldn't see it was focused. The ring color
+                  // reuses `#EB288B`, the same brand magenta already used on
+                  // this slider's thumb (`accent-[#EB288B]`) — no new color.
+                  className="w-full h-2 bg-gradient-to-r from-indigo-300 via-[#E3DAC9] to-red-300 rounded-lg appearance-none cursor-pointer accent-[#EB288B] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EB288B] focus-visible:ring-offset-2"
                   id="yin-yang-range-slider"
+                  // The slider's meaning is carried entirely by the artwork
+                  // around it, so it needs its own name. aria-valuetext also
+                  // replaces the bare number a screen reader would otherwise
+                  // read out ("-45") with the polarity it actually represents.
+                  aria-label="阴阳能量平衡：向左偏阴，向右偏阳"
+                  aria-valuetext={
+                    balanceValue === 0
+                      ? '阴阳平衡'
+                      : `${balanceValue < 0 ? '偏阴' : '偏阳'} ${Math.abs(balanceValue)}`
+                  }
                 />
                 {/* Zero Balance Marker */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-4 bg-[#EB288B]/60 pointer-events-none rounded" id="zero-marker"></div>
@@ -290,7 +311,7 @@ export default function YinYangBalance() {
                 <span className={`text-xs inline-block font-noto-sans-sc px-4 py-2 rounded-full font-bold transition-all duration-300 ${balanceLabel.color}`} id="balance-badge">
                   此能量偏移：{balanceLabel.label}
                 </span>
-                <p className="text-xs font-noto-sans-sc text-gray-400 mt-2.5 font-light leading-relaxed" id="dashboard-notice">
+                <p className="text-xs font-noto-sans-sc text-gray-600 mt-2.5 font-light leading-relaxed" id="dashboard-notice">
                   * 拖动上面的滑块模拟食物调和状态。食物能量学认为，完美的养生并不是回避一切阴性或阳性，而是在二者之间架起中正平和之桥。
                 </p>
               </div>
@@ -310,9 +331,11 @@ export default function YinYangBalance() {
       id="yin-yang-quote-block"
     >
       <img
-        src={`${import.meta.env.BASE_URL}LandingPage Desktop Part5 Bg.png`}
+        src={`${import.meta.env.BASE_URL}LandingPage Desktop Part5 Bg.webp`}
         alt=""
         aria-hidden="true"
+        loading="lazy"
+        decoding="async"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none z-0"
         id="yin-yang-quote-bg-image"
       />

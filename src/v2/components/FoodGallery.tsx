@@ -3,16 +3,45 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { GALLERY_FOODS } from '../data';
 import { GalleryFoodItem } from '../types';
-import { Info, HelpCircle, Check, ArrowRight, Grid3X3, Flame, Snowflake, ShieldCheck } from 'lucide-react';
+import { Info, HelpCircle, Check, ArrowRight, Grid3X3, Flame, Snowflake, ShieldCheck, X } from 'lucide-react';
 
 export default function FoodGallery() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [selectedFood, setSelectedFood] = useState<GalleryFoodItem | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  // The card that opened the dialog, so closing it (Escape, backdrop click,
+  // either close button) can hand keyboard focus back to where it came from
+  // instead of dropping it to <body>.
+  const triggerRef = useRef<HTMLElement | null>(null);
+
+  const openFood = (item: GalleryFoodItem, e: React.MouseEvent | React.KeyboardEvent) => {
+    triggerRef.current = e.currentTarget as HTMLElement;
+    setSelectedFood(item);
+  };
+
+  const closeFood = () => {
+    setSelectedFood(null);
+    triggerRef.current?.focus();
+  };
+
+  // Dialog behavior a modal is expected to have: Escape closes it, and focus
+  // moves onto it on open so a screen reader announces the dialog instead of
+  // leaving focus sitting on a card that just disappeared behind the overlay.
+  useEffect(() => {
+    if (!selectedFood) return;
+    closeButtonRef.current?.focus();
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeFood();
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedFood]);
 
   // Filter categories
   const categories = [
@@ -55,7 +84,7 @@ export default function FoodGallery() {
           Anchored to the top at natural aspect; the section's cream bg color continues it below. */}
       {/* Desktop: single combined background — pink illustration strip fading into cream. */}
       <img
-        src={`${import.meta.env.BASE_URL}LandingPage Full Sec6-BG.jpg`}
+        src={`${import.meta.env.BASE_URL}LandingPage Full Sec6-BG.webp`}
         alt=""
         aria-hidden="true"
         loading="lazy"
@@ -65,7 +94,7 @@ export default function FoodGallery() {
       />
       {/* Mobile: cream watercolor base fills the whole section (paired with the pink band below). */}
       <img
-        src={`${import.meta.env.BASE_URL}LandingPage Full Sec6-BG below section.jpg`}
+        src={`${import.meta.env.BASE_URL}LandingPage Full Sec6-BG below section.webp`}
         alt=""
         aria-hidden="true"
         loading="lazy"
@@ -81,7 +110,7 @@ export default function FoodGallery() {
             screens (text overflowed onto the cream cards). Under sm we use the dedicated pink
             illustration, object-cover so it fills the band at whatever height the text needs. */}
         <img
-          src={`${import.meta.env.BASE_URL}LandingPage Full Sec6-BG above section.jpg`}
+          src={`${import.meta.env.BASE_URL}LandingPage Full Sec6-BG above section.webp`}
           alt=""
           aria-hidden="true"
           loading="lazy"
@@ -117,7 +146,9 @@ export default function FoodGallery() {
           {categories.map((cat) => (
             <button
               key={cat.id}
+              type="button"
               onClick={() => setActiveCategory(cat.id)}
+              aria-pressed={activeCategory === cat.id}
               className={`px-5 py-2.5 rounded-full text-xs font-noto-sans-sc font-medium transition-all duration-300 pointer-events-auto cursor-pointer ${activeCategory === cat.id
                 ? 'bg-[#EB288B] text-white shadow-md shadow-amber-900/10'
                 : 'bg-white text-gray-600 border border-transparent hover:border-gray-200 hover:bg-[#FCF7F1]'
@@ -143,8 +174,25 @@ export default function FoodGallery() {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4 }}
                   whileHover={{ y: -8 }}
-                  onClick={() => setSelectedFood(item)}
-                  className="bg-white rounded-3xl overflow-hidden border border-[#ECE7DE] shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full cursor-pointer group"
+                  onClick={(e) => openFood(item, e)}
+                  // This card is the only way to open the detail dialog, so it
+                  // needs to work as a button, not just a click target: a real
+                  // <button> can't easily host this much nested layout without
+                  // extra resets, so it takes the standard custom-button ARIA
+                  // pattern instead — role, tabIndex, and an Enter/Space
+                  // handler, since a plain onClick on a <div> is invisible to
+                  // keyboard users entirely.
+                  role="button"
+                  tabIndex={0}
+                  aria-haspopup="dialog"
+                  aria-label={`查看「${item.chineseTitle}」的能量详情`}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      openFood(item, e);
+                    }
+                  }}
+                  className="bg-white rounded-3xl overflow-hidden border border-[#ECE7DE] shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full cursor-pointer group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EB288B] focus-visible:ring-offset-2"
                   id={`gallery-item-${item.id}`}
                 >
                   {/* Image wrapper */}
@@ -174,13 +222,13 @@ export default function FoodGallery() {
                   {/* Body Content */}
                   <div className="p-6 flex flex-col justify-between flex-grow font-noto-sans-sc" id={`gallery-body-${item.id}`}>
                     <div>
-                      <span className="text-[10px] uppercase font-noto-sans-sc font-bold text-[#D89A63]" id={`gallery-cat-${item.id}`}>
+                      <span className="text-[10px] uppercase font-noto-sans-sc font-bold text-[#8F6641]" id={`gallery-cat-${item.id}`}>
                         {item.category}
                       </span>
                       <h3 className="text-xl font-noto-sans-sc font-bold text-gray-800 mt-1 mb-2 group-hover:text-[#EB288B] transition-colors" id={`gallery-name-${item.id}`}>
                         {item.chineseTitle}
                       </h3>
-                      <p className="text-xs uppercase font-noto-sans-sc tracking-wider text-gray-400 mb-4" id={`gallery-eng-${item.id}`}>
+                      <p className="text-xs uppercase font-noto-sans-sc tracking-wider text-gray-600 mb-4" id={`gallery-eng-${item.id}`}>
                         {item.title}
                       </p>
 
@@ -192,10 +240,10 @@ export default function FoodGallery() {
                     {/* Secondary button trigger */}
                     <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto" id={`gallery-footer-${item.id}`}>
                       <span className="text-[11px] font-noto-sans-sc font-medium text-[#EB288B] flex items-center gap-1">
-                        <Info className="w-3.5 h-3.5 text-[#D89A63]" />
+                        <Info className="w-3.5 h-3.5 text-[#8F6641]" />
                         点击了解能量特性
                       </span>
-                      <span className="w-8 h-8 rounded-full bg-[#FAF8F4] flex items-center justify-center text-gray-400 group-hover:bg-[#EB288B] group-hover:text-white transition-all duration-300" id={`arrow-trigger-${item.id}`}>
+                      <span className="w-8 h-8 rounded-full bg-[#FAF8F4] flex items-center justify-center text-gray-600 group-hover:bg-[#EB288B] group-hover:text-white transition-all duration-300" id={`arrow-trigger-${item.id}`}>
                         <ArrowRight className="w-4 h-4" />
                       </span>
                     </div>
@@ -212,7 +260,15 @@ export default function FoodGallery() {
         {createPortal(
           <AnimatePresence>
           {selectedFood && (
-            <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999] flex items-center justify-center p-4" id="gallery-lightbox-modal">
+            // Clicking the backdrop closes the dialog, same as Escape — a
+            // standard modal affordance this one didn't have. The content
+            // box below stops the click from reaching here so clicking
+            // inside the card doesn't also close it.
+            <div
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999] flex items-center justify-center p-4"
+              id="gallery-lightbox-modal"
+              onClick={closeFood}
+            >
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -220,14 +276,25 @@ export default function FoodGallery() {
                 transition={{ type: 'spring', duration: 0.4 }}
                 className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl"
                 id="lightbox-content-box"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="lightbox-chinese-title"
+                onClick={(e) => e.stopPropagation()}
               >
                 {/* Close Button styling */}
                 <button
-                  onClick={() => setSelectedFood(null)}
-                  className="absolute top-4 right-4 z-55 w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center text-[#2F2F2F] shadow-sm select-auto cursor-pointer focus:ring-0 font-bold text-lg"
+                  ref={closeButtonRef}
+                  type="button"
+                  onClick={closeFood}
+                  aria-label="关闭 Close"
+                  // `focus:ring-0` had deleted the focus indicator with
+                  // nothing standing in for it; this is the first element
+                  // focus lands on when the dialog opens, so it especially
+                  // needs to show that it's focused.
+                  className="absolute top-4 right-4 z-55 w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center text-[#2F2F2F] shadow-sm select-auto cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EB288B] focus-visible:ring-offset-2 font-bold text-lg"
                   id="close-lightbox-btn"
                 >
-                  ✕
+                  <X className="w-4 h-4" aria-hidden="true" />
                 </button>
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-8 p-0" id="lightbox-layout">
@@ -248,14 +315,14 @@ export default function FoodGallery() {
                   {/* Right Side: Content and Benefits list */}
                   <div className="md:col-span-7 p-6 md:p-10 flex flex-col justify-between" id="lightbox-info-side">
                     <div>
-                      <span className="text-xs uppercase bg-[#FAF8F4] text-[#D89A63] border border-gray-100 px-3 py-1 rounded-full font-noto-sans-sc font-bold tracking-wide" id="lightbox-cat-badge">
+                      <span className="text-xs uppercase bg-[#FAF8F4] text-[#8F6641] border border-gray-100 px-3 py-1 rounded-full font-noto-sans-sc font-bold tracking-wide" id="lightbox-cat-badge">
                         {selectedFood.category}
                       </span>
 
                       <h3 className="text-2xl font-noto-sans-sc font-black text-gray-800 mt-4" id="lightbox-chinese-title">
                         {selectedFood.chineseTitle}
                       </h3>
-                      <p className="text-sm font-noto-sans-sc text-gray-400 tracking-wide mb-6 uppercase">
+                      <p className="text-sm font-noto-sans-sc text-gray-600 tracking-wide mb-6 uppercase">
                         {selectedFood.title}
                       </p>
 
@@ -285,7 +352,7 @@ export default function FoodGallery() {
                               className="text-xs md:text-sm text-gray-600 flex items-start gap-2.5"
                               id={`benefit-li-${benefitIdx}`}
                             >
-                              <span className="w-5 h-5 rounded-full bg-[#9BA88B]/10 flex items-center justify-center shrink-0 mt-0.5 text-[#9BA88B]" id={`benefit-check-${benefitIdx}`}>
+                              <span className="w-5 h-5 rounded-full bg-[#9BA88B]/10 flex items-center justify-center shrink-0 mt-0.5 text-[#69725F]" id={`benefit-check-${benefitIdx}`}>
                                 <Check className="w-3.5 h-3.5" />
                               </span>
                               <span className="font-light">{benefit}</span>
@@ -296,10 +363,11 @@ export default function FoodGallery() {
                     </div>
 
                     <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between" id="lightbox-footer-action">
-                      <span className="text-[11px] text-gray-400 font-noto-sans-sc">HULU HULU WORLD CATALOGUE</span>
+                      <span className="text-[11px] text-gray-600 font-noto-sans-sc">HULU HULU WORLD CATALOGUE</span>
                       <button
-                        onClick={() => setSelectedFood(null)}
-                        className="px-5 py-2 rounded-xl bg-[#EB288B] hover:bg-[#D1167B] text-white text-xs font-semibold cursor-pointer select-auto"
+                        type="button"
+                        onClick={closeFood}
+                        className="px-5 py-2 rounded-xl bg-[#EB288B] hover:bg-[#D1167B] text-white text-xs font-semibold cursor-pointer select-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EB288B] focus-visible:ring-offset-2"
                         id="lightbox-close-confirm-btn"
                       >
                         返回世界页 Back

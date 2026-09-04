@@ -10,19 +10,19 @@ import { ElementType, FiveElementData } from '../types';
 import { Heart, ShieldCheck, Soup, Star } from 'lucide-react';
 
 const ELEMENT_NODE_IMAGES: Record<ElementType, string> = {
-  metal: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 IC1-Mental.png`,
-  wood: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 IC2-Wood.png`,
-  water: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 IC3-water.png`,
-  fire: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 IC4-fire.png`,
-  earth: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 IC5-earth.png`
+  metal: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 IC1-Mental.webp`,
+  wood: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 IC2-Wood.webp`,
+  water: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 IC3-water.webp`,
+  fire: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 IC4-fire.webp`,
+  earth: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 IC5-earth.webp`
 };
 
 const ELEMENT_PANEL_IMAGES: Record<ElementType, string> = {
-  metal: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 MSC1-Metal.png`,
-  wood: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 MSC2-WOOD.png`,
-  water: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 MSC3-Water.png`,
-  fire: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 MSC4-Fire.png`,
-  earth: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 MSC5-earth.png`
+  metal: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 MSC1-Metal.webp`,
+  wood: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 MSC2-WOOD.webp`,
+  water: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 MSC3-Water.webp`,
+  fire: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 MSC4-Fire.webp`,
+  earth: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 MSC5-earth.webp`
 };
 
 export default function FiveElementsWheel() {
@@ -32,8 +32,9 @@ export default function FiveElementsWheel() {
     <section className="relative w-full bg-[#F7F3EC] overflow-hidden" id="section-5">
       {/* Section 5 full-page background image slot */}
       <img
-        src={`${import.meta.env.BASE_URL}LandingPage Desktop Part3 BG.png`}
-        alt="LandingPage Desktop Part3 BG.png"
+        src={`${import.meta.env.BASE_URL}LandingPage Desktop Part3 BG.webp`}
+        alt=""
+        aria-hidden="true"
         loading="lazy"
         decoding="async"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none z-0"
@@ -41,7 +42,7 @@ export default function FiveElementsWheel() {
       />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24">
         <div className="text-center max-w-3xl mx-auto mb-16" id="five-elements-header">
-          <span className="text-xs uppercase tracking-widest font-noto-sans-sc font-bold text-[#9BA88B]" id="section-3-label">
+          <span className="text-xs uppercase tracking-widest font-noto-sans-sc font-bold text-[#69725F]" id="section-3-label">
             FOOD IS ENERGY & VITALITY
           </span>
           <h2 className="text-3xl md:text-5xl font-noto-sans-sc font-bold text-[#EB288B] tracking-tight leading-tight mt-3 mb-6" id="section-3-title">
@@ -220,7 +221,7 @@ export default function FiveElementsWheel() {
                 {/* Recommended foods list */}
                 <div className="border-t border-gray-100 pt-6" id="foods-recommendation-zone">
                   <h4 className="text-xs uppercase tracking-widest font-noto-sans-sc font-semibold text-[#EB288B] mb-4 flex items-center gap-2">
-                    <Soup className="w-4 h-4 text-[#D89A63]" />
+                    <Soup className="w-4 h-4 text-[#8F6641]" />
                     代表性能量食物 (Representative Foods)
                   </h4>
                   <div className="flex flex-wrap gap-2.5" id="representative-foods-list">

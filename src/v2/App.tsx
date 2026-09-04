@@ -8,19 +8,28 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowUp, ShieldAlert, Sparkles, Sprout } from 'lucide-react';
 
 import HeroSection from './components/HeroSection';
-import PainPoints from './components/PainPoints';
+import { useAfterLoad } from './useAfterLoad';
+
+// Only the hero is above the fold, so it is the only section in the entry
+// chunk. The rest are split out and mounted once the page is idle: the first
+// paint then only has to render the hero instead of the whole document, and
+// their JavaScript is fetched in parallel rather than parsed before anything
+// is on screen. They still mount within a moment of load, well before a
+// visitor can scroll to them or use the nav anchors that point into them.
 // import BrandPositioning from './components/BrandPositioning';
-import FiveElementsWheel from './components/FiveElementsWheel';
-import YinYangBalance from './components/YinYangBalance';
+const PainPoints = React.lazy(() => import('./components/PainPoints'));
+const FiveElementsWheel = React.lazy(() => import('./components/FiveElementsWheel'));
+const YinYangBalance = React.lazy(() => import('./components/YinYangBalance'));
 // import MacrobioticWisdom from './components/MacrobioticWisdom';
-import CompareSection from './components/CompareSection';
-import FoodGallery from './components/FoodGallery';
-import FooterAndCTA from './components/FooterAndCTA';
+const CompareSection = React.lazy(() => import('./components/CompareSection'));
+const FoodGallery = React.lazy(() => import('./components/FoodGallery'));
+const FooterAndCTA = React.lazy(() => import('./components/FooterAndCTA'));
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const belowFoldReady = useAfterLoad();
 
   // Monitor scroll height
   useEffect(() => {
@@ -80,10 +89,17 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#F7F3EC] text-[#2F2F2F] antialiased relative overflow-hidden" id="hulu-world-app">
-      {/* Natural Tones Theme Background Watercolor Blobs */}
-      <div className="watercolor-blob blob-1"></div>
-      <div className="watercolor-blob blob-2"></div>
-      <div className="watercolor-blob blob-3"></div>
+      {/* Skip link — invisible until focused, so a keyboard user tabbing in
+          from the address bar can jump straight past the header nav instead
+          of tabbing through every link in it first. Uses the same brand
+          magenta already used for other filled buttons, not a new color. */}
+      <a
+        href="#main-content"
+        className="fixed top-2 left-2 z-[9999] -translate-y-24 focus:translate-y-0 transition-transform duration-200 px-4 py-2 rounded-full bg-[#EB288B] text-white text-sm font-semibold shadow-lg"
+        id="skip-to-content-link"
+      >
+        跳至主要内容 Skip to content
+      </a>
 
       {/* Sticky Header Nav */}
       <header
@@ -107,7 +123,9 @@ export default function App() {
           >
             <img
               src={`${import.meta.env.BASE_URL}HuluHulu Logo FA-02.png`}
-              alt="Hulu Hulu"
+              alt="Hulu Hulu Wellness — 食物即能量"
+              width={400}
+              height={225}
               className="h-20 md:h-20  w-auto object-contain group-hover:scale-105 transition-all duration-300"
               id="header-logo-image"
             />
@@ -147,13 +165,19 @@ export default function App() {
             </a>
           </div>
 
-          {/* Mobile hamburger menu trigger */}
+          {/* Mobile hamburger menu trigger — icon-only, so it needs its own
+              accessible name plus the expanded/controls pair a screen reader
+              uses to announce what the button does and what it opens. */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 text-gray-600 hover:text-gray-900 pointer-events-auto cursor-pointer"
             id="mobile-menu-trigger"
+            type="button"
+            aria-label={mobileMenuOpen ? '关闭菜单 Close menu' : '打开菜单 Open menu'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu-overlay"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
           </button>
 
         </div>
@@ -208,29 +232,46 @@ export default function App() {
         {/* Section 1: Hero Banner */}
         <HeroSection />
 
-        {/* Section 2: User Pain grid */}
-        <PainPoints />
+        {belowFoldReady && (
+          <React.Suspense fallback={null}>
+            {/* Section 2: User Pain grid */}
+            <PainPoints />
 
-        {/* Section 2.5: Brand Positioning with Pink Watercolor Circles */}
-        {/* <BrandPositioning /> */}
+            {/* Section 2.5: Brand Positioning with Pink Watercolor Circles */}
+            {/* <BrandPositioning /> */}
 
-        {/* Section 3: Central Five Elements Interactive Wheel */}
-        <FiveElementsWheel />
+            {/* Section 3: Central Five Elements Interactive Wheel */}
+            <FiveElementsWheel />
 
-        {/* Section 4: Split screen Yin / Yang balance dashboard */}
-        <YinYangBalance />
+            {/* Section 4: Split screen Yin / Yang balance dashboard */}
+            <YinYangBalance />
 
-        {/* Section 5: Macrobiotic Eco checklist and mockups */}
-        {/* <MacrobioticWisdom /> */}
+            {/* Section 5: Macrobiotic Eco checklist and mockups */}
+            {/* <MacrobioticWisdom /> */}
 
-        {/* Section 6: Supplements compared with Whole foods */}
-        <CompareSection />
+            {/* Section 6: Supplements compared with Whole foods */}
+            <CompareSection />
 
-        {/* Section 7: Photo Gallery catalog explorer */}
-        <FoodGallery />
+            {/* Section 7: Photo Gallery catalog explorer */}
+            <FoodGallery />
 
-        {/* Section 8 & Footer: Final Join CTA and copyright footer block */}
-        <FooterAndCTA />
+            {/* Section 8 & Footer: Final Join CTA and copyright footer block */}
+            <FooterAndCTA />
+
+            {/* Natural Tones Theme Background Watercolor Blobs.
+                These are offset against the full page box (blob-3 sits at
+                `top: 40%`, blob-2 hangs off the bottom), so they have to be
+                committed in the same paint as the sections that give the
+                document its final height — mounted any earlier they resolve
+                against the hero-only page and then jump several thousand
+                pixels, which was the entire CLS score. `<main>` is not
+                positioned, so they still lay out against #hulu-world-app
+                exactly as they did before. */}
+            <div className="watercolor-blob blob-1"></div>
+            <div className="watercolor-blob blob-2"></div>
+            <div className="watercolor-blob blob-3"></div>
+          </React.Suspense>
+        )}
 
       </main>
 
@@ -243,10 +284,12 @@ export default function App() {
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={scrollToTop}
             title="回到顶部"
+            aria-label="回到顶部 Back to top"
+            type="button"
             className="fixed bottom-8 right-8 z-[4000] w-12 h-12 rounded-full bg-[#EB288B] text-[#FAF8F4] hover:bg-[#D1167B] flex items-center justify-center shadow-lg cursor-pointer transform hover:translate-y-[-4px] transition-all duration-300 pointer-events-auto"
             id="scroll-to-top-fab"
           >
-            <ArrowUp className="w-5 h-5" />
+            <ArrowUp className="w-5 h-5" aria-hidden="true" />
           </motion.button>
         )}
       </AnimatePresence>
