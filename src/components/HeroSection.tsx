@@ -54,10 +54,10 @@ export default function HeroSection() {
           <circle cx="150" cy="180" r="180" fill="#9BA88B" filter="url(#watercolor-bleeding)" opacity="0.35" />
           <circle cx="1200" cy="200" r="220" fill="#E3DAC9" filter="url(#watercolor-bleeding)" opacity="0.5" />
           <circle cx="800" cy="750" r="190" fill="#D89A63" filter="url(#watercolor-bleeding)" opacity="0.25" />
-          <circle cx="200" cy="800" r="150" fill="#EB288B" filter="url(#watercolor-bleeding)" opacity="0.15" />
+          <circle cx="200" cy="800" r="150" fill="#91A179" filter="url(#watercolor-bleeding)" opacity="0.15" />
 
           {/* Dynamic Floating Grains / Grains of Rice background */}
-          <g fill="#EB288B" opacity="0.1" transform="translate(100, 200)">
+          <g fill="#91A179" opacity="0.1" transform="translate(100, 200)">
             <ellipse cx="10" cy="20" rx="3" ry="7" transform="rotate(25)" />
             <ellipse cx="60" cy="40" rx="3" ry="7" transform="rotate(-15)" />
             <ellipse cx="30" cy="90" rx="4" ry="9" transform="rotate(45)" />
@@ -84,7 +84,7 @@ export default function HeroSection() {
             <div className="w-8 h-8 rounded-full bg-[#9BA88B]/20 flex items-center justify-center text-[#9BA88B]" id="brand-sprout">
               <Sprout className="w-4 h-4" />
             </div>
-            <span className="text-xs uppercase tracking-widest font-noto-sans-sc font-black text-[#EB288B]" id="hero-small-title">
+            <span className="text-xs uppercase tracking-widest font-noto-sans-sc font-black text-[#91A179]" id="hero-small-title">
               FOOD IS ENERGY · 食物即能量
             </span>
           </motion.div>
@@ -106,7 +106,7 @@ export default function HeroSection() {
             className="border-l-2 border-[#D89A63] pl-6 mb-12 space-y-2"
             id="hero-subheadline-wrapper"
           >
-            <p className="text-2xl font-noto-sans-sc text-[#EB288B] font-medium leading-relaxed">
+            <p className="text-2xl font-noto-sans-sc text-[#91A179] font-medium leading-relaxed">
               食物不只是卡路里
             </p>
             <p className="text-sm sm:text-base font-noto-sans-sc text-gray-600 font-light leading-relaxed">
@@ -125,7 +125,7 @@ export default function HeroSection() {
             <a
               href="#section-5"
               onClick={scrollToConcern}
-              className="px-8 py-4 rounded-full bg-[#EB288B] hover:bg-[#D1167B] text-[#F7F3EC] text-sm font-noto-sans-sc font-semibold tracking-wider transition-all duration-300 shadow-lg shadow-amber-950/10 cursor-pointer pointer-events-auto inline-flex items-center gap-2 group"
+              className="px-8 py-4 rounded-full bg-[#91A179] hover:bg-[#D1167B] text-[#F7F3EC] text-sm font-noto-sans-sc font-semibold tracking-wider transition-all duration-300 shadow-lg shadow-amber-950/10 cursor-pointer pointer-events-auto inline-flex items-center gap-2 group"
               id="hero-primary-cta"
             >
               【了解食物能量】
@@ -178,9 +178,9 @@ export default function HeroSection() {
                 <ellipse cx="200" cy="250" rx="140" ry="25" fill="#241B12" opacity="0.08" />
 
                 {/* Outer Bowl Base */}
-                <path d="M 60,180 C 60,280 140,320 200,320 C 260,320 340,280 340,180" fill="#FAF6F0" stroke="#EB288B" strokeWidth="4.5" strokeLinecap="round" />
+                <path d="M 60,180 C 60,280 140,320 200,320 C 260,320 340,280 340,180" fill="#FAF6F0" stroke="#91A179" strokeWidth="4.5" strokeLinecap="round" />
                 {/* Bowl Inner lip shadow */}
-                <ellipse cx="200" cy="180" rx="140" ry="25" fill="#ECE7DE" stroke="#EB288B" strokeWidth="3" />
+                <ellipse cx="200" cy="180" rx="140" ry="25" fill="#ECE7DE" stroke="#91A179" strokeWidth="3" />
 
                 {/* Ingredients Layer 1 (Miso soup / base) */}
                 <ellipse cx="200" cy="182" rx="130" ry="20" fill="#EADCC7" />
@@ -206,11 +206,11 @@ export default function HeroSection() {
                 <circle cx="210" cy="182" r="2" fill="#2F2F2F" />
 
                 {/* Mushroom/Sprout rising out of the bowl */}
-                <path d="M 160,170 Q 155,130 145,110" stroke="#EB288B" strokeWidth="4.5" strokeLinecap="round" fill="none" />
+                <path d="M 160,170 Q 155,130 145,110" stroke="#91A179" strokeWidth="4.5" strokeLinecap="round" fill="none" />
                 <path d="M 145,110 C 135,110 135,122 145,122 C 155,122 155,110 145,110 Z" fill="#9BA88B" />
 
                 {/* Second green leaf detail */}
-                <path d="M 220,170 Q 240,140 265,145" stroke="#EB288B" strokeWidth="3" fill="none" />
+                <path d="M 220,170 Q 240,140 265,145" stroke="#91A179" strokeWidth="3" fill="none" />
                 <path d="M 235,150 Q 255,130 260,145 Z" fill="#9BA88B" />
 
                 {/* Bowl artistic ring patterns */}
@@ -235,16 +235,16 @@ export default function HeroSection() {
               className="absolute top-24 -right-10 text-[#D89A63]"
               id="float-element-2"
             >
-              <div className="w-4 h-6 rounded-full bg-[#D89A63]/60 rotate-45 border border-dashed border-[#EB288B]/25" id="mini-grain-1"></div>
+              <div className="w-4 h-6 rounded-full bg-[#D89A63]/60 rotate-45 border border-dashed border-[#91A179]/25" id="mini-grain-1"></div>
             </motion.div>
 
             <motion.div
               variants={particleVariants}
               animate="animate3"
-              className="absolute bottom-12 -left-6 text-[#EB288B]"
+              className="absolute bottom-12 -left-6 text-[#91A179]"
               id="float-element-3"
             >
-              <div className="w-5 h-7 rounded-sm border-2 border-[#EB288B]/30 transform rotate-12" id="mini-grain-2"></div>
+              <div className="w-5 h-7 rounded-sm border-2 border-[#91A179]/30 transform rotate-12" id="mini-grain-2"></div>
             </motion.div>
 
             {/* Glowing backdrop circular aura representing clean whole-body energy */}

@@ -51,7 +51,7 @@ export default function BrandPositioning() {
     >
       {/* Soft Watercolor Backdrop Blobs in the corner */}
       <div className="absolute top-[-50px] right-[-50px] w-80 h-80 rounded-full bg-[#9BA88B]/12 filter blur-3xl pointer-events-none" id="blob-decor-pink"></div>
-      <div className="absolute bottom-[-50px] left-[-30px] w-96 h-96 rounded-full bg-[#EB288B]/8 filter blur-3xl pointer-events-none" id="blob-decor-sage"></div>
+      <div className="absolute bottom-[-50px] left-[-30px] w-96 h-96 rounded-full bg-[#91A179]/8 filter blur-3xl pointer-events-none" id="blob-decor-sage"></div>
 
       {/* Elegant Ginkgo Leaf Sketches in Background Corners */}
       <GinkgoLeafDecoration className="absolute -top-6 -right-6 w-36 h-36 transform rotate-[-15deg] pointer-events-none" />
@@ -60,10 +60,10 @@ export default function BrandPositioning() {
 
       {/* Header Container exactly mimicking Hulu Hulu brand style guide */}
       <div className="flex flex-col md:flex-row items-center md:items-baseline gap-4 mb-20 relative z-10" id="positioning-header">
-        <h2 className="text-3xl md:text-4xl font-noto-sans-sc font-black text-[#EB288B] tracking-tight shrink-0 whitespace-nowrap" id="brand-guide-title">
+        <h2 className="text-3xl md:text-4xl font-noto-sans-sc font-black text-[#91A179] tracking-tight shrink-0 whitespace-nowrap" id="brand-guide-title">
           HULU HULU 的品牌定位
         </h2>
-        <div className="h-0.5 w-full bg-[#EB288B]/40" id="brand-guide-rule"></div>
+        <div className="h-0.5 w-full bg-[#91A179]/40" id="brand-guide-rule"></div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10" id="brand-positioning-grid">
@@ -91,21 +91,21 @@ export default function BrandPositioning() {
               />
             </div>
             <div className="space-y-3" id="guide-desc-core">
-              <h3 className="text-xl md:text-2xl font-noto-sans-sc font-black text-[#EB288B]" id="core-title">
+              <h3 className="text-xl md:text-2xl font-noto-sans-sc font-black text-[#91A179]" id="core-title">
                 我们的核心
               </h3>
               <ul className="space-y-1.5 text-gray-700 font-noto-sans-sc text-[15px] sm:text-base leading-relaxed" id="core-bullets">
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#EB288B]/70" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#91A179]/70" />
                   <span>吃饱，只是行为</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#EB288B]/70" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#91A179]/70" />
                   <span className="font-semibold text-gray-900">吃对，才是系统</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#EB288B]/70" />
-                  <span className="text-[#EB288B] font-bold">稳定，才是结果</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#91A179]/70" />
+                  <span className="text-[#91A179] font-bold">稳定，才是结果</span>
                 </li>
               </ul>
             </div>
@@ -131,7 +131,7 @@ export default function BrandPositioning() {
               />
             </div>
             <div className="space-y-3" id="guide-desc-diff">
-              <h3 className="text-xl md:text-2xl font-noto-sans-sc font-black text-[#EB288B]" id="diff-title">
+              <h3 className="text-xl md:text-2xl font-noto-sans-sc font-black text-[#91A179]" id="diff-title">
                 我们的差别
               </h3>
               <ul className="space-y-1.5 text-gray-700 font-noto-sans-sc text-[15px] sm:text-base leading-relaxed" id="diff-bullets">
@@ -171,7 +171,7 @@ export default function BrandPositioning() {
               />
             </div>
             <div className="space-y-3" id="guide-desc-val">
-              <h3 className="text-xl md:text-2xl font-noto-sans-sc font-black text-[#EB288B]" id="val-title">
+              <h3 className="text-xl md:text-2xl font-noto-sans-sc font-black text-[#91A179]" id="val-title">
                 我们的价值
               </h3>
               <ul className="space-y-1.5 text-gray-700 font-noto-sans-sc text-[15px] sm:text-base leading-relaxed" id="val-bullets">
@@ -268,18 +268,18 @@ export default function BrandPositioning() {
               {/* Radish thin rounds (Pink boundary with white inner, resembling standard Japanese radish slice) */}
               <g id="radish-rounds">
                 {/* Radish 1 */}
-                <circle cx="270" cy="230" r="28" fill="#FFF" stroke="#EB288B" strokeWidth="4" />
-                <circle cx="270" cy="230" r="21" fill="none" stroke="#EB288B" strokeWidth="0.8" strokeDasharray="2 4" opacity="0.5" />
+                <circle cx="270" cy="230" r="28" fill="#FFF" stroke="#91A179" strokeWidth="4" />
+                <circle cx="270" cy="230" r="21" fill="none" stroke="#91A179" strokeWidth="0.8" strokeDasharray="2 4" opacity="0.5" />
                 <circle cx="270" cy="230" r="3" fill="#2F2F2F" opacity="0.6" /> {/* Sesame seed */}
                 
                 {/* Radish 2 */}
-                <circle cx="310" cy="180" r="22" fill="#FFF" stroke="#EB288B" strokeWidth="3.5" />
-                <circle cx="310" cy="180" r="16" fill="none" stroke="#EB288B" strokeWidth="0.8" strokeDasharray="2 3" opacity="0.5" />
+                <circle cx="310" cy="180" r="22" fill="#FFF" stroke="#91A179" strokeWidth="3.5" />
+                <circle cx="310" cy="180" r="16" fill="none" stroke="#91A179" strokeWidth="0.8" strokeDasharray="2 3" opacity="0.5" />
                 <circle cx="308" cy="176" r="2" fill="#2F2F2F" opacity="0.6" />
                 <circle cx="314" cy="184" r="1.5" fill="#2F2F2F" opacity="0.6" />
 
                 {/* Radish 3 (Stacked beneath) */}
-                <circle cx="285" cy="160" r="25" fill="#FFF" stroke="#EB288B" strokeWidth="4" />
+                <circle cx="285" cy="160" r="25" fill="#FFF" stroke="#91A179" strokeWidth="4" />
                 <circle cx="282" cy="158" r="2" fill="#2F2F2F" opacity="0.6" />
               </g>
 

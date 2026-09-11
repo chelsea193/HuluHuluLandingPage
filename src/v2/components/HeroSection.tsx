@@ -7,6 +7,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowDown, Sprout } from 'lucide-react';
 import { useAfterLoad } from '../useAfterLoad';
+import { useLanguage } from '../context/LanguageContext';
+import { TRANSLATIONS } from '../data/translations';
 
 type Breakpoint = 'mobile' | 'tablet' | 'desktop';
 
@@ -127,6 +129,8 @@ function HeroClip({
 export default function HeroSection() {
   const breakpoint = useBreakpoint();
   const reducedMotion = usePrefersReducedMotion();
+  const { isZh } = useLanguage();
+  const t = TRANSLATIONS[isZh ? 'zh' : 'en'].hero;
 
   // The tablet layout shows the same clip twice (top crop / bottom crop) as one
   // continuous image, so the second element is nudged back into step whenever
@@ -150,8 +154,11 @@ export default function HeroSection() {
 
   const scrollToConcern = (e: React.MouseEvent) => {
     e.preventDefault();
-    // Anchor-scroll to Section 5 (Food Is Energy & Vitality)
-    const target = document.getElementById('section-5');
+    // Anchor-scroll to the next homepage section (Pain Points). This used to
+    // target FiveElementsWheel's "section-5", but that section moved to its
+    // own page (/wellness-lifestyle/ — see WellnessLifestylePage.tsx) and no
+    // longer exists on the homepage.
+    const target = document.getElementById('pain-points-section');
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
     }
@@ -176,7 +183,7 @@ export default function HeroSection() {
           <Sprout className="w-4 h-4" />
         </div> */}
         <span className="text-sm uppercase tracking-widest font-noto-sans-sc font-black text-gray-500" id={uid('hero-small-title')}>
-          FOOD IS ENERGY · 食物即能量
+          {t.smallTitle}
         </span>
       </motion.div>
 
@@ -184,10 +191,10 @@ export default function HeroSection() {
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.1 }}
-        className="text-3xl sm:text-4xl md:text-5xl font-noto-sans-sc font-black text-[#EB288B] tracking-tight leading-tight mb-4"
+        className="text-3xl sm:text-4xl md:text-5xl font-noto-sans-sc font-black text-[#A4B799] tracking-tight leading-tight mb-4"
         id={uid('hero-main-headline')}
       >
-        你多久没有好好吃饭了？
+        {t.mainHeadline}
       </Headline>
 
       <motion.p
@@ -197,7 +204,7 @@ export default function HeroSection() {
         className="text-sm sm:text-base font-noto-sans-sc text-[#2F2F2F] font-light leading-relaxed mb-6 max-w-xl"
         id={uid('hero-subheadline')}
       >
-        食物不只是卡路里 它会影响你的身体能量、情绪状态与生活品质。
+        {t.subheadline}
       </motion.p>
 
       {/* Action CTA Button */}
@@ -209,17 +216,17 @@ export default function HeroSection() {
         id={uid('hero-button-box')}
       >
         <a
-          href="#section-5"
+          href="#pain-points-section"
           onClick={scrollToConcern}
-          className="px-8 py-4 rounded-full bg-[#EB288B] hover:bg-[#D1167B] text-[#F7F3EC] text-sm font-noto-sans-sc font-semibold tracking-wider transition-all duration-300 shadow-lg shadow-amber-950/10 cursor-pointer pointer-events-auto inline-flex items-center gap-2 group"
+          className="px-8 py-4 rounded-full bg-[#A4B799] hover:bg-[#8E9F84] text-[#FFFAE8] text-sm font-noto-sans-sc font-semibold tracking-wider transition-all duration-300 shadow-lg shadow-amber-950/10 cursor-pointer pointer-events-auto inline-flex items-center gap-2 group"
           id={uid('hero-primary-cta')}
         >
-          【了解食物能量】
+          {t.ctaBtn}
           <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
         </a>
 
         <span className="text-xs text-gray-600 font-noto-sans-sc tracking-widest" id={uid('hero-curation-credit')}>
-          — BY HULU HULU WELLNESS
+          {t.curationCredit}
         </span>
       </motion.div>
     </>

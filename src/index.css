@@ -24,7 +24,7 @@
 }
 
 body {
-  background-color: #F7F3EC;
+  background-color: #FFFAE8;
   color: #2F2F2F;
   font-family: var(--font-sans);
   scroll-behavior: smooth;
@@ -73,7 +73,7 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F7F3EC;
+  background: #FFFAE8;
 }
 ::-webkit-scrollbar-thumb {
   background: #ECE7DE;

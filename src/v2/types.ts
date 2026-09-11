@@ -8,6 +8,8 @@ export interface PainPoint {
   iconId: number;
   title: string;
   description: string;
+  titleEn: string;
+  descriptionEn: string;
 }
 
 export type ElementType = 'wood' | 'fire' | 'earth' | 'metal' | 'water';
@@ -23,6 +25,8 @@ export interface FiveElementData {
   energyType: string;
   description: string;
   foods: string[];
+  descriptionEn: string;
+  foodsEn: string[];
 }
 
 export interface YinYangFood {
@@ -31,6 +35,9 @@ export interface YinYangFood {
   description: string;
   detail: string;
   level: number; // 1 to 3
+  nameEn: string;
+  descriptionEn: string;
+  detailEn: string;
 }
 
 export interface GalleryFoodItem {
@@ -44,4 +51,8 @@ export interface GalleryFoodItem {
   description: string;
   imageUrl: string;
   benefits: string[];
+  categoryEn: string;
+  descriptionEn: string;
+  benefitsEn: string[];
+  energyLabelEn?: string;
 }

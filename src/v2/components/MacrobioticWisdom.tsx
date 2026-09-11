@@ -5,26 +5,13 @@
 
 import { motion } from 'motion/react';
 import { CheckCircle2, Flame, Sparkles, Sprout } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { TRANSLATIONS } from '../data/translations';
 
 export default function MacrobioticWisdom() {
-  const features = [
-    {
-      title: '食物阴阳平衡搭配',
-      description: '理解大自然界不同冷热特性的食材，通过科学合理的搭配，抵消人体多余极性负荷。'
-    },
-    {
-      title: '吃当季食物',
-      description: '春食花叶、夏食嫩瓜、秋收根果、冬藏深茎，使人体内环境谐振于天地四时的变换。'
-    },
-    {
-      title: '天然少加工食物',
-      description: '尊崇“身土不二”与“独一完整”法则，多吃糙米、粗粝五谷及原型菜根，吸取食物最本真的全貌力量。'
-    },
-    {
-      title: '把身体变得更有智慧',
-      description: '好好吃饭并不限于充饥，它更是在修补我们的生物电平衡与情绪频率，调理身心一体之元气。'
-    }
-  ];
+  const { isZh } = useLanguage();
+  const t = TRANSLATIONS[isZh ? 'zh' : 'en'].macrobiotic;
+  const features = t.features;
 
   return (
     <section className="py-24 bg-[#E3DAC9]/40 border-y border-[#DCD5C9]/60" id="macrobiotic-section">
@@ -34,16 +21,15 @@ export default function MacrobioticWisdom() {
           
           {/* Left Panel: Narrative, checklist, features */}
           <div className="lg:col-span-7 flex flex-col justify-center" id="macrobiotic-narrative">
-            <span className="text-xs uppercase tracking-widest font-extrabold text-[#EB288B] mb-2 flex items-center gap-1">
-              <Sprout className="w-4 h-4 text-[#69725F]" /> MACROBIOTIC ECO-PHILOSOPHY
+            <span className="text-xs uppercase tracking-widest font-extrabold text-[#A4B799] mb-2 flex items-center gap-1">
+              <Sprout className="w-4 h-4 text-[#69725F]" /> {t.badge}
             </span>
             <h2 className="text-3xl md:text-4xl font-noto-sans-sc text-[#2F2F2F] font-bold tracking-tight mb-6" id="macrobiotic-title">
-              Macrobiotic 饮食智慧
+              {t.title}
             </h2>
             <div className="w-12 h-1 bg-[#9BA88B] mb-6" id="macro-divider"></div>
             <p className="text-lg text-gray-600 font-light mb-8 leading-relaxed" id="macro-intro">
-              Macrobiotic（长寿大解脱饮食法）是一种强调平衡与自然的饮食生活方式。
-              它关注的不是冰冷的统计和卡路里计算，开发的是一套能够让我们与外界环境、自然节律及生命本体对话的能量餐盘哲学。它关注：
+              {t.intro}
             </p>
 
             {/* Checklist */}
@@ -79,12 +65,12 @@ export default function MacrobioticWisdom() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="p-5 rounded-2xl bg-[#F7F3EC] border border-[#ECE7DE] max-w-xl"
+              className="p-5 rounded-2xl bg-[#FFFAE8] border border-[#ECE7DE] max-w-xl"
               id="macro-statement-box"
             >
-              <p className="text-sm text-[#EB288B] font-noto-sans-sc leading-loose font-medium flex items-center gap-2" id="macro-statement">
+              <p className="text-sm text-[#A4B799] font-noto-sans-sc leading-loose font-medium flex items-center gap-2" id="macro-statement">
                 <Flame className="w-4 h-4 text-[#8F6641]" />
-                不是节食，不是限制，而是一种帮助身体回归平衡的生活方式。
+                {t.statement}
               </p>
             </motion.div>
           </div>
@@ -101,7 +87,7 @@ export default function MacrobioticWisdom() {
             >
               <img
                 src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&q=80&w=800"
-                alt="Natural macrobiotic food preparation on warm wooden table"
+                alt={isZh ? '木质餐桌上摆放的天然大地餐饮食材' : 'Natural macrobiotic food preparation on warm wooden table'}
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover select-none"
@@ -115,13 +101,13 @@ export default function MacrobioticWisdom() {
               {/* Overlay Content tag */}
               <div className="absolute bottom-6 left-6 right-6 text-white" id="image-overlay-content">
                 <span className="text-[10px] uppercase tracking-widest bg-[#9BA88B] text-white px-3 py-1 rounded-full font-noto-sans-sc font-bold mb-3 inline-block" id="overlay-tag">
-                  Macro Bowl Table Prep
+                  {t.overlayTag}
                 </span>
                 <p className="text-base sm:text-lg font-noto-sans-sc tracking-wide leading-relaxed font-semibold italic" id="overlay-headline">
-                  “ 食物在火候、岩盐与大地上酝酿的生命之息。 ”
+                  {t.overlayHeadline}
                 </p>
                 <p className="text-[10px] text-gray-300 font-noto-sans-sc mt-1.5" id="overlay-caption">
-                  Traditional whole grains, earth clay, and slow simmering
+                  {t.overlayCaption}
                 </p>
               </div>
             </motion.div>

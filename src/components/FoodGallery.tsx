@@ -112,7 +112,7 @@ export default function FoodGallery() {
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
               className={`px-5 py-2.5 rounded-full text-xs font-noto-sans-sc font-medium transition-all duration-300 pointer-events-auto cursor-pointer ${activeCategory === cat.id
-                ? 'bg-[#EB288B] text-white shadow-md shadow-amber-900/10'
+                ? 'bg-[#91A179] text-white shadow-md shadow-amber-900/10'
                 : 'bg-[#F7F3EC] text-gray-600 border border-transparent hover:border-gray-200 hover:bg-white'
                 }`}
               id={`cat-tab-${cat.id}`}
@@ -168,7 +168,7 @@ export default function FoodGallery() {
                       <span className="text-[10px] uppercase font-noto-sans-sc font-bold text-[#D89A63]" id={`gallery-cat-${item.id}`}>
                         {item.category}
                       </span>
-                      <h3 className="text-xl font-noto-sans-sc font-bold text-gray-800 mt-1 mb-2 group-hover:text-[#EB288B] transition-colors" id={`gallery-name-${item.id}`}>
+                      <h3 className="text-xl font-noto-sans-sc font-bold text-gray-800 mt-1 mb-2 group-hover:text-[#91A179] transition-colors" id={`gallery-name-${item.id}`}>
                         {item.chineseTitle}
                       </h3>
                       <p className="text-xs uppercase font-noto-sans-sc tracking-wider text-gray-400 mb-4" id={`gallery-eng-${item.id}`}>
@@ -182,11 +182,11 @@ export default function FoodGallery() {
 
                     {/* Secondary button trigger */}
                     <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto" id={`gallery-footer-${item.id}`}>
-                      <span className="text-[11px] font-noto-sans-sc font-medium text-[#EB288B] flex items-center gap-1">
+                      <span className="text-[11px] font-noto-sans-sc font-medium text-[#91A179] flex items-center gap-1">
                         <Info className="w-3.5 h-3.5 text-[#D89A63]" />
                         点击了解能量特性
                       </span>
-                      <span className="w-8 h-8 rounded-full bg-[#FAF8F4] flex items-center justify-center text-gray-400 group-hover:bg-[#EB288B] group-hover:text-white transition-all duration-300" id={`arrow-trigger-${item.id}`}>
+                      <span className="w-8 h-8 rounded-full bg-[#FAF8F4] flex items-center justify-center text-gray-400 group-hover:bg-[#91A179] group-hover:text-white transition-all duration-300" id={`arrow-trigger-${item.id}`}>
                         <ArrowRight className="w-4 h-4" />
                       </span>
                     </div>
@@ -263,7 +263,7 @@ export default function FoodGallery() {
 
                       {/* Benefits listed */}
                       <div id="lightbox-benefits-zone">
-                        <h4 className="text-xs uppercase tracking-widest font-bold text-[#EB288B] mb-4">
+                        <h4 className="text-xs uppercase tracking-widest font-bold text-[#91A179] mb-4">
                           ✓ 能量滋补效益 (Energy Benefits)
                         </h4>
                         <ul className="space-y-3" id="lightbox-benefits-list">
@@ -287,7 +287,7 @@ export default function FoodGallery() {
                       <span className="text-[11px] text-gray-400 font-noto-sans-sc">HULU HULU WORLD CATALOGUE</span>
                       <button
                         onClick={() => setSelectedFood(null)}
-                        className="px-5 py-2 rounded-xl bg-[#EB288B] hover:bg-[#D1167B] text-white text-xs font-semibold cursor-pointer select-auto"
+                        className="px-5 py-2 rounded-xl bg-[#91A179] hover:bg-[#D1167B] text-white text-xs font-semibold cursor-pointer select-auto"
                         id="lightbox-close-confirm-btn"
                       >
                         返回世界页 Back

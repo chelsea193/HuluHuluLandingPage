@@ -8,6 +8,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { FIVE_ELEMENTS } from '../data';
 import { ElementType, FiveElementData } from '../types';
 import { Heart, ShieldCheck, Soup, Star } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { TRANSLATIONS } from '../data/translations';
 
 const ELEMENT_NODE_IMAGES: Record<ElementType, string> = {
   metal: `${import.meta.env.BASE_URL}LandingPage Desktop Part3 IC1-Mental.webp`,
@@ -27,29 +29,36 @@ const ELEMENT_PANEL_IMAGES: Record<ElementType, string> = {
 
 export default function FiveElementsWheel() {
   const [activeElement, setActiveElement] = useState<FiveElementData>(FIVE_ELEMENTS[2]); // Default to Earth (糙米)
+  const { isZh } = useLanguage();
+  const t = TRANSLATIONS[isZh ? 'zh' : 'en'].fiveElements;
 
   return (
-    <section className="relative w-full bg-[#F7F3EC] overflow-hidden" id="section-5">
+    <section className="relative w-full bg-[#FFFAE8] overflow-hidden" id="wellness-lifestyle-page-section">
       {/* Section 5 full-page background image slot */}
       <img
-        src={`${import.meta.env.BASE_URL}LandingPage Desktop Part3 BG.webp`}
+        src={`${import.meta.env.BASE_URL}LP DesktopVer-02.webp`}
         alt=""
         aria-hidden="true"
         loading="lazy"
         decoding="async"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none z-0"
+        className="absolute inset-0 w-full h-full object-cover object-bottom pointer-events-none select-none z-0"
         id="section-5-bg-image"
       />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24">
         <div className="text-center max-w-3xl mx-auto mb-16" id="five-elements-header">
           <span className="text-xs uppercase tracking-widest font-noto-sans-sc font-bold text-[#69725F]" id="section-3-label">
-            FOOD IS ENERGY & VITALITY
+            {t.badge}
           </span>
-          <h2 className="text-3xl md:text-5xl font-noto-sans-sc font-bold text-[#EB288B] tracking-tight leading-tight mt-3 mb-6" id="section-3-title">
-            重新认识你每天吃的食物
-          </h2>
+          {/* This section used to live inside the homepage (where the hero
+              owns the page's one <h1>); now that it's promoted to its own
+              document (wellness-lifestyle/index.html) it owns that
+              document's single <h1>, same as FoodGallery does for /menu/
+              and YinYangBalance does for /five-elements-balance/. */}
+          <h1 className="text-3xl md:text-5xl font-noto-sans-sc font-bold text-[#A4B799] tracking-tight leading-tight mt-3 mb-6" id="section-3-title">
+            {t.title}
+          </h1>
           <p className="text-lg md:text-xl text-[#2F2F2F] font-noto-sans-sc tracking-wide italic leading-relaxed" id="section-3-intro">
-            食物不只是卡路里，更有内在的能量。有些食物吃了让人精神满满，有些却让人昏昏欲睡——在东方饮食智慧里，每种食物都有自己的能量个性。
+            {t.subtitle}
           </p>
         </div>
 
@@ -70,8 +79,8 @@ export default function FiveElementsWheel() {
 
               {/* Core Central Display */}
               <div className="absolute w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-white shadow-xl border border-[#ECE7DE] flex flex-col items-center justify-center text-center p-4 z-10 select-none" id="central-display">
-                <span className="text-xs uppercase tracking-widest text-[#EB288B] font-noto-sans-sc mb-1">
-                  ACTIVE ENERGY
+                <span className="text-xs uppercase tracking-widest text-[#A4B799] font-noto-sans-sc mb-1">
+                  {t.activeEnergyLabel}
                 </span>
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -87,10 +96,10 @@ export default function FiveElementsWheel() {
                       className="text-4xl sm:text-5xl font-noto-sans-sc font-black"
                       style={{ color: activeElement.color }}
                     >
-                      {activeElement.chineseName}
+                      {isZh ? activeElement.chineseName : activeElement.englishName}
                     </span>
                     <span className="text-xs font-noto-sans-sc text-gray-500 mt-1 uppercase tracking-wider">
-                      {activeElement.englishName}
+                      {isZh ? activeElement.englishName : activeElement.chineseName}
                     </span>
                   </motion.div>
                 </AnimatePresence>
@@ -124,7 +133,7 @@ export default function FiveElementsWheel() {
                     >
                       <img
                         src={ELEMENT_NODE_IMAGES[item.element]}
-                        alt={`${item.chineseName} ${item.englishName}`}
+                        alt={isZh ? item.chineseName : item.englishName}
                         className="w-full h-full object-contain pointer-events-none select-none"
                       />
 
@@ -147,7 +156,7 @@ export default function FiveElementsWheel() {
                 <path
                   d="M 200 70 L 324 160 L 276 305 L 124 305 L 76 160 Z"
                   fill="none"
-                  stroke="#EB288B"
+                  stroke="#A4B799"
                   strokeWidth="2"
                   strokeDasharray="4 4"
                   id="generation-cycle-path"
@@ -163,7 +172,7 @@ export default function FiveElementsWheel() {
             </div>
 
             <p className="text-xs text-gray-500 font-noto-sans-sc mt-8 select-none" id="interactivity-hint">
-              * 点击五行粒子（木、火、土、金、水）探索不同食物之能
+              {t.interactiveHint}
             </p>
           </div>
 
@@ -186,17 +195,19 @@ export default function FiveElementsWheel() {
                   >
                     <img
                       src={ELEMENT_PANEL_IMAGES[activeElement.element]}
-                      alt={`${activeElement.chineseName} ${activeElement.englishName}`}
+                      alt={isZh ? activeElement.chineseName : activeElement.englishName}
                       className="w-full h-full object-contain pointer-events-none select-none"
                     />
                   </span>
                   <div>
                     <h3 className="text-2xl font-noto-sans-sc font-bold text-[#2F2F2F]" id="panel-title-text">
-                      {activeElement.chineseName}形能量 · {activeElement.englishName} Energy
+                      {isZh
+                        ? `${activeElement.chineseName}${t.energySuffix} · ${activeElement.englishName} Energy`
+                        : `${activeElement.englishName}${t.energySuffix} · ${activeElement.chineseName}`}
                     </h3>
                     <div className="text-sm font-noto-sans-sc tracking-wide text-gray-500 flex flex-col gap-0.5 mt-1" id="panel-subtitle">
                       <span className="flex items-center gap-1">
-                        <Heart className="w-4 h-4" /> 对应腑脏：
+                        <Heart className="w-4 h-4" /> {t.organLabel}
                       </span>
                       <strong className="text-gray-700">{activeElement.bodyOrgan}</strong>
                     </div>
@@ -210,22 +221,22 @@ export default function FiveElementsWheel() {
                   id="energy-type-bubble"
                 >
                   <Star className="w-4 h-4 fill-current" />
-                  能量本征：{activeElement.energyType}
+                  {t.energyLabel}{activeElement.energyType}
                 </div>
 
                 {/* Description */}
                 <p className="text-sm font-noto-sans-sc text-gray-600 leading-relaxed font-light mb-8" id="element-description">
-                  {activeElement.description}
+                  {isZh ? activeElement.description : activeElement.descriptionEn}
                 </p>
 
                 {/* Recommended foods list */}
                 <div className="border-t border-gray-100 pt-6" id="foods-recommendation-zone">
-                  <h4 className="text-xs uppercase tracking-widest font-noto-sans-sc font-semibold text-[#EB288B] mb-4 flex items-center gap-2">
+                  <h4 className="text-xs uppercase tracking-widest font-noto-sans-sc font-semibold text-[#A4B799] mb-4 flex items-center gap-2">
                     <Soup className="w-4 h-4 text-[#8F6641]" />
-                    代表性能量食物 (Representative Foods)
+                    {t.foodsLabel}
                   </h4>
                   <div className="flex flex-wrap gap-2.5" id="representative-foods-list">
-                    {activeElement.foods.map((food, foodIdx) => (
+                    {(isZh ? activeElement.foods : activeElement.foodsEn).map((food, foodIdx) => (
                       <span
                         key={foodIdx}
                         className="text-xs font-noto-sans-sc px-3.5 py-1.5 rounded-full border bg-gray-50 border-gray-200 text-gray-700 font-medium tracking-wide hover:shadow-sm hover:border-gray-300 transition-all duration-200"
@@ -239,14 +250,6 @@ export default function FiveElementsWheel() {
               </motion.div>
             </AnimatePresence>
           </div>
-        </div>
-
-        <div className="relative z-10 mt-16 bg-[#EB288B] p-6 md:p-8 rounded-2xl border border-[#DCD5C9] max-w-4xl mx-auto" id="elements-closing-wisdom">
-          <span className="text-sm font-noto-sans-sc text-white leading-relaxed font-light text-center flex justify-center" id="wisdom-text">
-            在东方饮食智慧中，不同食物拥有不同的能量特性，并对应人体不同系统与功能。<br />
-            当饮食失衡时，身体的能量状态也可能受到影响。<br />
-            了解食物的能量特性，帮助我们做出更适合自己的饮食选择。
-          </span>
         </div>
       </div>
     </section>

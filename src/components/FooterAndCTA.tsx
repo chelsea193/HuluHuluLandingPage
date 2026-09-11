@@ -28,7 +28,7 @@ export default function FooterAndCTA() {
         {/* Organic backdrop lines */}
         <div className="absolute inset-x-0 bottom-0 top-1/2 pointer-events-none select-none opacity-5" id="cta-patterns">
           <svg className="w-full h-full" viewBox="0 0 1000 300">
-            <path d="M0,150 C300,200 600,100 1000,180" stroke="#EB288B" strokeWidth="2" fill="none" />
+            <path d="M0,150 C300,200 600,100 1000,180" stroke="#91A179" strokeWidth="2" fill="none" />
             <path d="M0,100 C200,50 500,250 1000,120" stroke="#9BA88B" strokeWidth="2.5" fill="none" />
           </svg>
         </div>
@@ -52,7 +52,7 @@ export default function FooterAndCTA() {
             <div className="flex flex-wrap items-center gap-4 mb-8" id="cta-action-row">
               <button
                 onClick={() => handleConsultJoin('community')}
-                className="px-8 py-4 rounded-full bg-[#EB288B] hover:bg-[#D1167B] text-white text-sm font-semibold tracking-wider transition-all duration-300 shadow-lg shadow-amber-950/15 cursor-pointer flex items-center gap-2 group"
+                className="px-8 py-4 rounded-full bg-[#91A179] hover:bg-[#D1167B] text-white text-sm font-semibold tracking-wider transition-all duration-300 shadow-lg shadow-amber-950/15 cursor-pointer flex items-center gap-2 group"
                 id="cta-join-community-btn"
               >
                 <Compass className="w-4 h-4 group-hover:rotate-45 transition-transform" />
@@ -88,7 +88,7 @@ export default function FooterAndCTA() {
               <div className="flex -space-x-2" id="member-avatars">
                 <div className="w-7 h-7 rounded-full border-2 border-white bg-[#9BA88B] text-[8px] text-white flex items-center justify-center font-bold">H</div>
                 <div className="w-7 h-7 rounded-full border-2 border-white bg-[#D89A63] text-[8px] text-white flex items-center justify-center font-bold">U</div>
-                <div className="w-7 h-7 rounded-full border-2 border-white bg-[#EB288B] text-[8px] text-white flex items-center justify-center font-bold">L</div>
+                <div className="w-7 h-7 rounded-full border-2 border-white bg-[#91A179] text-[8px] text-white flex items-center justify-center font-bold">L</div>
               </div>
               <span className="text-xs text-gray-500 font-noto-sans-sc tracking-wide" id="trust-line-text">
                 超过 <strong className="text-gray-800 font-extrabold font-noto-sans-sc bg-amber-50 px-1 py-0.5 rounded">1,850+</strong> 位会员正在学习食物与能量的关系
@@ -107,14 +107,14 @@ export default function FooterAndCTA() {
               </span>
 
               {/* Hand-drawn Mock QR frame */}
-              <div className="w-36 h-36 bg-[#F7F3EC] rounded-2xl border-4 border-[#EB288B]/40 flex items-center justify-center p-3 relative group-hover:border-[#9BA88B]/60 transition-colors duration-300" id="qr-box">
-                <QrCode className="w-full h-full text-[#EB288B] group-hover:text-[#576751] transition-colors" />
+              <div className="w-36 h-36 bg-[#F7F3EC] rounded-2xl border-4 border-[#91A179]/40 flex items-center justify-center p-3 relative group-hover:border-[#9BA88B]/60 transition-colors duration-300" id="qr-box">
+                <QrCode className="w-full h-full text-[#91A179] group-hover:text-[#576751] transition-colors" />
                 
                 {/* Decorative border brackets */}
-                <div className="absolute top-1 left-1 w-3 h-3 border-t-2 border-l-2 border-[#EB288B]"></div>
-                <div className="absolute top-1 right-1 w-3 h-3 border-t-2 border-r-2 border-[#EB288B]"></div>
-                <div className="absolute bottom-1 left-1 w-3 h-3 border-b-2 border-l-2 border-[#EB288B]"></div>
-                <div className="absolute bottom-1 right-1 w-3 h-3 border-b-2 border-r-2 border-[#EB288B]"></div>
+                <div className="absolute top-1 left-1 w-3 h-3 border-t-2 border-l-2 border-[#91A179]"></div>
+                <div className="absolute top-1 right-1 w-3 h-3 border-t-2 border-r-2 border-[#91A179]"></div>
+                <div className="absolute bottom-1 left-1 w-3 h-3 border-b-2 border-l-2 border-[#91A179]"></div>
+                <div className="absolute bottom-1 right-1 w-3 h-3 border-b-2 border-r-2 border-[#91A179]"></div>
               </div>
 
               <span className="text-[11px] font-noto-sans-sc text-gray-500 font-semibold mt-4 mb-1 block">
@@ -135,7 +135,7 @@ export default function FooterAndCTA() {
           
           {/* Footer widget 1: Brand intro */}
           <div className="md:col-span-5" id="f-widget-brand">
-            <span className="text-2xl font-noto-sans-sc font-black text-[#EB288B] tracking-wider block mb-4">
+            <span className="text-2xl font-noto-sans-sc font-black text-[#91A179] tracking-wider block mb-4">
               Hulu Hulu
             </span>
             <span className="text-[10px] uppercase tracking-widest font-noto-sans-sc font-bold text-[#D89A63] border border-[#D89A63]/30 px-3 py-1 rounded-full mb-6 inline-block">
@@ -149,11 +149,11 @@ export default function FooterAndCTA() {
 
           {/* Footer widget 2: Contacts */}
           <div className="md:col-span-4 flex flex-col justify-start" id="f-widget-contact">
-            <h4 className="text-xs uppercase tracking-wider font-noto-sans-sc font-extrabold text-[#EB288B] mb-6">
+            <h4 className="text-xs uppercase tracking-wider font-noto-sans-sc font-extrabold text-[#91A179] mb-6">
               联络我们 CONTACTS
             </h4>
             <div className="space-y-4" id="footer-contacts-list">
-              <a href="https://wa.me/601157444931" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-xs text-gray-500 hover:text-[#EB288B] transition-colors pointer-events-auto" id="f-con-whatsapp">
+              <a href="https://wa.me/601157444931" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-xs text-gray-500 hover:text-[#91A179] transition-colors pointer-events-auto" id="f-con-whatsapp">
                 <MessageSquare className="w-4 h-4 text-[#9BA88B]" />
                 <div className="font-noto-sans-sc">
                   <span className="font-semibold block text-gray-700">WhatsApp</span>
@@ -161,7 +161,7 @@ export default function FooterAndCTA() {
                 </div>
               </a>
 
-              <a href="mailto:hello@huluhuluwellness.com" className="flex items-center gap-3 text-xs text-gray-500 hover:text-[#EB288B] transition-colors pointer-events-auto" id="f-con-email">
+              <a href="mailto:hello@huluhuluwellness.com" className="flex items-center gap-3 text-xs text-gray-500 hover:text-[#91A179] transition-colors pointer-events-auto" id="f-con-email">
                 <Mail className="w-4 h-4 text-[#9BA88B]" />
                 <div className="font-noto-sans-sc">
                   <span className="font-semibold block text-gray-700">Email</span>
@@ -181,17 +181,17 @@ export default function FooterAndCTA() {
 
           {/* Footer widget 3: Social & Media */}
           <div className="md:col-span-3 flex flex-col justify-start" id="f-widget-socials">
-            <h4 className="text-xs uppercase tracking-wider font-noto-sans-sc font-extrabold text-[#EB288B] mb-6">
+            <h4 className="text-xs uppercase tracking-wider font-noto-sans-sc font-extrabold text-[#91A179] mb-6">
               关注我们 FOLLOW US
             </h4>
             <div className="flex flex-col gap-3 font-noto-sans-sc" id="social-links-col">
-              <a href="#facebook" className="text-xs text-gray-600 font-light hover:text-[#EB288B] flex items-center gap-2 transition-colors pointer-events-auto">
+              <a href="#facebook" className="text-xs text-gray-600 font-light hover:text-[#91A179] flex items-center gap-2 transition-colors pointer-events-auto">
                 <Facebook className="w-4 h-4 text-[#9BA88B]" /> Facebook
               </a>
-              <a href="#instagram" className="text-xs text-gray-600 font-light hover:text-[#EB288B] flex items-center gap-2 transition-colors pointer-events-auto">
+              <a href="#instagram" className="text-xs text-gray-600 font-light hover:text-[#91A179] flex items-center gap-2 transition-colors pointer-events-auto">
                 <Instagram className="w-4 h-4 text-[#9BA88B]" /> Instagram
               </a>
-              <a href="https://wa.me/601157444931" target="_blank" rel="noreferrer" className="text-xs text-gray-600 font-light hover:text-[#EB288B] flex items-center gap-2 transition-colors pointer-events-auto">
+              <a href="https://wa.me/601157444931" target="_blank" rel="noreferrer" className="text-xs text-gray-600 font-light hover:text-[#91A179] flex items-center gap-2 transition-colors pointer-events-auto">
                 <MessageCircle className="w-4 h-4 text-[#9BA88B]" /> WhatsApp
               </a>
             </div>

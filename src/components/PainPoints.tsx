@@ -15,7 +15,7 @@ export default function PainPoints() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-xs uppercase tracking-widest font-noto-sans-sc font-semibold text-[#EB288B] mb-3"
+          className="text-xs uppercase tracking-widest font-noto-sans-sc font-semibold text-[#91A179] mb-3"
           id="section-2-label"
         >
           COMMON CONCERNS
@@ -102,7 +102,7 @@ export default function PainPoints() {
           而是你吃进去的食物，是否真正适合你的身体状态。
         </p>
         <div className="relative z-10 w-12 h-0.5 bg-[#D89A63]/50 mx-auto mb-6" id="closing-divider"></div>
-        <h1 className="relative z-10 text-2xl md:text-4xl font-bold text-[#EB288B] tracking-wider font-noto-sans-sc" id="closing-headline">
+        <h1 className="relative z-10 text-2xl md:text-4xl font-bold text-[#91A179] tracking-wider font-noto-sans-sc" id="closing-headline">
           其实，好好吃饭就能解决。
         </h1>
       </motion.div>

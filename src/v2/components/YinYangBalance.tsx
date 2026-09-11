@@ -8,6 +8,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { YIN_YANG_FOODS } from '../data';
 import { YinYangFood } from '../types';
 import { ChevronRight, Sparkles, AlertTriangle, Scale } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { TRANSLATIONS } from '../data/translations';
 
 const FOOD_DETAIL_IMAGES: Partial<Record<string, string>> = {
   '椰子 (Coconut)': `${import.meta.env.BASE_URL}LandingPage Desktop Part4 FD1-coconut.webp`,
@@ -19,24 +21,26 @@ const FOOD_DETAIL_IMAGES: Partial<Record<string, string>> = {
 export default function YinYangBalance() {
   const [activeFood, setActiveFood] = useState<YinYangFood>(YIN_YANG_FOODS[1]); // Default to Milk
   const [balanceValue, setBalanceValue] = useState<number>(0); // -100 (Extreme Yin) to +100 (Extreme Yang)
+  const { isZh } = useLanguage();
+  const t = TRANSLATIONS[isZh ? 'zh' : 'en'].yinYang;
 
   const yinFoods = YIN_YANG_FOODS.filter((f) => f.energy === 'yin');
   const yangFoods = YIN_YANG_FOODS.filter((f) => f.energy === 'yang');
 
   // Dynamically determine balance label
   const getBalanceLabel = () => {
-    if (balanceValue < -60) return { label: '极度偏阴 (Extreme Yin - Hyper-Expansion)', color: 'text-indigo-800 bg-indigo-100/60' };
-    if (balanceValue < -15) return { label: '稍微偏阴 (Mild Yin - Cool & Calming)', color: 'text-[#69725F] bg-[#9BA88B]/10' };
-    if (balanceValue > 60) return { label: '极度偏阳 (Extreme Yang - Over-contraction)', color: 'text-red-800 bg-red-100/60' };
-    if (balanceValue > 15) return { label: '稍微偏阳 (Mild Yang - Active & Vital)', color: 'text-[#8F6641] bg-[#D89A63]/10' };
-    return { label: '中庸平衡 (Perfect Golden Center)', color: 'text-[#EB288B] bg-[#F7F3EC]' };
+    if (balanceValue < -60) return { label: t.extremeYinLabel, color: 'text-indigo-800 bg-indigo-100/60' };
+    if (balanceValue < -15) return { label: t.mildYinLabel, color: 'text-[#69725F] bg-[#9BA88B]/10' };
+    if (balanceValue > 60) return { label: t.extremeYangLabel, color: 'text-red-800 bg-red-100/60' };
+    if (balanceValue > 15) return { label: t.mildYangLabel, color: 'text-[#8F6641] bg-[#D89A63]/10' };
+    return { label: t.centerLabel, color: 'text-[#A4B799] bg-[#FFFAE8]' };
   };
 
   const balanceLabel = getBalanceLabel();
 
   return (
     <>
-    <section className="relative w-full bg-[#F7F3EC] overflow-hidden" id="yin-yang-section">
+    <section className="relative w-full bg-[#FFFAE8] overflow-hidden" id="yinyang-page-section">
       {/* Section 6 full-page background image slot */}
       <img
         src={`${import.meta.env.BASE_URL}LandingPage Desktop Part4 BG.webp`}
@@ -50,12 +54,16 @@ export default function YinYangBalance() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-24 pb-24">
         <div className="text-center max-w-3xl mx-auto mb-16" id="yin-yang-header">
-          <h2 className="text-3xl md:text-5xl font-noto-sans-sc font-bold text-[#EB288B] tracking-tight leading-tight mb-6" id="section-4-title">
-            食物能量学：阴与阳的平衡
-          </h2>
-          <div className="w-16 h-0.5 bg-[#EB288B]/30 mx-auto mb-6" id="gallery-divider"></div>
+          {/* This section used to live inside the homepage (where the hero
+              owns the page's one <h1>); now that it's promoted to its own
+              document (five-elements-balance/index.html) it owns that
+              document's single <h1>, same as FoodGallery does for /menu/. */}
+          <h1 className="text-3xl md:text-5xl font-noto-sans-sc font-bold text-[#A4B799] tracking-tight leading-tight mb-6" id="section-4-title">
+            {t.title}
+          </h1>
+          <div className="w-16 h-0.5 bg-[#A4B799]/30 mx-auto mb-6" id="gallery-divider"></div>
           <p className="text-sm md:text-base font-noto-sans-sc text-[#2F2F2F] font-light" id="section-4-intro">
-            哪些食物最有助于提升能量水平？又有哪些应该尽量避免？
+            {t.subtitle}
           </p>
         </div>
 
@@ -65,7 +73,7 @@ export default function YinYangBalance() {
           <div className="bg-gradient-to-br from-[#ECE7DE]/40 via-white to-indigo-50/20 rounded-3xl shadow-sm overflow-hidden flex flex-col" id="yin-column">
             <img
               src={`${import.meta.env.BASE_URL}LandingPage Full Sec6- Box1.webp`}
-              alt="偏阴性食物：生冷蔬果与清凉属性食物"
+              alt={isZh ? '偏阴性食物：生冷蔬果与清凉属性食物' : 'Yin-leaning foods: raw, cooling produce'}
               loading="lazy"
               decoding="async"
               className="w-full aspect-[3/2] object-cover object-top"
@@ -75,14 +83,14 @@ export default function YinYangBalance() {
             <div>
               <div className="flex items-center gap-3 mb-6" id="yin-heading-wrapper">
                 <span className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center font-noto-sans-sc text-indigo-700 font-bold" id="yin-badge">
-                  阴
+                  {t.yinBadge}
                 </span>
                 <h3 className="text-2xl font-noto-sans-sc font-bold text-gray-800" id="yin-title">
-                  阴性食物（Yin Expansion）
+                  {t.yinTitle}
                 </h3>
               </div>
               <p className="text-xs text-indigo-600 uppercase tracking-widest font-noto-sans-sc font-medium mb-6" id="yin-energy-attrs">
-                特性：冷却 / 扩张 / 沉静 / 稀薄 / 离心
+                {t.yinAttrs}
               </p>
               <div className="space-y-3" id="yin-food-buttons">
                 {yinFoods.map((food) => {
@@ -103,16 +111,16 @@ export default function YinYangBalance() {
                     >
                       <div className="flex-1 min-w-0 md:flex-[7]">
                         <span className="text-base font-noto-sans-sc font-semibold text-gray-800 block">
-                          {food.name}
+                          {isZh ? food.name : food.nameEn}
                         </span>
                         <span className="text-xs font-noto-sans-sc text-gray-500 font-light">
-                          {food.description}
+                          {isZh ? food.description : food.descriptionEn}
                         </span>
                       </div>
                       <div className="shrink-0 flex items-center justify-end gap-1.5 md:flex-[3]" id="yin-badge-sub">
                         <span className={`text-[10px] uppercase font-noto-sans-sc px-2 py-0.5 rounded-full ${food.level === 3 ? 'bg-indigo-100 text-indigo-700' : 'bg-gray-100 text-gray-600'
                           }`}>
-                          Level {food.level} Yin
+                          {t.levelBadge(food.level, 'yin')}
                         </span>
                         <ChevronRight className="w-4 h-4 text-gray-600" />
                       </div>
@@ -123,10 +131,10 @@ export default function YinYangBalance() {
             </div>
             <div className="mt-8 pt-6 border-t border-indigo-100/50" id="yin-summary-note">
               <span className="text-[11px] font-noto-sans-sc text-indigo-700 block mb-1">
-                💡 极阴现象：
+                {t.yinSummaryLabel}
               </span>
               <span className="text-[11px] font-noto-sans-sc text-gray-500 leading-relaxed font-light">
-                摄入过多酒精或多糖等极阴品，能量过度向上逸散，会导致体力消沉、四肢虚冷。
+                {t.yinSummaryText}
               </span>
             </div>
             </div>
@@ -136,7 +144,7 @@ export default function YinYangBalance() {
           <div className="bg-gradient-to-br from-[#ECE7DE]/40 via-white to-red-50/20 rounded-3xl shadow-sm overflow-hidden flex flex-col" id="yang-column">
             <img
               src={`${import.meta.env.BASE_URL}LandingPage Full Sec6- Box2.webp`}
-              alt="偏阳性食物：温热属性的根茎类与烹煮食物"
+              alt={isZh ? '偏阳性食物：温热属性的根茎类与烹煮食物' : 'Yang-leaning foods: warming roots and cooked dishes'}
               loading="lazy"
               decoding="async"
               className="w-full aspect-[3/2] object-cover object-top"
@@ -146,14 +154,14 @@ export default function YinYangBalance() {
             <div>
               <div className="flex items-center gap-3 mb-6" id="yang-heading-wrapper">
                 <span className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-noto-sans-sc text-red-700 font-bold" id="yang-badge">
-                  阳
+                  {t.yangBadge}
                 </span>
                 <h3 className="text-2xl font-noto-sans-sc font-bold text-gray-800" id="yang-title">
-                  阳性食物（Yang Contraction）
+                  {t.yangTitle}
                 </h3>
               </div>
               <p className="text-xs text-red-600 uppercase tracking-widest font-noto-sans-sc font-medium mb-6" id="yang-energy-attrs">
-                特性：温热 / 收敛 / 紧缩 / 浓缩 / 向心
+                {t.yangAttrs}
               </p>
               <div className="space-y-3" id="yang-food-buttons">
                 {yangFoods.map((food) => {
@@ -174,16 +182,16 @@ export default function YinYangBalance() {
                     >
                       <div className="flex-1 min-w-0 md:flex-[7]">
                         <span className="text-base font-noto-sans-sc font-semibold text-gray-800 block">
-                          {food.name}
+                          {isZh ? food.name : food.nameEn}
                         </span>
                         <span className="text-xs font-noto-sans-sc text-gray-500 font-light">
-                          {food.description}
+                          {isZh ? food.description : food.descriptionEn}
                         </span>
                       </div>
                       <div className="shrink-0 flex items-center justify-end gap-1.5 md:flex-[3]" id="yang-badge-sub">
                         <span className={`text-[10px] uppercase font-noto-sans-sc px-2 py-0.5 rounded-full ${food.level === 3 ? 'bg-red-100 text-red-700' : 'bg-gray-100 text-gray-600'
                           }`}>
-                          Level {food.level} Yang
+                          {t.levelBadge(food.level, 'yang')}
                         </span>
                         <ChevronRight className="w-4 h-4 text-gray-600" />
                       </div>
@@ -194,10 +202,10 @@ export default function YinYangBalance() {
             </div>
             <div className="mt-8 pt-6 border-t border-red-100/50" id="yang-summary-note">
               <span className="text-[11px] font-noto-sans-sc text-red-700 block mb-1">
-                💡 极阳现象：
+                {t.yangSummaryLabel}
               </span>
               <span className="text-[11px] font-noto-sans-sc text-gray-500 leading-relaxed font-light">
-                过量高油盐重加工红肉，体内组织过度硬化抽缩，容易引起情绪急躁和三高压力。
+                {t.yangSummaryText}
               </span>
             </div>
             </div>
@@ -209,8 +217,8 @@ export default function YinYangBalance() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center" id="dashboard-layout">
             {/* Detailed food card selection */}
             <div className="bg-[#FAF8F4] p-6 rounded-2xl border border-gray-100" id="detail-card-panel">
-              <h4 className="text-xs uppercase tracking-widest font-noto-sans-sc font-bold text-[#EB288B] mb-3 flex items-center gap-1.5">
-                <Sparkles className="w-4 h-4 text-[#8F6641]" /> EXPLORING POLARITY DETAILS
+              <h4 className="text-xs uppercase tracking-widest font-noto-sans-sc font-bold text-[#A4B799] mb-3 flex items-center gap-1.5">
+                <Sparkles className="w-4 h-4 text-[#8F6641]" /> {t.exploringLabel}
               </h4>
               <AnimatePresence mode="wait">
                 <motion.div
@@ -224,28 +232,28 @@ export default function YinYangBalance() {
                   {FOOD_DETAIL_IMAGES[activeFood.name] && (
                     <img
                       src={FOOD_DETAIL_IMAGES[activeFood.name]}
-                      alt={activeFood.name}
+                      alt={isZh ? activeFood.name : activeFood.nameEn}
                       className="w-full aspect-[3/2] object-cover rounded-2xl mb-4"
                       id="detail-food-image"
                     />
                   )}
                   <div className="flex flex-col items-start gap-1.5 mb-2" id="info-header">
-                    <h3 className="text-lg sm:text-xl font-noto-sans-sc font-semibold text-gray-800">{activeFood.name}</h3>
+                    <h3 className="text-lg sm:text-xl font-noto-sans-sc font-semibold text-gray-800">{isZh ? activeFood.name : activeFood.nameEn}</h3>
                     <span className={`text-xs px-2.5 py-0.5 rounded-full font-noto-sans-sc font-semibold uppercase whitespace-nowrap ${activeFood.energy === 'yin' ? 'bg-indigo-100 text-indigo-700' : 'bg-red-100 text-red-700'
                       }`}>
-                      {activeFood.energy === 'yin' ? '阴性 (Cooling)' : '阳性 (Warming)'}
+                      {activeFood.energy === 'yin' ? t.yinCoolingBadge : t.yangWarmingBadge}
                     </span>
                   </div>
                   <p className="text-xs text-gray-600 font-noto-sans-sc mb-4 leading-none uppercase tracking-wide">
-                    Energy Rating: {activeFood.level} / 3 Polar Intensity
+                    {t.energyRatingLabel}: {activeFood.level} / 3 {t.polarIntensityLabel}
                   </p>
                   <p className="text-sm font-noto-sans-sc text-gray-600 leading-relaxed font-light mb-4" id="info-detail-description">
-                    {activeFood.detail}
+                    {isZh ? activeFood.detail : activeFood.detailEn}
                   </p>
                   <div className="flex items-start gap-2 text-xs font-noto-sans-sc bg-amber-50/70 border border-amber-200/50 p-3 rounded-xl text-amber-900" id="info-warning-block">
                     <AlertTriangle className="w-4 h-4 text-[#8F6641] shrink-0 mt-0.5" />
                     <span>
-                      <strong>微言：</strong>此类食材能量级属于<strong> Level {activeFood.level}</strong>，在日常饮食中应慎防过度累积。
+                      {isZh ? <strong>{t.cautionLabel}</strong> : null}{t.cautionText(activeFood.level)}
                     </span>
                   </div>
                 </motion.div>
@@ -255,13 +263,13 @@ export default function YinYangBalance() {
             {/* Interactive Balance Slide Ruler */}
             <div className="flex flex-col justify-center" id="interactive-scale-zone">
               <div className="flex flex-nowrap items-center justify-between gap-1.5 mb-4" id="scale-indicator-zone">
-                <span className="shrink-0 text-[10px] sm:text-xs font-noto-sans-sc font-black text-indigo-700 whitespace-nowrap">阴 (YIN)</span>
+                <span className="shrink-0 text-[10px] sm:text-xs font-noto-sans-sc font-black text-indigo-700 whitespace-nowrap">{t.scaleYin}</span>
                 <span className="min-w-0 text-[10px] sm:text-xs font-noto-sans-sc font-semibold text-gray-700 flex items-center gap-1 whitespace-nowrap">
-                  <Scale className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#EB288B] shrink-0" />
-                  <span className="hidden sm:inline">Balance Dashboard</span>
-                  <span className="sm:hidden">Balance</span>
+                  <Scale className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#A4B799] shrink-0" />
+                  <span className="hidden sm:inline">{t.balanceDashboard}</span>
+                  <span className="sm:hidden">{t.balanceShort}</span>
                 </span>
-                <span className="shrink-0 text-[10px] sm:text-xs font-noto-sans-sc font-black text-red-700 whitespace-nowrap">(YANG) 阳</span>
+                <span className="shrink-0 text-[10px] sm:text-xs font-noto-sans-sc font-black text-red-700 whitespace-nowrap">{t.scaleYang}</span>
               </div>
 
               {/* Slider track UI */}
@@ -287,32 +295,32 @@ export default function YinYangBalance() {
                   // `focus:outline-none` removed the browser's default focus
                   // ring and nothing replaced it, so a keyboard user tabbing
                   // to the slider couldn't see it was focused. The ring color
-                  // reuses `#EB288B`, the same brand magenta already used on
-                  // this slider's thumb (`accent-[#EB288B]`) — no new color.
-                  className="w-full h-2 bg-gradient-to-r from-indigo-300 via-[#E3DAC9] to-red-300 rounded-lg appearance-none cursor-pointer accent-[#EB288B] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EB288B] focus-visible:ring-offset-2"
+                  // reuses `#A4B799`, the same brand magenta already used on
+                  // this slider's thumb (`accent-[#A4B799]`) — no new color.
+                  className="w-full h-2 bg-gradient-to-r from-indigo-300 via-[#E3DAC9] to-red-300 rounded-lg appearance-none cursor-pointer accent-[#A4B799] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A4B799] focus-visible:ring-offset-2"
                   id="yin-yang-range-slider"
                   // The slider's meaning is carried entirely by the artwork
                   // around it, so it needs its own name. aria-valuetext also
                   // replaces the bare number a screen reader would otherwise
                   // read out ("-45") with the polarity it actually represents.
-                  aria-label="阴阳能量平衡：向左偏阴，向右偏阳"
+                  aria-label={t.sliderAriaLabel}
                   aria-valuetext={
                     balanceValue === 0
-                      ? '阴阳平衡'
-                      : `${balanceValue < 0 ? '偏阴' : '偏阳'} ${Math.abs(balanceValue)}`
+                      ? t.balanceNeutral
+                      : `${balanceValue < 0 ? t.balanceYinPrefix : t.balanceYangPrefix} ${Math.abs(balanceValue)}`
                   }
                 />
                 {/* Zero Balance Marker */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-4 bg-[#EB288B]/60 pointer-events-none rounded" id="zero-marker"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-4 bg-[#A4B799]/60 pointer-events-none rounded" id="zero-marker"></div>
               </div>
 
               {/* Slider analysis response */}
               <div className="text-center mt-6" id="analysis-box">
                 <span className={`text-xs inline-block font-noto-sans-sc px-4 py-2 rounded-full font-bold transition-all duration-300 ${balanceLabel.color}`} id="balance-badge">
-                  此能量偏移：{balanceLabel.label}
+                  {t.shiftLabel}{balanceLabel.label}
                 </span>
                 <p className="text-xs font-noto-sans-sc text-gray-600 mt-2.5 font-light leading-relaxed" id="dashboard-notice">
-                  * 拖动上面的滑块模拟食物调和状态。食物能量学认为，完美的养生并不是回避一切阴性或阳性，而是在二者之间架起中正平和之桥。
+                  {t.dashboardNotice}
                 </p>
               </div>
             </div>
@@ -331,7 +339,7 @@ export default function YinYangBalance() {
       id="yin-yang-quote-block"
     >
       <img
-        src={`${import.meta.env.BASE_URL}LandingPage Desktop Part5 Bg.webp`}
+        src={`${import.meta.env.BASE_URL}LP DesktopVer-03.webp`}
         alt=""
         aria-hidden="true"
         loading="lazy"
@@ -341,14 +349,14 @@ export default function YinYangBalance() {
       />
       <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-12 py-24 text-center">
         <div className="inline-block text-white text-xs font-noto-sans-sc font-semibold tracking-wider mb-6" id="yin-yang-quote-accent">
-          YIN & YANG BALANCE
+          {t.quoteAccent}
         </div>
         <p className="text-3xl md:text-5xl font-noto-sans-sc font-bold text-white tracking-wider leading-relaxed mb-6" id="yin-yang-quote-text">
-          偏阴不行，偏阳也不行，<br />
-          选择阴阳平衡的才是刚刚好。
+          {t.quoteText[0]}<br />
+          {t.quoteText[1]}
         </p>
         <span className="text-xs uppercase tracking-widest text-white font-noto-sans-sc" id="yin-yang-quote-attribution">
-          —— Hulu Hulu 饮食
+          {t.quoteAttribution}
         </span>
       </div>
     </motion.section>

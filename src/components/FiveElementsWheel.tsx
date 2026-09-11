@@ -29,7 +29,7 @@ export default function FiveElementsWheel() {
           重新认识你每天吃的食物
         </h2>
         <div className="w-16 h-1 bg-[#D89A63]/30 mx-auto mb-6" id="section-3-divider"></div>
-        <p className="text-lg md:text-xl text-[#EB288B] font-noto-sans-sc tracking-wide italic leading-relaxed" id="section-3-intro">
+        <p className="text-lg md:text-xl text-[#91A179] font-noto-sans-sc tracking-wide italic leading-relaxed" id="section-3-intro">
           食物不只是卡路里，更有内在的能量。有些食物吃了让人精神满满，有些却让人昏昏欲睡——在东方饮食智慧里，每种食物都有自己的能量个性。
         </p>
       </div>
@@ -51,7 +51,7 @@ export default function FiveElementsWheel() {
 
             {/* Core Central Display */}
             <div className="absolute w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-white shadow-xl border border-[#ECE7DE] flex flex-col items-center justify-center text-center p-4 z-10 select-none" id="central-display">
-              <span className="text-xs uppercase tracking-widest text-[#EB288B] font-noto-sans-sc mb-1">
+              <span className="text-xs uppercase tracking-widest text-[#91A179] font-noto-sans-sc mb-1">
                 ACTIVE ENERGY
               </span>
               <AnimatePresence mode="wait">
@@ -129,7 +129,7 @@ export default function FiveElementsWheel() {
               <path
                 d="M 200 70 L 324 160 L 276 305 L 124 305 L 76 160 Z"
                 fill="none"
-                stroke="#EB288B"
+                stroke="#91A179"
                 strokeWidth="2"
                 strokeDasharray="4 4"
                 id="generation-cycle-path"
@@ -195,7 +195,7 @@ export default function FiveElementsWheel() {
 
               {/* Recommended foods list */}
               <div className="border-t border-gray-100 pt-6" id="foods-recommendation-zone">
-                <h4 className="text-xs uppercase tracking-widest font-noto-sans-sc font-semibold text-[#EB288B] mb-4 flex items-center gap-2">
+                <h4 className="text-xs uppercase tracking-widest font-noto-sans-sc font-semibold text-[#91A179] mb-4 flex items-center gap-2">
                   <Soup className="w-4 h-4 text-[#D89A63]" />
                   代表性能量食物 (Representative Foods)
                 </h4>

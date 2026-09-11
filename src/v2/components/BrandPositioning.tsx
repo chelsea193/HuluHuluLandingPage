@@ -4,6 +4,8 @@
  */
 
 import { motion } from 'motion/react';
+import { useLanguage } from '../context/LanguageContext';
+import { TRANSLATIONS } from '../data/translations';
 
 // Hand-sketched ginkgo leaf background element
 function GinkgoLeafDecoration({ className }: { className?: string }) {
@@ -44,6 +46,9 @@ function GinkgoLeafDecoration({ className }: { className?: string }) {
 }
 
 export default function BrandPositioning() {
+  const { isZh } = useLanguage();
+  const t = TRANSLATIONS[isZh ? 'zh' : 'en'].brandPositioning;
+
   return (
     <section 
       className="py-24 px-6 md:px-12 max-w-7xl mx-auto rounded-[40px] bg-white/40 backdrop-blur-md border border-[#9BA88B]/15 relative overflow-hidden my-16 shadow-sm"
@@ -51,7 +56,7 @@ export default function BrandPositioning() {
     >
       {/* Soft Watercolor Backdrop Blobs in the corner */}
       <div className="absolute top-[-50px] right-[-50px] w-80 h-80 rounded-full bg-[#9BA88B]/12 filter blur-3xl pointer-events-none" id="blob-decor-pink"></div>
-      <div className="absolute bottom-[-50px] left-[-30px] w-96 h-96 rounded-full bg-[#EB288B]/8 filter blur-3xl pointer-events-none" id="blob-decor-sage"></div>
+      <div className="absolute bottom-[-50px] left-[-30px] w-96 h-96 rounded-full bg-[#A4B799]/8 filter blur-3xl pointer-events-none" id="blob-decor-sage"></div>
 
       {/* Elegant Ginkgo Leaf Sketches in Background Corners */}
       <GinkgoLeafDecoration className="absolute -top-6 -right-6 w-36 h-36 transform rotate-[-15deg] pointer-events-none" />
@@ -60,10 +65,10 @@ export default function BrandPositioning() {
 
       {/* Header Container exactly mimicking Hulu Hulu brand style guide */}
       <div className="flex flex-col md:flex-row items-center md:items-baseline gap-4 mb-20 relative z-10" id="positioning-header">
-        <h2 className="text-3xl md:text-4xl font-noto-sans-sc font-black text-[#EB288B] tracking-tight shrink-0 whitespace-nowrap" id="brand-guide-title">
-          HULU HULU 的品牌定位
+        <h2 className="text-3xl md:text-4xl font-noto-sans-sc font-black text-[#A4B799] tracking-tight shrink-0 whitespace-nowrap" id="brand-guide-title">
+          {t.guideTitle}
         </h2>
-        <div className="h-0.5 w-full bg-[#EB288B]/40" id="brand-guide-rule"></div>
+        <div className="h-0.5 w-full bg-[#A4B799]/40" id="brand-guide-rule"></div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10" id="brand-positioning-grid">
@@ -86,28 +91,28 @@ export default function BrandPositioning() {
             >
               <img
                 src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-IC1.webp`}
-                alt="品牌核心理念图标"
+                alt={isZh ? '品牌核心理念图标' : 'Brand core concept icon'}
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover scale-[1.35]"
               />
             </div>
             <div className="space-y-3" id="guide-desc-core">
-              <h3 className="text-xl md:text-2xl font-noto-sans-sc font-black text-[#EB288B]" id="core-title">
-                我们的核心
+              <h3 className="text-xl md:text-2xl font-noto-sans-sc font-black text-[#A4B799]" id="core-title">
+                {t.coreTitle}
               </h3>
               <ul className="space-y-1.5 text-gray-700 font-noto-sans-sc text-[15px] sm:text-base leading-relaxed" id="core-bullets">
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#EB288B]/70" />
-                  <span>吃饱，只是行为</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#A4B799]/70" />
+                  <span>{t.coreBullets[0]}</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#EB288B]/70" />
-                  <span className="font-semibold text-gray-900">吃对，才是系统</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#A4B799]/70" />
+                  <span className="font-semibold text-gray-900">{t.coreBullets[1]}</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#EB288B]/70" />
-                  <span className="text-[#EB288B] font-bold">稳定，才是结果</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#A4B799]/70" />
+                  <span className="text-[#A4B799] font-bold">{t.coreBullets[2]}</span>
                 </li>
               </ul>
             </div>
@@ -128,28 +133,28 @@ export default function BrandPositioning() {
             >
               <img
                 src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-IC2.webp`}
-                alt="品牌差异化图标"
+                alt={isZh ? '品牌差异化图标' : 'Brand differentiation icon'}
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover scale-[1.35]"
               />
             </div>
             <div className="space-y-3" id="guide-desc-diff">
-              <h3 className="text-xl md:text-2xl font-noto-sans-sc font-black text-[#EB288B]" id="diff-title">
-                我们的差别
+              <h3 className="text-xl md:text-2xl font-noto-sans-sc font-black text-[#A4B799]" id="diff-title">
+                {t.diffTitle}
               </h3>
               <ul className="space-y-1.5 text-gray-700 font-noto-sans-sc text-[15px] sm:text-base leading-relaxed" id="diff-bullets">
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#9BA88B]" />
-                  <span>市场只教你吃什么</span>
+                  <span>{t.diffBullets[0]}</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#9BA88B]" />
-                  <span className="font-semibold text-gray-900">我们连接食物与身体能量</span>
+                  <span className="font-semibold text-gray-900">{t.diffBullets[1]}</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#9BA88B]" />
-                  <span className="text-[#69725F] font-bold">创造让身体稳定的系统</span>
+                  <span className="text-[#69725F] font-bold">{t.diffBullets[2]}</span>
                 </li>
               </ul>
             </div>
@@ -170,25 +175,25 @@ export default function BrandPositioning() {
             >
               <img
                 src={`${import.meta.env.BASE_URL}LandingPage Full Sec4-IC3.webp`}
-                alt="品牌价值主张图标"
+                alt={isZh ? '品牌价值主张图标' : 'Brand value proposition icon'}
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="space-y-3" id="guide-desc-val">
-              <h3 className="text-xl md:text-2xl font-noto-sans-sc font-black text-[#EB288B]" id="val-title">
-                我们的价值
+              <h3 className="text-xl md:text-2xl font-noto-sans-sc font-black text-[#A4B799]" id="val-title">
+                {t.valTitle}
               </h3>
               <ul className="space-y-1.5 text-gray-700 font-noto-sans-sc text-[15px] sm:text-base leading-relaxed" id="val-bullets">
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#D89A63] mt-2" />
-                  <span>Hulu Hulu 创造的不只是饮食方法</span>
+                  <span>{t.valBulletsLead}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#D89A63] mt-2" />
                   <span className="text-gray-900 leading-relaxed">
-                    而是一套 <strong className="text-[#8F6641] font-bold bg-amber-50 px-1 py-0.5 rounded text-sm sm:text-base">“食物 + 能量 + 身体状态”</strong> 的完整调理系统
+                    {t.valBulletsTailPrefix}<strong className="text-[#8F6641] font-bold bg-amber-50 px-1 py-0.5 rounded text-sm sm:text-base">{t.valBulletsHighlight}</strong>{t.valBulletsTailSuffix}
                   </span>
                 </li>
               </ul>
@@ -277,18 +282,18 @@ export default function BrandPositioning() {
               {/* Radish thin rounds (Pink boundary with white inner, resembling standard Japanese radish slice) */}
               <g id="radish-rounds">
                 {/* Radish 1 */}
-                <circle cx="270" cy="230" r="28" fill="#FFF" stroke="#EB288B" strokeWidth="4" />
-                <circle cx="270" cy="230" r="21" fill="none" stroke="#EB288B" strokeWidth="0.8" strokeDasharray="2 4" opacity="0.5" />
+                <circle cx="270" cy="230" r="28" fill="#FFF" stroke="#A4B799" strokeWidth="4" />
+                <circle cx="270" cy="230" r="21" fill="none" stroke="#A4B799" strokeWidth="0.8" strokeDasharray="2 4" opacity="0.5" />
                 <circle cx="270" cy="230" r="3" fill="#2F2F2F" opacity="0.6" /> {/* Sesame seed */}
                 
                 {/* Radish 2 */}
-                <circle cx="310" cy="180" r="22" fill="#FFF" stroke="#EB288B" strokeWidth="3.5" />
-                <circle cx="310" cy="180" r="16" fill="none" stroke="#EB288B" strokeWidth="0.8" strokeDasharray="2 3" opacity="0.5" />
+                <circle cx="310" cy="180" r="22" fill="#FFF" stroke="#A4B799" strokeWidth="3.5" />
+                <circle cx="310" cy="180" r="16" fill="none" stroke="#A4B799" strokeWidth="0.8" strokeDasharray="2 3" opacity="0.5" />
                 <circle cx="308" cy="176" r="2" fill="#2F2F2F" opacity="0.6" />
                 <circle cx="314" cy="184" r="1.5" fill="#2F2F2F" opacity="0.6" />
 
                 {/* Radish 3 (Stacked beneath) */}
-                <circle cx="285" cy="160" r="25" fill="#FFF" stroke="#EB288B" strokeWidth="4" />
+                <circle cx="285" cy="160" r="25" fill="#FFF" stroke="#A4B799" strokeWidth="4" />
                 <circle cx="282" cy="158" r="2" fill="#2F2F2F" opacity="0.6" />
               </g>
 
@@ -330,7 +335,7 @@ export default function BrandPositioning() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 overflow-hidden mt-16 max-w-4xl mx-auto bg-[#F7F3EC] border-2 border-dashed border-[#9BA88B]/40 rounded-3xl p-8 md:p-12 text-center"
+        className="relative z-10 overflow-hidden mt-16 max-w-4xl mx-auto bg-[#FFFAE8] border-2 border-dashed border-[#9BA88B]/40 rounded-3xl p-8 md:p-12 text-center"
         id="brand-positioning-highlight-box"
       >
         {/* Full-width background image slot */}
@@ -344,8 +349,8 @@ export default function BrandPositioning() {
           id="brand-positioning-highlight-bg"
         />
         <p className="relative z-10 text-lg md:text-2xl font-noto-sans-sc text-[#2F2F2F] leading-relaxed tracking-wide" id="brand-positioning-quote">
-          食物营养与大地的共振，<br />
-          创造让生命回归稳定的和谐能量生态
+          {t.quote[0]}<br />
+          {t.quote[1]}
         </p>
       </motion.div>
     </section>

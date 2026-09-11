@@ -34,7 +34,7 @@ export default function MacrobioticWisdom() {
           
           {/* Left Panel: Narrative, checklist, features */}
           <div className="lg:col-span-7 flex flex-col justify-center" id="macrobiotic-narrative">
-            <span className="text-xs uppercase tracking-widest font-extrabold text-[#EB288B] mb-2 flex items-center gap-1">
+            <span className="text-xs uppercase tracking-widest font-extrabold text-[#91A179] mb-2 flex items-center gap-1">
               <Sprout className="w-4 h-4 text-[#9BA88B]" /> MACROBIOTIC ECO-PHILOSOPHY
             </span>
             <h2 className="text-3xl md:text-4xl font-noto-sans-sc text-[#2F2F2F] font-bold tracking-tight mb-6" id="macrobiotic-title">
@@ -82,7 +82,7 @@ export default function MacrobioticWisdom() {
               className="p-5 rounded-2xl bg-[#F7F3EC] border border-[#ECE7DE] max-w-xl"
               id="macro-statement-box"
             >
-              <p className="text-sm text-[#EB288B] font-noto-sans-sc leading-loose font-medium flex items-center gap-2" id="macro-statement">
+              <p className="text-sm text-[#91A179] font-noto-sans-sc leading-loose font-medium flex items-center gap-2" id="macro-statement">
                 <Flame className="w-4 h-4 text-[#D89A63]" />
                 不是节食，不是限制，而是一种帮助身体回归平衡的生活方式。
               </p>

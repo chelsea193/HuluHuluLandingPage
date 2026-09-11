@@ -112,7 +112,7 @@ export default function App() {
               <span className="text-xl font-noto-sans-sc font-black text-[#576751] tracking-wider leading-none">
                 Hulu Hulu
               </span>
-              <span className="text-[8px] font-noto-sans-sc font-bold uppercase tracking-widest text-[#EB288B] mt-1">
+              <span className="text-[8px] font-noto-sans-sc font-bold uppercase tracking-widest text-[#91A179] mt-1">
                 FOOD IS ENERGY
               </span>
             </div>
@@ -125,7 +125,7 @@ export default function App() {
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={(e) => handleScrollTo(e, link.id)}
-                className="text-xs font-noto-sans-sc font-semibold tracking-wide text-gray-500 hover:text-[#EB288B] relative transition-colors duration-300 py-2 group pointer-events-auto"
+                className="text-xs font-noto-sans-sc font-semibold tracking-wide text-gray-500 hover:text-[#91A179] relative transition-colors duration-300 py-2 group pointer-events-auto"
                 id={`nav-link-${link.id}`}
               >
                 {link.label}
@@ -180,7 +180,7 @@ export default function App() {
                     key={link.id}
                     href={`#${link.id}`}
                     onClick={(e) => handleScrollTo(e, link.id)}
-                    className="text-sm font-noto-sans-sc font-bold text-gray-600 hover:text-[#EB288B] py-2 border-b border-gray-100 block transition-colors"
+                    className="text-sm font-noto-sans-sc font-bold text-gray-600 hover:text-[#91A179] py-2 border-b border-gray-100 block transition-colors"
                     id={`m-nav-link-${link.id}`}
                   >
                     {link.label}
@@ -196,7 +196,7 @@ export default function App() {
                       target.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="w-full text-center py-3 rounded-xl bg-[#EB288B] text-white text-xs font-bold mt-2 hover:bg-[#D1167B] block"
+                  className="w-full text-center py-3 rounded-xl bg-[#91A179] text-white text-xs font-bold mt-2 hover:bg-[#D1167B] block"
                   id="mobile-header-cta"
                 >
                   WhatsApp 咨询门径
@@ -248,7 +248,7 @@ export default function App() {
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={scrollToTop}
             title="回到顶部"
-            className="fixed bottom-8 right-8 z-[4000] w-12 h-12 rounded-full bg-[#EB288B] text-[#FAF8F4] hover:bg-[#D1167B] flex items-center justify-center shadow-lg cursor-pointer transform hover:translate-y-[-4px] transition-all duration-300 pointer-events-auto"
+            className="fixed bottom-8 right-8 z-[4000] w-12 h-12 rounded-full bg-[#91A179] text-[#FAF8F4] hover:bg-[#D1167B] flex items-center justify-center shadow-lg cursor-pointer transform hover:translate-y-[-4px] transition-all duration-300 pointer-events-auto"
             id="scroll-to-top-fab"
           >
             <ArrowUp className="w-5 h-5" />

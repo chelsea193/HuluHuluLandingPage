@@ -1,9 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://huluhuluwellness.com/</loc>
-    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://huluhuluwellness.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://huluhuluwellness.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huluhuluwellness.com/" />
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://huluhuluwellness.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://huluhuluwellness.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://huluhuluwellness.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huluhuluwellness.com/" />
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://huluhuluwellness.com/menu/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://huluhuluwellness.com/menu/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://huluhuluwellness.com/en/menu/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huluhuluwellness.com/menu/" />
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://huluhuluwellness.com/en/menu/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://huluhuluwellness.com/menu/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://huluhuluwellness.com/en/menu/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huluhuluwellness.com/menu/" />
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://huluhuluwellness.com/five-elements-balance/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://huluhuluwellness.com/five-elements-balance/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://huluhuluwellness.com/en/five-elements-balance/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huluhuluwellness.com/five-elements-balance/" />
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://huluhuluwellness.com/en/five-elements-balance/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://huluhuluwellness.com/five-elements-balance/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://huluhuluwellness.com/en/five-elements-balance/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huluhuluwellness.com/five-elements-balance/" />
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://huluhuluwellness.com/wellness-lifestyle/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://huluhuluwellness.com/wellness-lifestyle/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://huluhuluwellness.com/en/wellness-lifestyle/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huluhuluwellness.com/wellness-lifestyle/" />
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://huluhuluwellness.com/en/wellness-lifestyle/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://huluhuluwellness.com/wellness-lifestyle/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://huluhuluwellness.com/en/wellness-lifestyle/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huluhuluwellness.com/wellness-lifestyle/" />
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://huluhuluwellness.com/quiz/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://huluhuluwellness.com/quiz/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://huluhuluwellness.com/en/quiz/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huluhuluwellness.com/quiz/" />
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://huluhuluwellness.com/en/quiz/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://huluhuluwellness.com/quiz/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://huluhuluwellness.com/en/quiz/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huluhuluwellness.com/quiz/" />
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://huluhuluwellness.com/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://huluhuluwellness.com/faq/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://huluhuluwellness.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huluhuluwellness.com/faq/" />
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://huluhuluwellness.com/en/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://huluhuluwellness.com/faq/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://huluhuluwellness.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huluhuluwellness.com/faq/" />
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

@@ -100,7 +100,7 @@ same dashed border, same background image treatment, same `max-w-4xl` width.
 ### Rules
 
 1. Outer wrapper: `mt-16`, `max-w-4xl mx-auto`, centered text.
-2. Surface: `bg-[#F7F3EC]`, `rounded-3xl`, **dashed** sage border
+2. Surface: `bg-[#FFFAE8]`, `rounded-3xl`, **dashed** sage border
    `border-2 border-dashed border-[#9BA88B]/40`.
 3. **Height comes from the padding** `p-8 md:p-12` — never hard-code a height; keep these
    paddings identical so all quote boxes match.
@@ -118,7 +118,7 @@ same dashed border, same background image treatment, same `max-w-4xl` width.
   whileInView={{ opacity: 1, scale: 1 }}
   viewport={{ once: true }}
   transition={{ duration: 0.8 }}
-  className="relative overflow-hidden mt-16 bg-[#F7F3EC] p-8 md:p-12 rounded-3xl border-2 border-dashed border-[#9BA88B]/40 max-w-4xl mx-auto text-center"
+  className="relative overflow-hidden mt-16 bg-[#FFFAE8] p-8 md:p-12 rounded-3xl border-2 border-dashed border-[#9BA88B]/40 max-w-4xl mx-auto text-center"
   id="section-3"
 >
   {/* Full-width background image slot */}
@@ -138,7 +138,7 @@ same dashed border, same background image treatment, same `max-w-4xl` width.
     而是你吃进去的食物，是否真正适合你的身体状态。
   </p>
   <div className="relative z-10 w-12 h-0.5 bg-[#D89A63]/50 mx-auto mb-6" id="closing-divider"></div>
-  <h1 className="relative z-10 text-2xl md:text-4xl font-bold text-[#EB288B] tracking-wider font-sans" id="closing-headline">
+  <h1 className="relative z-10 text-2xl md:text-4xl font-bold text-[#A4B799] tracking-wider font-sans" id="closing-headline">
     其实，好好吃饭就能解决。
   </h1>
 </motion.div>
@@ -149,13 +149,13 @@ same dashed border, same background image treatment, same `max-w-4xl` width.
 | Part            | Classes                                                                 |
 | --------------- | ---------------------------------------------------------------------- |
 | Wrapper         | `mt-16 max-w-4xl mx-auto text-center`                                   |
-| Surface         | `bg-[#F7F3EC] rounded-3xl border-2 border-dashed border-[#9BA88B]/40`   |
+| Surface         | `bg-[#FFFAE8] rounded-3xl border-2 border-dashed border-[#9BA88B]/40`   |
 | Height (padding)| `p-8 md:p-12`                                                          |
 | Background      | `absolute inset-0 w-full h-full object-fill` (decorative)              |
 | Accent pill     | `px-4 py-1.5 rounded-full bg-[#9BA88B]/10 text-[#69725F] text-xs`       |
 | Body copy       | `text-xl md:text-2xl font-serif leading-loose mb-6 tracking-wide`      |
 | Divider         | `w-12 h-0.5 bg-[#D89A63]/50 mx-auto mb-6`                              |
-| Headline        | `text-2xl md:text-4xl font-bold text-[#EB288B] tracking-wider font-sans`|
+| Headline        | `text-2xl md:text-4xl font-bold text-[#A4B799] tracking-wider font-sans`|
 
 > Swap the text and the background image `src` per section, but keep the wrapper classes,
 > paddings, dashed border, and `z-10` layering **identical** so every quotation box renders
@@ -165,31 +165,54 @@ same dashed border, same background image treatment, same `max-w-4xl` width.
 
 ## Shared palette (for reference)
 
-> **Magenta is `#EB288B` by deliberate brand choice.** A prior pass deepened
-> it to `#CF237A` because `#EB288B` only scores 4.03:1 against the page's
-> cream surfaces (`#FFFFFF`, `#FAF8F4`, `#F7F3EC`, `#FAF1EA`, `#FFFBEB`) —
-> short of the WCAG AA text minimum of 4.5:1. That change was reverted at the
-> project owner's request, so `#EB288B` is back everywhere `#CF237A` was
-> used, contrast shortfall included. Don't "fix" this back to `#CF237A`.
-> If AA contrast becomes a priority again, revisit magenta specifically
-> rather than reusing `#CF237A` from memory — re-derive it, since exact
-> requirements (target ratio, surfaces) may differ next time.
+> **Brand accent is `#A4B799` (sage-green)**, matching the huluhulu-review
+> design system (v2.1). It replaced the prior `#91A179` — a full-site swap,
+> so every `text-[#91A179]`, `bg-[#91A179]`, `border-[#91A179]`, etc. should
+> read `#A4B799` instead, with **hover state `#8E9F84`** (`hover:bg-[#8E9F84]`)
+> on primary buttons/links, not the old `#7D8A68`. Re-check contrast against
+> the page's cream surfaces (`#FFFFFF`, `#FAF8F4`, `#FFFAE8`, `#FAF1EA`,
+> `#FFFBEB`) before relying on this color for small/thin text.
+>
+> The global page canvas is **`#FFFAE8`** ("Canvas Alabaster") — it replaced
+> `#F7F3EC` everywhere, including the quote-box surface. `#FAF8F4` ("Surface
+> Pearl") is unchanged and still used for card backgrounds, the sticky header,
+> and modals — don't conflate the two.
 >
 > Terracotta and sage remain split: `#D89A63` / `#9BA88B` for *decoration*
 > only (dividers, borders, blobs, where contrast rules don't apply), and their
 > darker text siblings below for anything that has to be read. Also avoid
 > `text-gray-400` (2.6:1) — use `text-gray-600`, and never fade body text with
-> an opacity suffix such as `text-[#F7F3EC]/80`, which blends the colour and
-> silently drops the ratio.
+> an opacity suffix such as `text-[#FFFAE8]/80`, which blends the colour and
+> silently drops the ratio — even though huluhulu-review does this in its
+> footer, keep footer text at full opacity here.
+>
+> Source of truth: `huluhulu-review/designsystem.md` (v2.1). Five Elements
+> energy colors are unchanged from the original palette (Wood `#8CA080`,
+> Fire `#D47D72`, Earth `#D5A76C`, Metal `#B7BCC3`, Water `#657EA5`) —
+> designsystem.md's alternate five-element swatch table is aspirational and
+> not what the actual review-repo code uses, so don't apply it.
 
-| Token        | Hex                   | Use                                  |
-| ------------ | --------------------- | ------------------------------------ |
-| Magenta      | `#EB288B`             | Brand / headlines / accents / fills  |
-| Terracotta   | `#D89A63`             | Dividers, borders, decoration **only** |
-| Terracotta ✎ | `#8F6641`             | Terracotta **text**                  |
-| Sage         | `#9BA88B`             | Borders / decoration **only**        |
-| Sage ✎       | `#69725F`             | Sage **text**                        |
-| Ink          | `#2F2F2F`             | Body text                            |
-| Cream panel  | `#F7F3EC`             | Quote-box surface                    |
-| Cream bg     | `#FAF8F4` / `#FAF1EA` | Section background fallback          |
-| Stone border | `#ECE7DE` / `#DCD5C9` | Hairline borders                     |
+| Token          | Hex                   | Use                                       |
+| -------------- | ---------------------- | ------------------------------------------ |
+| Brand accent   | `#A4B799`             | Brand / headlines / accents / fills       |
+| Brand hover    | `#8E9F84`              | Hover/pressed state for primary buttons   |
+| Terracotta     | `#D89A63`             | Dividers, borders, decoration **only**    |
+| Terracotta ✎   | `#8F6641`             | Terracotta **text**                       |
+| Sage           | `#9BA88B`             | Borders / decoration **only**             |
+| Sage ✎         | `#69725F`             | Sage **text**                             |
+| Sage hover     | `#859275`              | Hover state for sage/botanical buttons    |
+| Ink            | `#2F2F2F`             | Body text                                 |
+| Canvas         | `#FFFAE8`             | Global page / section background          |
+| Surface Pearl  | `#FAF8F4` / `#FAF1EA` | Card background, sticky header, modals    |
+| Stone border   | `#ECE7DE` / `#DCD5C9` | Hairline borders                          |
+
+---
+
+## Workflow preferences (always follow)
+
+1. **Output/brand name** is "HuluHuluLandingPage" — use this naming for the project/output.
+2. **Referrer** is "huluhulu" — use this value wherever a referrer/source identifier is needed.
+3. **SEO** must always be taken care of (meta tags, semantic HTML, alt text, headings, etc.) when building or editing sections.
+4. **Commits are done by the user** — do not run `git commit` (or push) unless explicitly asked to.
+5. **Responsiveness** must always be taken care of (mobile/tablet/desktop breakpoints) for every section.
+6. **Ask before starting** — if anything is unclear or a question arises, ask before beginning work, rather than assuming.

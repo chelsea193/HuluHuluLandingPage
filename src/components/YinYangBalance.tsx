@@ -22,7 +22,7 @@ export default function YinYangBalance() {
     if (balanceValue < -15) return { label: '稍微偏阴 (Mild Yin - Cool & Calming)', color: 'text-[#9BA88B] bg-[#9BA88B]/10' };
     if (balanceValue > 60) return { label: '极度偏阳 (Extreme Yang - Over-contraction)', color: 'text-red-800 bg-red-100/60' };
     if (balanceValue > 15) return { label: '稍微偏阳 (Mild Yang - Active & Vital)', color: 'text-[#D89A63] bg-[#D89A63]/10' };
-    return { label: '中庸平衡 (Perfect Golden Center)', color: 'text-[#EB288B] bg-[#F7F3EC]' };
+    return { label: '中庸平衡 (Perfect Golden Center)', color: 'text-[#91A179] bg-[#F7F3EC]' };
   };
 
   const balanceLabel = getBalanceLabel();
@@ -224,7 +224,7 @@ export default function YinYangBalance() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center" id="dashboard-layout">
             {/* Detailed food card selection */}
             <div className="bg-[#FAF8F4] p-6 rounded-2xl border border-gray-100" id="detail-card-panel">
-              <h4 className="text-xs uppercase tracking-widest font-noto-sans-sc font-bold text-[#EB288B] mb-3 flex items-center gap-1.5">
+              <h4 className="text-xs uppercase tracking-widest font-noto-sans-sc font-bold text-[#91A179] mb-3 flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-[#D89A63]" /> EXPLORING POLARITY DETAILS
               </h4>
               <AnimatePresence mode="wait">
@@ -264,7 +264,7 @@ export default function YinYangBalance() {
               <div className="flex items-center justify-between mb-4" id="scale-indicator-zone">
                 <span className="text-xs font-noto-sans-sc font-black text-indigo-700">阴 (YIN)</span>
                 <span className="text-xs font-noto-sans-sc font-semibold text-gray-700 flex items-center gap-1">
-                  <Scale className="w-4 h-4 text-[#EB288B]" /> Balance Dashboard
+                  <Scale className="w-4 h-4 text-[#91A179]" /> Balance Dashboard
                 </span>
                 <span className="text-xs font-noto-sans-sc font-black text-red-700">(YANG) 阳</span>
               </div>
@@ -289,11 +289,11 @@ export default function YinYangBalance() {
                       setActiveFood(matched);
                     }
                   }}
-                  className="w-full h-2 bg-gradient-to-r from-indigo-300 via-[#E3DAC9] to-red-300 rounded-lg appearance-none cursor-pointer focus:outline-none accent-[#EB288B]"
+                  className="w-full h-2 bg-gradient-to-r from-indigo-300 via-[#E3DAC9] to-red-300 rounded-lg appearance-none cursor-pointer focus:outline-none accent-[#91A179]"
                   id="yin-yang-range-slider"
                 />
                 {/* Zero Balance Marker */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-4 bg-[#EB288B]/60 pointer-events-none rounded" id="zero-marker"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-4 bg-[#91A179]/60 pointer-events-none rounded" id="zero-marker"></div>
               </div>
 
               {/* Slider analysis response */}
@@ -334,7 +334,7 @@ export default function YinYangBalance() {
             选择阴阳平衡的才是刚刚好。
           </p>
           <div className="relative z-10 w-12 h-0.5 bg-[#D89A63]/50 mx-auto mb-6" id="yin-yang-quote-divider"></div>
-          <span className="relative z-10 text-xs uppercase tracking-widest text-[#EB288B] font-noto-sans-sc font-semibold" id="yin-yang-quote-attribution">
+          <span className="relative z-10 text-xs uppercase tracking-widest text-[#91A179] font-noto-sans-sc font-semibold" id="yin-yang-quote-attribution">
             —— Hulu Hulu 饮食
           </span>
         </motion.div>
