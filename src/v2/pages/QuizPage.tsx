@@ -5,14 +5,14 @@
 
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  RotateCcw, 
-  Share2, 
-  ArrowRight, 
-  ArrowLeft, 
-  Home, 
-  HelpCircle, 
-  Check, 
+import {
+  RotateCcw,
+  Share2,
+  ArrowRight,
+  ArrowLeft,
+  Home,
+  HelpCircle,
+  Check,
   Copy,
   Facebook,
   Instagram,
@@ -347,19 +347,17 @@ export default function QuizPage({ onNavigateHome, onNavigateFAQ, onNavigateMenu
                     <button
                       key={idx}
                       onClick={() => handleSelectOption(idx)}
-                      className={`w-full text-left p-4 sm:p-5 rounded-2xl border transition-all duration-200 cursor-pointer flex items-center gap-4 relative group ${
-                        isSelected
-                          ? 'bg-white border-[#A4B799] ring-2 ring-[#A4B799]/20 shadow-md'
-                          : 'bg-white/70 border-[#ECE7DE] hover:bg-white hover:border-[#9BA88B]/60'
-                      }`}
+                      className={`w-full text-left p-4 sm:p-5 rounded-2xl border transition-all duration-200 cursor-pointer flex items-center gap-4 relative group ${isSelected
+                        ? 'bg-white border-[#A4B799] ring-2 ring-[#A4B799]/20 shadow-md'
+                        : 'bg-white/70 border-[#ECE7DE] hover:bg-white hover:border-[#9BA88B]/60'
+                        }`}
                     >
                       {/* Option Key Badge (A, B, C, D, E) */}
                       <div
-                        className={`w-7 h-7 rounded-full border text-xs font-bold flex items-center justify-center shrink-0 transition-colors font-mono ${
-                          isSelected
-                            ? 'border-[#A4B799] bg-[#A4B799] text-white'
-                            : 'border-gray-300 text-gray-500 group-hover:border-[#9BA88B] group-hover:text-gray-700'
-                        }`}
+                        className={`w-7 h-7 rounded-full border text-xs font-bold flex items-center justify-center shrink-0 transition-colors font-mono ${isSelected
+                          ? 'border-[#A4B799] bg-[#A4B799] text-white'
+                          : 'border-gray-300 text-gray-500 group-hover:border-[#9BA88B] group-hover:text-gray-700'
+                          }`}
                       >
                         {option.key}
                       </div>
@@ -367,9 +365,8 @@ export default function QuizPage({ onNavigateHome, onNavigateFAQ, onNavigateMenu
                       {/* Option Text */}
                       <div className="flex-1 font-noto-sans-sc">
                         <span
-                          className={`text-sm sm:text-base leading-relaxed ${
-                            isSelected ? 'text-[#2F2F2F] font-semibold' : 'text-gray-700'
-                          }`}
+                          className={`text-sm sm:text-base leading-relaxed ${isSelected ? 'text-[#2F2F2F] font-semibold' : 'text-gray-700'
+                            }`}
                         >
                           {isZh ? option.text : option.textEn}
                         </span>
@@ -384,11 +381,10 @@ export default function QuizPage({ onNavigateHome, onNavigateFAQ, onNavigateMenu
                 <button
                   onClick={handlePrev}
                   disabled={currentStep === 0}
-                  className={`px-5 py-2.5 rounded-full border border-[#ECE7DE] text-xs font-semibold font-noto-sans-sc flex items-center gap-1.5 transition-all ${
-                    currentStep === 0
-                      ? 'opacity-30 cursor-not-allowed text-gray-400'
-                      : 'hover:bg-white text-gray-600 cursor-pointer'
-                  }`}
+                  className={`px-5 py-2.5 rounded-full border border-[#ECE7DE] text-xs font-semibold font-noto-sans-sc flex items-center gap-1.5 transition-all ${currentStep === 0
+                    ? 'opacity-30 cursor-not-allowed text-gray-400'
+                    : 'hover:bg-white text-gray-600 cursor-pointer'
+                    }`}
                 >
                   <ArrowLeft className="w-3.5 h-3.5" />
                   {isZh ? '上一题' : 'Previous'}
@@ -397,13 +393,12 @@ export default function QuizPage({ onNavigateHome, onNavigateFAQ, onNavigateMenu
                 <button
                   onClick={handleNext}
                   disabled={selectedOptionIndex === undefined}
-                  className={`px-7 py-3 rounded-full text-xs font-bold font-noto-sans-sc tracking-wider transition-all flex items-center gap-2 ${
-                    selectedOptionIndex !== undefined
-                      ? 'bg-[#A4B799] hover:bg-[#8E9F84] text-white shadow-md shadow-[#A4B799]/20 cursor-pointer'
-                      : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                  }`}
+                  className={`px-7 py-3 rounded-full text-xs font-bold font-noto-sans-sc tracking-wider transition-all flex items-center gap-2 ${selectedOptionIndex !== undefined
+                    ? 'bg-[#A4B799] hover:bg-[#8E9F84] text-white shadow-md shadow-[#A4B799]/20 cursor-pointer'
+                    : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                    }`}
                 >
-                  {currentStep === totalQuestions - 1 
+                  {currentStep === totalQuestions - 1
                     ? (isZh ? '查看测试结果' : 'View Energy Report')
                     : (isZh ? '下一题' : 'Next Question')
                   }
@@ -476,8 +471,8 @@ export default function QuizPage({ onNavigateHome, onNavigateFAQ, onNavigateMenu
                   {isZh ? '您的五行能量密码' : 'Your Energy Breakdown'}
                 </h2>
                 <p className="text-xs text-gray-500 font-noto-sans-sc mb-6">
-                  {isZh 
-                    ? '数值代表在15道题中所选该属性的次数（最大15分 / 最小0分）' 
+                  {isZh
+                    ? '数值代表在15道题中所选该属性的次数（最大15分 / 最小0分）'
                     : 'Points scored out of 15 questions for each element'}
                 </p>
 
@@ -496,17 +491,28 @@ export default function QuizPage({ onNavigateHome, onNavigateFAQ, onNavigateMenu
                     return (
                       <div
                         key={item.key}
-                        className={`p-3 rounded-2xl border text-center transition-all ${
-                          isDominant
-                            ? 'bg-white border-[#A4B799] shadow-md ring-2 ring-[#A4B799]/20'
-                            : 'bg-white/60 border-[#ECE7DE]'
-                        }`}
+                        className={`p-1.5 sm:p-4 rounded-2xl border text-center transition-all flex flex-col justify-between ${isDominant
+                          ? 'bg-white border-[#A4B799] shadow-md ring-2 ring-[#A4B799]/20'
+                          : 'bg-white/60 border-[#ECE7DE]'
+                          }`}
                       >
-                        <div className="text-xs font-bold text-gray-500 font-noto-sans-sc mb-1 flex items-center justify-center gap-1">
-                          {isDominant && <span>👑</span>}
-                          {item.label}（{score}{isZh ? '分' : 'pts'}）
+                        {/* Line 1：皇冠（独占一行） */}
+                        <div className="h-4 sm:h-5 flex items-center justify-center text-xs sm:text-sm mb-0.5">
+                          {isDominant ? <span>👑</span> : null}
                         </div>
-                        <div className="text-lg sm:text-2xl font-black font-mono text-[#2F2F2F]">
+
+                        {/* Line 2：五行名称 */}
+                        <div className="text-xs sm:text-sm font-bold text-gray-700 font-noto-sans-sc">
+                          {item.label}
+                        </div>
+
+                        {/* Line 3：分数（核心修复：加上 whitespace-nowrap 绝不换行，并降低小屏字号） */}
+                        <div className="text-[9px] sm:text-[11px] text-gray-400 font-noto-sans-sc my-0.5 whitespace-nowrap tracking-tighter sm:tracking-normal">
+                          （{score}{isZh ? '分' : 'pts'}）
+                        </div>
+
+                        {/* Line 4：百分比 */}
+                        <div className="text-sm sm:text-2xl font-black font-mono text-[#2F2F2F]">
                           {pct}%
                         </div>
                       </div>
@@ -674,11 +680,10 @@ export default function QuizPage({ onNavigateHome, onNavigateFAQ, onNavigateMenu
                   return (
                     <div
                       key={elKey}
-                      className={`p-5 sm:p-6 rounded-2xl border transition-all ${
-                        isDominant
-                          ? 'bg-white border-[#A4B799] shadow-md ring-1 ring-[#A4B799]/20'
-                          : 'bg-white/70 border-[#ECE7DE]'
-                      }`}
+                      className={`p-5 sm:p-6 rounded-2xl border transition-all ${isDominant
+                        ? 'bg-white border-[#A4B799] shadow-md ring-1 ring-[#A4B799]/20'
+                        : 'bg-white/70 border-[#ECE7DE]'
+                        }`}
                     >
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                         <div className="flex items-center gap-2">
@@ -688,7 +693,7 @@ export default function QuizPage({ onNavigateHome, onNavigateFAQ, onNavigateMenu
                           </span>
                         </div>
                         <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
-                          {isZh 
+                          {isZh
                             ? `${detail.quote}：${detail.subQuote}`
                             : `${detail.quoteEn}: ${detail.subQuoteEn}`}
                         </span>
@@ -709,8 +714,8 @@ export default function QuizPage({ onNavigateHome, onNavigateFAQ, onNavigateMenu
             <div className="bg-gradient-to-b from-[#FAF8F4] to-[#ECE7DE]/50 border border-[#ECE7DE] rounded-3xl p-8 sm:p-12 text-center font-noto-sans-sc space-y-6">
               <div className="max-w-xl mx-auto">
                 <h3 className="text-xl sm:text-2xl font-bold text-[#2F2F2F] mb-3">
-                  {isZh 
-                    ? '从一个小改变开始，找回自己的生活节奏。' 
+                  {isZh
+                    ? '从一个小改变开始，找回自己的生活节奏。'
                     : 'Begin with a gentle shift to reclaim your natural rhythm.'}
                 </h3>
                 <p className="text-sm text-gray-600 font-light leading-relaxed">
@@ -758,7 +763,7 @@ export default function QuizPage({ onNavigateHome, onNavigateFAQ, onNavigateMenu
 
               {/* Disclaimer */}
               <p className="text-[11px] text-gray-600 font-light pt-4 max-w-lg mx-auto border-t border-[#ECE7DE]">
-                {isZh 
+                {isZh
                   ? '本测验基于养生概念设计，仅供个人状态观察及一般生活方式参考，测试结果不代表医学诊断。'
                   : 'This assessment is designed on holistic wellness principles for personal reflection and does not substitute medical diagnosis.'}
               </p>
@@ -781,7 +786,7 @@ export default function QuizPage({ onNavigateHome, onNavigateFAQ, onNavigateMenu
                 {isZh ? '分享我的五行能量结果' : 'Share My Five Elements Profile'}
               </h4>
               <p className="text-xs text-gray-500 text-center mb-6">
-                {isZh 
+                {isZh
                   ? '让朋友也来测测属于自己的五行能量密码'
                   : 'Invite friends to uncover their personalized Five-Element energy'}
               </p>
@@ -809,8 +814,8 @@ export default function QuizPage({ onNavigateHome, onNavigateFAQ, onNavigateMenu
                   className="w-full py-3 rounded-full bg-[#A4B799] text-white text-xs font-bold hover:bg-[#8E9F84] transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-md"
                 >
                   {copiedLink ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                  {copiedLink 
-                    ? (isZh ? '已复制分享文案与链接！' : 'Link & summary copied!') 
+                  {copiedLink
+                    ? (isZh ? '已复制分享文案与链接！' : 'Link & summary copied!')
                     : (isZh ? '复制结果文案与链接' : 'Copy Summary & Link')}
                 </button>
 
